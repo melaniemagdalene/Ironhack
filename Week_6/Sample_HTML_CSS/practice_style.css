@@ -1,0 +1,54 @@
+html {
+	margin: 0;
+	padding: 0;
+	}
+
+body { 
+	font-family: Calibri, "Helvetica Neue", Helvetica, Arial, "Sans-serif";	font-size: 20px;
+	color: #484848;
+	text-align: center;
+	}
+
+h1 	{ 
+	font-family: Calibri, "Helvetica Neue", Helvetica, Arial, "Sans-serif";
+	font-size: 40px;
+	font-weight: bold;
+	color: #181818;
+	text-align: center;
+	}
+
+h2 	{
+    font-size: 46px;
+    font-weight: bold;
+    color: #EF1C1C;
+    text-align: center;
+	}
+
+.date {
+	font-size: 18px;
+	color: #484848;
+	text-align: center;
+	}
+
+.author { 
+	font-size: 20px;
+	color: #c9353a;
+	text-align: center;
+	}
+
+img.displayed {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 25%;
+	}
+
+ul  {
+    list-style-type: none;
+	}
+
+.quote {
+	font-weight: bold;
+	color: blue;
+	text-align: center;
+	}

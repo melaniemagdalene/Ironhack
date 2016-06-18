@@ -1,0 +1,49 @@
+code {
+	/*position: relative;*/
+	top: 200px;
+	left: -400px;
+	background: #2db34a;
+	border-radius: 6px;
+	color: #fff;
+	display: block;
+	padding: 24px 15px;
+	text-align: center;
+	text-transform: uppercase;
+	}
+
+header,
+section,
+aside,
+footer {
+	margin: 0 1.5% 24px 1.5%;
+	}
+
+img {
+    float: right;
+	}
+
+.img {
+    overflow: auto;	
+	}
+
+.box-set {
+	background: #eaeaed;
+	}
+
+.box {
+	background: #2db34a;
+	text-align: center;
+	float: left;
+	margin: 1.85%;
+	width: 30%;
+	color: #fff;
+	}
+
+.box-set:before, .box-set:after {
+	content: "";
+	display: table;
+	}
+
+.box-set:after {
+	clear:both;
+	}

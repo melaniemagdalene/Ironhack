@@ -1,0 +1,47 @@
+body:after {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	font-weight: bold;
+	font-size: 200%;
+	text-align: center;
+	color: white;
+	}
+
+@media screen and (min-width:320px) {
+	body:after {
+		content: "320px - 480px Width";
+		background-color: #000;
+		background-repeat: no-repeat;
+	}
+}
+
+@media screen and (min-width:480px) {
+	body:after {
+		content: "480px - 768px Width";
+		background-color: #ccc;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	body:after {
+		content: "768px - 1024px Width";
+		background-color: #666;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	body:after {
+		content: "1024px - 1200px Width";
+		background-color: #333;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	body:after {
+		content: "1200px Width or Greater";
+		background-color: #000;
+		font-size: 300%;
+	}
+}
