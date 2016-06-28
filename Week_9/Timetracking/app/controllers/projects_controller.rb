@@ -13,7 +13,13 @@ class ProjectsController < ApplicationController
 			description: params[:project][:description]
 			)
 		@project.save
-
 		redirect_to '/projects'
+	end
+
+	def show
+			@project = Project.find(params[:id])
+			unless @project
+			render 'no_projects_found'
+		end
 	end
 end
