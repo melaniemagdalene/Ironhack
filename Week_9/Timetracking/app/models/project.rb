@@ -2,6 +2,8 @@
 # Move the code to obtain the last 10 created projects to a method in the class Project name last_created_projects(n)
 
 class Project < ActiveRecord::Base
+	has_many :time_entries
+
 	def self.clean_old
 		where("created_at < ?", 1.week.ago).destroy_all
 	end
@@ -22,5 +24,5 @@ end
 # 	end
 # end
 
-# p = Project.new("Ironhack"
+# p = Project.new("Ironhack")
 # p.name
