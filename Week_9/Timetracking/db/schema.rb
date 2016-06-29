@@ -31,5 +31,4 @@ ActiveRecord::Schema.define(version: 20160628230713) do
   end
 
   add_index "time_entries", ["project_id"], name: "index_time_entries_on_project_id"
-
 end

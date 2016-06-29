@@ -1,4 +1,5 @@
 class TimeEntry < ActiveRecord::Base
+
 	has_many :time_entries
 	has_many :entries, class_name: "TimeEntry"
 

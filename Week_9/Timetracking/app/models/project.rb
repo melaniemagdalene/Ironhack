@@ -11,6 +11,18 @@ class Project < ActiveRecord::Base
 	def self.last_created_projects(limit)
 		limit(limit).order(created_at: :desc)
 	end
+
+	# p.total_hours_in_month(3, 2014)
+	def total_hours_in_month(month, year)
+		date = Time.new(year, month)
+		entries_in_month = time_entries.where(
+			date: date, date.end_of_month
+		)
+
+		hours = entries_in_month.sum{ |e| e.hours }
+		minutes = entries_in_month.sum { |e| e.minutes }
+		(minutes / 60)
+	end
 end
 
 
