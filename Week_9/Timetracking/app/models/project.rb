@@ -3,6 +3,9 @@
 
 class Project < ActiveRecord::Base
 	has_many :time_entries
+	
+	# First define attribute that will be validated-> :name
+	validates :name, uniqueness: true, presence: true, length: { maximum: 30 }, format: { with: /A[a-zA-Z0-9]+/ }
 
 	def self.clean_old
 		where("created_at < ?", 1.week.ago).destroy_all
@@ -16,7 +19,7 @@ class Project < ActiveRecord::Base
 	def total_hours_in_month(month, year)
 		date = Time.new(year, month)
 		entries_in_month = time_entries.where(
-			date: date, date.end_of_month
+			date: date..date.end_of_month
 		)
 
 		hours = entries_in_month.sum{ |e| e.hours }

@@ -1,0 +1,190 @@
+Last login: Thu Jun 30 18:54:23 on ttys002
+Melanies-MacBook-Pro:~ melanieblazevic$ pwd
+/Users/melanieblazevic
+Melanies-MacBook-Pro:~ melanieblazevic$ cd desktop/ironhack/week_9
+Melanies-MacBook-Pro:week_9 melanieblazevic$ ls
+Ironbnb		Timetracking
+Melanies-MacBook-Pro:week_9 melanieblazevic$ cd Timetracking
+Melanies-MacBook-Pro:Timetracking melanieblazevic$ cd app/models
+Melanies-MacBook-Pro:models melanieblazevic$ subl -n .
+Melanies-MacBook-Pro:models melanieblazevic$ cd ..
+Melanies-MacBook-Pro:app melanieblazevic$ pwd
+/Users/melanieblazevic/desktop/ironhack/week_9/Timetracking/app
+Melanies-MacBook-Pro:app melanieblazevic$ cd ..
+Melanies-MacBook-Pro:Timetracking melanieblazevic$ subl -n .
+Melanies-MacBook-Pro:Timetracking melanieblazevic$ rails console
+Loading development environment (Rails 4.2.6)
+irb(main):001:0> p = Project.new
+SyntaxError: /Users/melanieblazevic/Desktop/Ironhack/Week_9/Timetracking/app/models/project.rb:21: syntax error, unexpected '\n', expecting =>
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:457:in `load'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:457:in `block in load_file'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:647:in `new_constants_in'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:456:in `load_file'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:354:in `require_or_load'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:494:in `load_missing_constant'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:184:in `const_missing'
+	from (irb):1
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/console.rb:110:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/console.rb:9:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/commands_tasks.rb:68:in `console'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+irb(main):002:0> reload!
+Reloading...
+=> true
+irb(main):003:0> p = Project.new
+=> #<Project id: nil, name: nil, created_at: nil, updated_at: nil, description: nil>
+irb(main):004:0> p.valid?
+=> false
+irb(main):005:0> p.name
+=> nil
+irb(main):006:0> p.name = "Ironhack"
+=> "Ironhack"
+irb(main):007:0> p.valid?
+=> true
+irb(main):008:0> p.name = ""
+=> ""
+irb(main):011:0> p.valid?
+=> false
+irb(main):012:0> nil.present?
+=> false
+irb(main):013:0> "".present?
+=> false
+irb(main):014:0> reload!
+Reloading...
+=> true
+irb(main):015:0> p = Project.new
+=> #<Project id: nil, name: nil, created_at: nil, updated_at: nil, description: nil>
+irb(main):016:0> p.name = "Name with space"
+=> "Name with space"
+irb(main):017:0> p.valid?
+  Project Exists (13.5ms)  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'Name with space' LIMIT 1
+=> false
+irb(main):018:0> reload!
+Reloading...
+=> true
+irb(main):019:0> reload!
+Reloading...
+=> true
+irb(main):020:0> t = TimeEntry.new
+ArgumentError: Unknown validator: 'NumericallyValidator'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activemodel-4.2.6/lib/active_model/validations/validates.rb:120:in `rescue in block in validates'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activemodel-4.2.6/lib/active_model/validations/validates.rb:117:in `block in validates'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activemodel-4.2.6/lib/active_model/validations/validates.rb:113:in `each'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activemodel-4.2.6/lib/active_model/validations/validates.rb:113:in `validates'
+	from /Users/melanieblazevic/Desktop/Ironhack/Week_9/Timetracking/app/models/time_entry.rb:8:in `<class:TimeEntry>'
+	from /Users/melanieblazevic/Desktop/Ironhack/Week_9/Timetracking/app/models/time_entry.rb:1:in `<top (required)>'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:457:in `load'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:457:in `block in load_file'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:647:in `new_constants_in'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:456:in `load_file'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:354:in `require_or_load'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:494:in `load_missing_constant'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-4.2.6/lib/active_support/dependencies.rb:184:in `const_missing'
+	from (irb):20
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/console.rb:110:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/console.rb:9:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/commands_tasks.rb:68:in `console'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'irb(main):021:0> 
+irb(main):022:0* 
+irb(main):023:0* reload!
+Reloading...
+=> true
+irb(main):024:0> reload!
+Reloading...
+=> true
+irb(main):025:0> t = TimeEntry.new
+=> #<TimeEntry id: nil, project_id: nil, hours: nil, minutes: nil, comments: nil, date: nil, created_at: nil, updated_at: nil>
+irb(main):026:0> t.hours = "Hello"
+=> "Hello"
+irb(main):027:0> t.valid?
+=> false
+irb(main):028:0> p = Project.new
+=> #<Project id: nil, name: nil, created_at: nil, updated_at: nil, description: nil>
+irb(main):029:0> p.save
+   (0.2ms)  begin transaction
+  Project Exists (13.3ms)  SELECT  1 AS one FROM "projects" WHERE "projects"."name" IS NULL LIMIT 1
+   (0.1ms)  rollback transaction
+=> false
+irb(main):030:0> p = Project.new
+=> #<Project id: nil, name: nil, created_at: nil, updated_at: nil, description: nil>
+irb(main):031:0> p.name = 'Ironhack'
+=> "Ironhack"
+irb(main):032:0> p.save
+   (0.1ms)  begin transaction
+  Project Exists (0.3ms)  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'Ironhack' LIMIT 1
+   (0.1ms)  rollback transaction
+=> false
+irb(main):033:0> p = Project.create
+   (0.1ms)  begin transaction
+  Project Exists (0.3ms)  SELECT  1 AS one FROM "projects" WHERE "projects"."name" IS NULL LIMIT 1
+   (0.1ms)  rollback transaction
+=> #<Project id: nil, name: nil, created_at: nil, updated_at: nil, description: nil>
+irb(main):034:0> p = Project.create(name: 'foobar')
+   (0.1ms)  begin transaction
+  Project Exists (0.2ms)  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'foobar' LIMIT 1
+   (0.1ms)  rollback transaction
+=> #<Project id: nil, name: "foobar", created_at: nil, updated_at: nil, description: nil>
+irb(main):035:0> p.name
+=> "foobar"
+irb(main):036:0> p.save
+   (0.1ms)  begin transaction
+  Project Exists (0.3ms)  SELECT  1 AS one FROM "projects" WHERE "projects"."name" = 'foobar' LIMIT 1
+   (0.1ms)  rollback transaction
+=> false
+irb(main):037:0> p = Project.find(56)
+  Project Load (0.2ms)  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 56]]
+ActiveRecord::RecordNotFound: Couldn't find Project with 'id'=56
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activerecord-4.2.6/lib/active_record/core.rb:155:in `find'
+	from (irb):37
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/console.rb:110:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/console.rb:9:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/commands_tasks.rb:68:in `console'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands/commands_tasks.rb:39:in `run_command!'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-4.2.6/lib/rails/commands.rb:17:in `<top (required)>'
+	from bin/rails:4:in `require'
+	from bin/rails:4:in `<main>'
+irb(main):038:0> p = Project.find(1)
+  Project Load (0.1ms)  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 1]]
+=> #<Project id: 1, name: "Ironhack v2 updated", created_at: "2016-06-24 00:31:21", updated_at: "2016-06-25 14:41:17", description: "Awesome Description">
+irb(main):040:0> p.name
+=> "Ironhack v2 updated"
+irb(main):041:0> p = Project.find (5)
+  Project Load (0.1ms)  SELECT  "projects".* FROM "projects" WHERE "projects"."id" = ? LIMIT 1  [["id", 5]]
+=> #<Project id: 5, name: "Project 2", created_at: "2016-06-25 14:54:31", updated_at: "2016-06-25 14:54:31", description: "Awesome Description">
+irb(main):042:0> p = Project.new
+=> #<Project id: nil, name: nil, created_at: nil, updated_at: nil, description: nil>
+irb(main):043:0> p.errors
+=> #<ActiveModel::Errors:0x007f8f9e220508 @base=#<Project id: nil, name: nil, created_at: nil, updated_at: nil, description: nil>, @messages={}>
+irb(main):044:0> p.errors.empty?
+=> true
+irb(main):045:0> p.save
+   (0.2ms)  begin transaction
+  Project Exists (0.2ms)  SELECT  1 AS one FROM "projects" WHERE "projects"."name" IS NULL LIMIT 1
+   (0.1ms)  rollback transaction
+=> false
+irb(main):046:0> p.errors.empty?
+=> false
+irb(main):047:0> p.valid?
+  Project Exists (3.5ms)  SELECT  1 AS one FROM "projects" WHERE "projects"."name" IS NULL LIMIT 1
+=> false
+irb(main):048:0> p.errors.size
+=> 2
+irb(main):049:0> p.errors.full_messages
+=> ["Name can't be blank", "Name is invalid"]
+irb(main):050:0> exit
+Melanies-MacBook-Pro:Timetracking melanieblazevic$ exit
+logout
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+Deleting expired sessions...21 completed.
+
+[Process completed]
+
