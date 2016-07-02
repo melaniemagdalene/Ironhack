@@ -8,7 +8,7 @@ class TimeEntriesController < ApplicationController
 			:hours, :minutes, :date
 			)
 		# time_entry_params = { hours: 1, minutes: 3, date: somedate }
-		@time_entry = @project.time_entries.new(:time_entry_params)
+		@time_entry = @project.time_entries.new(time_entry_params)
 		if @time_entry.save
 			redirect_to project_time_entries_path(@project)
 		else
