@@ -11,3 +11,11 @@
 		</li>
 	<% end %>
 </ol>
+
+<h1><%= @project.name %></h1>
+
+<%= link_to('Projects', projects_path) %>
+<%= link_to('Add Time Entry', new_project_time_entry_path) %>
+
+<!-- quotation marks in erb are text displayed in web browser -->
+<!-- path links to the page -->
