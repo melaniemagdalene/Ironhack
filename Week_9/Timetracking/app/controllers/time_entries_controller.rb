@@ -26,9 +26,9 @@ class TimeEntriesController < ApplicationController
 		# find resourses needed
 		@project = Project.find(params[:project_id])
 		# Create strong parameters whitelist
-		time_entry_params = params.require(:time_entry).permit(
-			:hours, :minutes, :date
-		)
+		# time_entry_params = params.require(:time_entry).permit(
+		# 	:hours, :minutes, :date
+		# )
 		# time_entry_params = { hours: 1, minutes: 3, date: somedate }
 		@time_entry = @project.time_entries.new(time_entry_params)
 		if @time_entry.save
@@ -46,6 +46,15 @@ class TimeEntriesController < ApplicationController
 	def new
 		@project = Project.find(params[:project_id])
 		@time_entry = @project.time_entries.new
+	end
+
+	# encapsulation code
+	private
+
+	def time_entries_params
+		params.require(:time_entry).permit(
+			:hours, :minutes, :date, :comment
+		)
 	end
 end
 
