@@ -8,6 +8,7 @@
 			Minutes: 
 			<%= time_entry.minutes %> m -
 			<%= time_entry.date %>
+			<%= link_to "Edit Time Entry", edit_project_time_entry_path(@project, time_entry) %>
 		</li>
 	<% end %>
 </ol>
@@ -18,4 +19,4 @@
 <%= link_to('Add Time Entry', new_project_time_entry_path) %>
 
 <!-- quotation marks in erb are text displayed in web browser -->
-<!-- path links to the page -->
+<!-- "path" links to the page -->
