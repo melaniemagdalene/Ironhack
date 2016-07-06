@@ -1,6 +1,13 @@
 class TimeEntriesController < ApplicationController
 	
 	# Create action
+	def destroy
+		flash[:success] = "Time Entry Deleted!"
+		@project = Project.find(params[:project_id])
+		@time_entry = @project.time_entries.find(params[:id])
+		@time_entry.destroy
+		redirect_to project_time_entries_path(@project)
+	end
 
 	# time_entries is a collection
 	def update
@@ -32,7 +39,7 @@ class TimeEntriesController < ApplicationController
 		# time_entry_params = { hours: 1, minutes: 3, date: somedate }
 		@time_entry = @project.time_entries.new(time_entries_params)
 		if @time_entry.save
-			redirect_to project_time_entries_path(@project)
+			redirect_to project_time_entries_path(@project), notice: "Time entry created successfully."
 		else
 			render 'new'
 		end
