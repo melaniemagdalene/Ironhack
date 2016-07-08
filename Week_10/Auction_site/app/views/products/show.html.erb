@@ -1,1 +1,7 @@
-<h1>Thanks for creating your new product: <%= @product.title %>!</h1>
+<h1>Thank you!<h1> 
+<h2><%= @user.name %> you have successfully created a new product, "<%= @product.title %>"! </h2>  
+<br>
+<h3> Description: <%= @product.description %> </h3>
+<h3> Deadline: <%= @product.deadline %> </h3>
+
+<%= link_to("Create New Product", new_user_product_path(@user)) %>

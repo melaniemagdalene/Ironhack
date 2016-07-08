@@ -6,7 +6,7 @@
 	</ul>
 <% end %>
 
-<%= form_for @product do |f| %>
+<%= form_for [@user, @product] do |f| %>
 	<%= f.label :title %>
 	<%= f.text_field :title %>
 	<br>
@@ -19,3 +19,5 @@
 
 	<%= f.submit 'Add Product' %>
 <% end %>
+
+<%= link_to("View All Products", user_products_path(@user)) %>
