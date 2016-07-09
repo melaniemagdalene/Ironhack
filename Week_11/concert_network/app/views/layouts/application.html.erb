@@ -3,13 +3,20 @@
 <!DOCTYPE html>
 	<html>
 		<head>
+			<!-- page structure -->
 			<title>Concert Network</title>
 			<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 			<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
 			<%= csrf_meta_tags %>
+
+			<center><h2><%= link_to("Music Concert Network", "/") %></h2></center>
 		</head>
 	
 		<body>
 			<%= yield %>
+			
+			<footer>
+				<center><p><%= link_to("Concerts", concerts_path) %> | <%= link_to("New Concert", new_concert_path) %></p></center>
+			</footer>
 		</body>
 	</html>
