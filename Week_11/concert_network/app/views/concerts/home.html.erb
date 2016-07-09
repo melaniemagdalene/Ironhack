@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+     <meta charset="UTF-8">
+     <title>Music Concert Network</title>
+  </head>
+
+    <body>
+      <div class="container-fluid">
+      <div class="row head">
+
+      <div class="col-sm-7">
+        <h1>View the bands playing tonight:</h1>
+        <ul>
+          <% @concerts.today do |concert| %>
+            <li> 
+            <strong><%= concert.artist %></strong> <br>
+            <strong><%= concert.venue %></strong> <br>
+            <strong><%= concert.date %></strong> 
+            </li>
+            <br>
+          <% end %>
+        </ul>
+      </div>
+
+      <div class="col-sm-5">
+        <h4>Concerts held this month:</h4>
+        <ul>
+          <% @concerts_this_month.each do |concert| %>
+            <li> 
+            <strong><%= concert.artist %></strong> <br>
+            <strong><%= concert.venue %></strong> <br>
+            <strong><%= concert.date %></strong> 
+            </li>
+            <br>
+          <% end %>
+        </ul>
+      </div>
+  </body>
+</html>

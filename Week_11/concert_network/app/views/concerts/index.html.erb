@@ -1,2 +1,9 @@
-<h1>Concerts#index</h1>
-<p>Find me in app/views/concerts/index.html.erb</p>
+<h1>Concerts</h1>
+
+<!-- Iterate through concerts -->
+<% @concerts.each do |concert| %>
+	Artist Name: <%= link_to concert.artist,concert_path(concert) %><br>
+	<p>
+		<%= link_to "Delete", concert, data: { confirm: "Are you sure?" }, :method => :delete %>
+	</p>
+<% end %>
