@@ -14,3 +14,7 @@
 
 <h4>Description</h4>
 	<%= @concert.description %>
+
+<% @comments.each do |comment_concert| %>
+	<%= comment_concert.comment %>
+<% end %>
