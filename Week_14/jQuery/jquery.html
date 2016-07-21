@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <p>I like pizza.</p>
+    <div class="container" style="margin-top: 50px;">
+      <button class="btn btn-primary hello-button">Do Something</button>
+      <button class="btn btn-primary js-pizza">Order Pizzas</button>
+      <button class="btn btn-primary js-empanadas">Empanadas</button>
+      <button id="cookies" class="btn btn-primary">Cookies</button>
+      <button id="ice-cream" class="btn btn-primary">Ice Cream</button>
+      <a href="#shakes" class="btn btn-primary">Shakes</a>
+      <a data-hook="coffee donuts" class="btn btn-primary">Coffee</a>
+      <ul class="list">
+        <li>Zero</li>
+        <li>One</li>
+        <li>Two</li>
+        <li>Three</li>
+      </ul>
+      <h1 id="title">jQuery Exercises</h1>
+      <button class="btn btn-primary js-tacos">Tacos</button>
+      <button data-action="do stuff" class="btn btn-primary">Do Stuff</button>
+  
+    </div>
+
+    <script type="text/javascript">
+      $('.hello-button').on('click', function () {
+        alert('Hello world!')
+      })
+
+      $('.js-pizza').on('click', function () {
+        alert('Order pizzas!')
+      })
+
+      $('.js-empanadas').on('click', function () {
+        alert('Order empanadas!')
+      })
+
+      $('#cookies').on('click', function () {
+        alert('Order cookies!')
+      })
+
+      $('#ice-cream').on('click', function () {
+        alert('Order ice-cream!')
+      })
+
+      $('[href]').on('click', function () {
+        alert('Order shakes!')
+      })
+
+      $('[data-hook="coffee donuts"]').on('click', function () {
+        alert('Order coffee!')
+      })
+
+      $('.js-tacos').on('click', function () {
+        alert('Order tacos!')
+      })
+
+      $('[data-action="do stuff"]').on('click', function () {
+        alert('Order stuff!')
+      })
+    </script>  
+  </body>
+</html>
