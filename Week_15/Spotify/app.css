@@ -1,11 +1,8 @@
 .form-group {
-	margin-top: 75px;
-	margin-left: 75px;
-	margin-right: 75px;
-}
-
-.form-control {
-	margin-top: 5px;
+	margin-top: 50px;
+	margin-left: 100px;
+	margin-right: 100px;
+	text-align: center;
 }
 
 .btn-info {
