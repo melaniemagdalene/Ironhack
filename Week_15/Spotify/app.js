@@ -1,17 +1,44 @@
-$(document).on("ready", function() {
-	$(".form-control").on("click", function () {
-		$.ajax({
-			type: "GET",
-			url: "https://api.spotify.com/v1/search?type=artist&query=SEARCHTERM",
-			success: function (response) {
-				console.log("Success!");
-				console.log(response);
-			},
+$(document).ready(function(){
+	$('.js-artist-form').on("submit", function(event){
+		event.preventDefault();
+		
+		// Make a request to the API
+		var searchTerm = $(".js-artist-input").val();
 
-			error: function (error) {
-				console.log("Error!");
-				console.log(error.responseText);
-			}
-		});
-	});
-});
+		$.ajax({
+			url: `https://api.spotify.com/v1/search?type=artist&query=${searchTerm}`,
+			success: showArtists,
+			error: artistError,
+		})
+	})
+})
+
+// Returns API with JSON
+function showArtists(response){
+	console.log("Response", response);
+	var artists = response.artists.items;
+
+	artists.forEach(appendArtist);
+}
+
+function appendArtist(artist){
+	var artistImage;
+
+	if (artist.images[2]){
+		artistImage = artist.images[2].url
+	} else {
+		artistImage = "http://placehold.it/200x200"
+	}
+
+	var html = `
+		<li>
+			<h3>${artist.name}</h3>
+			<img src=${artistImage}>
+		</li>
+	`
+	$(".js-artist-list").append(html)
+}
+
+function artistError(err){
+	console.log("Error!", err.responsetext);
+}
