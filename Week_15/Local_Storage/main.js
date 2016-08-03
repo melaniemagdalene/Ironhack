@@ -18,10 +18,13 @@ $(document).ready(function() {
 	$color_button.on("click", changeColor);
 
 
-	if (window.localStorage.getItem("images")) {
-		// Get the urls
+	// if (window.localStorage.getItem("images")) {
+	// 	// Get the urls
+	// 	var savedImage.forEach(function(imageUrl){
+	// 		$(."image-container").append(image)
+	// 	})
 		// Append urls to the page
-	}	else {
+
 		window.localStorage.setItem("images", "[]");
 	}
 

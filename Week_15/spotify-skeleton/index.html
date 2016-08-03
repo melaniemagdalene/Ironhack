@@ -1,0 +1,39 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+	<body>
+		<form class="js-artist-form">
+			<div><center><label for="formInput"><h1>Song Search</h1></label></center></div>
+			<input type="text" class="js-artist-input" placeholder="Enter Song Name">
+			<div><center><button type="submit" class="btn btn-info btn-lg search" value="Send"><span class="glyphicon glyphicon-search"> Search</span></button><center></div>
+		</form>
+
+		<div class="widget">
+			<div class="header"> 
+			<!-- Try adding/removing these classes: -->
+			<!-- disabled -->
+			<!-- playing -->
+			<div class="btn-play disabled"></div>
+
+			<div class="metadata">
+			  <p class="title">Hunger of The Pine</p>
+			  <p class="author">alt-J</p>
+
+			  <div class="seekbar">
+			    <progress value="5" max="30"></progress>
+			  </div>
+			</div>
+			</div>
+			<div class="cover">
+				<img class="the-image" src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
+			</div>
+
+			<audio src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
+			<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+			<script src="app.js"></script>
+		</div>
+	</body>
+</html>
