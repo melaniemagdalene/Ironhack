@@ -1,5 +1,7 @@
-<h1>Add A New Post!</h1>
+<h1>Add New Post!</h1>
 
+<!-- Resource that will be created -->
+<!-- Form_for generates authenticity token -->
 <%= form_for @post do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -7,6 +9,5 @@
   <%= f.label :gif_url %>
   <%= f.text_field :gif_url %>
 
-  <%= f.submit'Add New Post!' %>
-
+  <%= f.submit'Create Post' %>
 <% end %>

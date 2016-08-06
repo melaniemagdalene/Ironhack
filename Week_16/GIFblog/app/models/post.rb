@@ -4,4 +4,13 @@ class Post < ActiveRecord::Base
 		order(title: :ASC)
 	end
 
+	def upvote
+		votes = self.nov
+		update(nov: votes + 1)
+	end
+
+	def downvote
+		votes = self.nov
+		update(nov: votes - 1)
+	end
 end
