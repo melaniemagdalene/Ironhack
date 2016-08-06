@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
 
-	resources :posts, only: :title, :gif_url
+	post "/posts/:id/upvote" => "posts#upvote"
+	resources :posts, only: [:index, :new, :create, :show]
 end

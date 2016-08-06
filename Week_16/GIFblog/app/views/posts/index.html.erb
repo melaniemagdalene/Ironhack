@@ -1,21 +1,6 @@
 <% @posts.each do |post| %>
-        <li>
-	        <h3><%= post.title %></h3><br>
+	        <h3><%= post.title %></h3>
+	        <!-- Rails helper image tag -->
 		  	<%= image_tag(post.gif_url) %>
-        </li>
-    <% end %>
-
-<ul>
-	<p><a href="http://localhost:3000/posts/new">Add New Post</a></p>
-</ul>
-
-<ul>
-	<% @posts.each do |post| %>
-		<tr>
-			<td><%= post.title %></td>
-			<td><%= link_to 'Show', post %></td>
-			<td><%= link_to 'Edit', edit_post_path(post) %></td>
-			<td><%= link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-		</tr>
-	<% end %>
-</ul>
+	<p><%= link_to "See Post", post_path(post) %></p>
+<% end %>

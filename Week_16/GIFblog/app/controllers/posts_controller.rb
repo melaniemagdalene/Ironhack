@@ -19,19 +19,33 @@ class PostsController < ApplicationController
 	        redirect_to '/posts'
 	    else
 	    	render "new"
+	    end
+	end
+
+	def show
+		@post = Post.find(params[:id])
+	end
+
+	def upvote
+		# Find post
+		@post = Post.find(params[:id])
+		# Increase the votes by 1
+		@post.increment!(:nov)
+		# Redirect to the show page
+		redirect_to post_path(@post)
+	end
+
+	def downvote
+		@post = Post.find(params[:id])
+		@post.decrement!(:nov)
+		redirect_to post_path(@post)
 	end
 
 	# Protected, strong parameters
-	
+
 	private
 
 	def post_params
 		params.require(:post).permit(:title, :gif_url)
-	end
-
-	def upvote
-		@post = Post.find(params[:id])
-		@post.upvote
-			redirect_to(posts_path)
 	end
 end
