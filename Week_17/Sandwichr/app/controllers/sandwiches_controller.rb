@@ -11,15 +11,18 @@ class SandwichesController < ApplicationController
 		render json: sandwich
 	end
 
-	def show
-		sandwich = Sandwich.find_by(id: params[:id])
-			unless sandwich
-				render json: {error: "Sandwich not found."},
-					status: 404
-				return
-			end
-		render json: sandwich
+	def add_ingredient
+		@ingredient = Ingredient.find_by(id: params[:ingredient_id])
+		@sandwich = Sandwich.find_by(id: params[:id])
+
+		@ingredient.sandwiches.push(@sandwich)
+
+		render json: @sandwich
 	end
+
+	# def total_calories
+
+	# end
 
 	def update
 		sandwich = Sandwich.find_by(id: params[:id])
@@ -43,6 +46,15 @@ class SandwichesController < ApplicationController
 		render json: sandwich
 	end
 
+	def show
+		sandwich = Sandwich.find_by(id: params[:id])
+			unless sandwich
+				render json: {error: "Sandwich not found."},
+					status: 404
+				return
+			end
+		render json: sandwich.to_json({:include => :ingredient})
+	end
 
 	# Private method used within a controller's actions
 	private
