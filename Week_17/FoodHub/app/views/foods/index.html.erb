@@ -1,0 +1,11 @@
+<h1>FoodHub</h1>
+
+<ul>
+	<% @foods.each do |food| %>
+		<li>
+			<%= food.name %>
+			<%= food.calories %>
+			<%= food.rating %>	
+		</li>
+	<% end %>
+</ul>
