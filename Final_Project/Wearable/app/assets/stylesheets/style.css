@@ -1,0 +1,22 @@
+.logo {
+    float: left;
+    margin: 19px 17px 0 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+.nav {
+    float: right;
+}
+
+/*.nav a {
+    display: block;
+    line-height: 62px;
+    padding: 0 24px 0 53px;
+    color: #fff;
+}*/
