@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+	<head>
 	<meta charset="UTF-8">
-	<title>Wearable</title>
+	<title>wearable</title>
 
 	<header class="header">
 		<div class="container">
-			<div class="logo"><img src="images/wearable_logo.png" height="25" width="81" alt="Wearable"></div>
-		</div>
+<!-- 			<div class="logo"><img src="/Wearable/assets/wearable_logo.png" height="25" width="81" alt="Wearable"></div>
+ -->		</div>
 	</header>
 
-    <%= csrf_meta_tags %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
+	<%= csrf_meta_tags %>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.4/css/bootstrap.min.css" integrity="2hfp1SzUoho7/TsGGGDaFdsuuDL0LX2hnUp6VkX3CUQ2K4K+xjboZdsXyp4oUHZj" crossorigin="anonymous">
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+	</head>
 
-  <body>
-  	<%= render 'shared/navbar' %>
-
-    <%= yield %>
-  </body>
+	<body>
+		<%= render 'shared/navbar' %>
+		<%= yield %>
+	</body>
 </html>
