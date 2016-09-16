@@ -1,13 +1,7 @@
 Rails.application.routes.draw do
- #  get 'sessions/new'
 
- #  devise_for :users
-	# # get 'home/index'
+  devise_for :users
 
-	# # get 'users/new'
-	# # get 'home/index'
-
-	# root 'home#index'
 
 	root   'static_pages#home'
 	get    '/help',    to: 'static_pages#help'
@@ -17,9 +11,12 @@ Rails.application.routes.draw do
 	get    '/login',   to: 'sessions#new'
 	post   '/login',   to: 'sessions#create'
 	delete '/logout',  to: 'sessions#destroy'
-
-
-	resources :users do
-	resources :posts
+	
+	devise_scope :user do
+		get '/signout', to: 'devise/sessions#destroy', as: :signout
 	end
+
+	# resources :users 
+	resources :posts
+	
 end

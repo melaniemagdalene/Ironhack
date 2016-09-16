@@ -27,11 +27,11 @@
 	<div class="row">      
         <div class="container text-center">
 			<button class="btn btn-outline-info">
-				<%= link_to "Sign up", signup_path %>
+				<%= link_to "Sign up", new_user_registration_path %>
 			</button>
 			
 			<button class="btn btn-outline-info">
-				<%= link_to "Login", login_path %>
+				<%= link_to "Login", new_user_session_path %>
 			</button>
         </div>
     </div>
@@ -61,5 +61,11 @@
 			        <a>No cash, check, or tips necessary, completely free!</a>
 		        </div>
 		    </div>
+
+			<button class="btn btn-outline-info">
+				<%= link_to "Logout", signout_path %>
+			</button>
 		</div>
 	</div>
+
+
