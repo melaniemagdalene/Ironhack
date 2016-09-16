@@ -1,4 +1,4 @@
-body {
+/*body {
 	margin: 0px;
 	background-image: url("/assets/background.jpg");
 	background-size: cover;
@@ -11,14 +11,13 @@ body {
 	z-index: 0;
 }
 
-/*#hero {
+#hero {
 	position: relative;
 	top: 0;
 	bottom: 0;
 	height: 100vh;
 	z-index: 0;
 }
-*/
 
 #hero-overlay {
     position: absolute;
@@ -67,3 +66,4 @@ html {
 .nav-link {
 	color: white;
 }
+*/
