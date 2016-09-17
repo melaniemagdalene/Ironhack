@@ -8,6 +8,10 @@
   max-width: 600px;
 }
 
+.home-container {
+	margin-top: 30px;
+}
+
 .signup {
   float: left;
   width: 300px;
@@ -86,6 +90,28 @@
 .nav {
     float: right;
 }
+
+a {
+	color: white;
+}
+
+.btn.btn-info {
+	background-color: #53CACE;
+}
+
+.btn-grey {
+	background-color: #555;
+	border-radius: 25px;
+}
+
+.nav-link {
+	background-color: #53CACE;
+	border-radius: 25px;
+	padding-left: 15px;
+	padding-right: 15px;
+}
+
+
 
 /*body {
 	margin: 0px;
