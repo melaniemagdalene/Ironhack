@@ -2,11 +2,10 @@
 
 <div class="container text-center">
     <div class="row">
-    <h1>
-    Login
-    </h1>
+    
+    <h1>Login</h1><br>
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
     <br>
     
     <%= f.email_field :email, class: 'form-control', placeholder: "Email address" %>
@@ -19,9 +18,8 @@
     <br>
 
     <button class="btn-grey">
-      <%= link_to "Register now!", new_user_registration_path %>
+      <%= link_to "Register", new_user_registration_path %>
     </button>
-
   </div>
 </div>
 
