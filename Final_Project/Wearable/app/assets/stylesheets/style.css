@@ -4,7 +4,8 @@
 .form-container {
   width: 840px;
   margin: 25px auto
-  padding-left: 100px;  
+  padding-left: 100px;
+  max-width: 600px;
 }
 
 .signup {
@@ -82,6 +83,10 @@
   border-color: #53CACE;
 }
 
+.nav {
+    float: right;
+}
+
 /*body {
 	margin: 0px;
 	background-image: url("/assets/background.jpg");
@@ -132,10 +137,6 @@ html {
 .logo {
     float: left;
     margin: 19px 17px 0 0;
-}
-
-.nav {
-    float: right;
 }
 
 .nav.navbar-nav {

@@ -1,0 +1,27 @@
+<% provide(:title, "Log in") %>
+
+  <div class="container text-center">
+<div class="row">
+    <h1>
+    Login
+    </h1>
+
+    <%= form_for(:session, url: login_path) do |f| %>
+    <br>
+    
+    <%= f.email_field :email, class: 'form-control', placeholder: "Email address" %>
+    <br>
+    <%= f.password_field :password, class: 'form-control', placeholder: "Password" %>
+    <br>
+
+    <%= f.submit "Login", class: "btn btn-outline-info" %>
+    <% end %>
+    <br>
+
+    <button class="btn btn-outline-info">
+      <%= link_to "Register", signup_path %>
+    </button>
+  </div>
+</div>
+
+<%= render "devise/shared/links" %>
