@@ -1,17 +1,36 @@
-@import url(https://fonts.googleapis.com/css?family=Poppins:400,500,600,700,300);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+h1 {
+  font-family: Montserrat;
+  margin-top: 40px;
+}
 
-.form-container {
+h1.display-1 {
+  font-family: Montserrat;
+}
+
+.center-item {
+  text-align: center;
+}
+
+h1.center-item {
+  font-family: Montserrat;
+  margin-top: 40px;
+}
+
+.reg-form {
+  max-width: 800px;
+}
+
+/*.form-container {
   width: 840px;
   margin: 25px auto
   padding-left: 100px;
   max-width: 600px;
-}
+}*/
 
 .home-container {
 	margin-top: 30px;
 }
-
+/*
 .signup {
   float: left;
   width: 300px;
@@ -19,6 +38,10 @@
   background-color: white;
   text-align: center;
   border-radius: 5px 0 0 5px;
+}*/
+
+.login-email {
+  margin-top: 40px;
 }
 
 [type=text] {
@@ -28,7 +51,8 @@
   border: 0;
   border-bottom: 1px solid rgba(0,0,0,.2);
   height: 45px;
-  line-height: 45px;  
+  line-height: 45px;
+  margin-top: 40px;
   margin-bottom: 10px;
   font-size: 1em;
   color: rgba(0,0,0,.4);
@@ -100,8 +124,20 @@ a {
 }
 
 .btn-grey {
-	background-color: #555;
+	background-color: #a5acad;
 	border-radius: 25px;
+}
+
+.btn-grey {
+  margin-top: 25px;
+  width: 30%;
+  border: 0;
+  background-color: #a5acad;
+  border-radius: 5px;
+  height: 50px;
+  color: white;
+  font-weight: 400;
+  font-size: 1em;
 }
 
 .nav-link {
@@ -124,9 +160,9 @@ a {
 	max-width: 100%;
 	height: auto;
 	z-index: 0;
-}
+}*/
 
-#hero {
+/*#hero {
 	position: relative;
 	top: 0;
 	bottom: 0;
@@ -176,5 +212,4 @@ html {
 
 .nav-link {
 	color: white;
-}
-*/
+}*/
