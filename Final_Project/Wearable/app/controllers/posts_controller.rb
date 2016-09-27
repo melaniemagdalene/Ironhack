@@ -3,6 +3,7 @@ class PostsController < ApplicationController
 
 	def index
 		@posts = Post.all.order("created_at desc")
+		@post = Post.new
 	end
 
 	def new
@@ -13,7 +14,7 @@ class PostsController < ApplicationController
 		@post = Post.new post_params
 
 		if @post.save
-			redirect_to @post, notice: "Post created successfully."
+			redirect_to @post
 		else
 			render 'new', notice: "Post was unable to save."
 		end
@@ -27,7 +28,7 @@ class PostsController < ApplicationController
 
 	def update
 		if @post.update post_params
-			redirect_to @post, notice: "Your article was successfully saved!"
+			redirect_to @post
 		else
 			render 'edit'
 		end
