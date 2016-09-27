@@ -1,17 +1,24 @@
-<h1>Post</h1>
+<!-- Partial for the post form -->
 
-<%= form_for :post, url: posts_path do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
- 
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
- 
-  <p>
+<%= form_for @post do |f| %>
+  <% if @post.errors.any? %>
+    <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving:</h2>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+  <% end %>
+
+  <div>
+    <%= f.text_field :title, placeholder: "Title" %>
+  </div>
+  <br>
+
+  <div>
+    <%= f.text_area :description, placeholder: "Post Description" %>
+  </div>
+  <br>
+
+  <div class="center-item">
     <%= f.submit %>
-  </p>
+  </div>
 <% end %>

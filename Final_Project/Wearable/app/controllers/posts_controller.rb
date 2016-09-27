@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :authenticate_user!, except: [:index, :show]
+	before_action :find_post, only: [:show, :edit, :update, :destroy]
 
 	def index
 		@posts = Post.all.order("created_at desc")
@@ -10,43 +10,41 @@ class PostsController < ApplicationController
 	end
 
 	def create
-		@post = Post.new
+		@post = Post.new post_params
+
 		if @post.save
-			flash[:success] = "Post created successfully."
-			redirect_to root_url
+			redirect_to @post, notice: "Post created successfully."
 		else
-			render 'index'
+			render 'new', notice: "Post was unable to save."
 		end
 	end
 
-	# def create
-		# @post = Post.new(post_params)
-		# if @post.save
-			# redirect_to '/posts'
-		# else
-			# render "new"
-		# end
-	# end
-
-	# def home
-	# 	@posts = Post.all
-	# end
-
-	# def show
-	#     @user = User.find(session[:user_id])
-	#     @signed_in_user = session[:user_id]
-
-	#     @post = Post.find params[:id]
-	#     @description = Description.new(post: @post)
-	# end
+	def show
+	end
 
 	def edit
 	end
 
-
 	def update
+		if @post.update post_params
+			redirect_to @post, notice: "Your article was successfully saved!"
+		else
+			render 'edit'
+		end
 	end
 
 	def destroy
+		@post.destroy
+		redirect_to posts_path
+	end
+
+	private
+
+	def post_params
+		params.require(:post).permit(:title, :description)
+	end
+
+	def find_post
+		@post = Post.find(params[:id])
 	end
 end
