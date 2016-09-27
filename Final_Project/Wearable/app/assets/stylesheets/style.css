@@ -1,3 +1,11 @@
+form {
+  text-align: center;
+}
+
+textarea {
+  width: 80%;
+}
+
 h1 {
   font-family: Montserrat;
   margin-top: 40px;

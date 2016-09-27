@@ -1,4 +1,6 @@
-class Post < ApplicationRecord
+class Post < ActiveRecord::Base
 	belongs_to :user
-	validates :content, length: { maximum: 500 }
+	
+	validates :title, presence: true
+	validates :description, presence: true
 end
