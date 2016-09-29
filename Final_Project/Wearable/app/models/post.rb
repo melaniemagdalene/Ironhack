@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-	has_and_belongs_to_many :users
+	belongs_to :user
 	
 	default_scope -> { order(created_at: :desc) }
 	validates :title, presence: true

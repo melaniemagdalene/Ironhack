@@ -1,17 +1,20 @@
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	after_action :verify_authorized, only: [:update]
 
 	def index
+		@posts = policy_scope(Post)
 		@posts = Post.all.order("created_at desc")
 		@post = Post.new
 	end
 
 	def new
-		@post = Post.new
+		@post = current_user.posts.new
 	end
 
 	def create
-		@post = Post.new post_params
+		# @post = Post.new post_params
+		@post = current_user.posts.new(post_params)
 
 		if @post.save
 			redirect_to @post
@@ -27,11 +30,20 @@ class PostsController < ApplicationController
 	end
 
 	def update
-		if @post.update post_params
+		@post = Post.find(params[:id])
+			authorize @post
+		if @post.update_attributes(post_params)
 			redirect_to @post
 		else
-			render 'edit'
+			render :edit
 		end
+	end
+
+	def publish
+		@post = Post.find(params[:id])
+		authorize @post, :update?
+		@post.publish!
+		redirect_to @post
 	end
 
 	def destroy
