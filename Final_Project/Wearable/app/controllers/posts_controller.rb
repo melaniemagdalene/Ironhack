@@ -2,6 +2,15 @@ class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
 	after_action :verify_authorized, only: [:update]
 
+
+	# Initializes new object, while passing two parameters
+	commentable = Post.create!(:title => "Title", :description => "Description")
+
+	comment = commentable.comments.create
+	comment.title = "First comment."
+	comment.comment = "This is the first comment."
+	comment.save
+
 	def index
 		@posts = policy_scope(Post)
 		@posts = Post.all.order("created_at desc")
@@ -47,13 +56,21 @@ class PostsController < ApplicationController
 	end
 
 	def destroy
-		@post.destroy
-		redirect_to posts_path
+		# @post.destroy
+		# redirect_to posts_path
+		@post = Post.find(params[:id])
+			authorize @post
+		if @post.destroy_attributes(post_params)
+			redirect_to @post
+		else
+			render :destroy
+		end
 	end
 
 	private
 
 	def post_params
+
 		params.require(:post).permit(:title, :description)
 	end
 
