@@ -24,12 +24,18 @@
 <div class="container text-center">
 	<div class="row">
 		<div>
-	    <%= f.text_field :title, placeholder: "Title" %>
+		<%= form_for @comment, url: comments_path(@post.id), method: :post do |f| %>
+		    <%= f.text_area :comment, placeholder: "Comment" %>
+		    <%= hidden_field :post_id, @post.id %>
 		</div>
-		<% commentable = Post.find(29) %>
-
-		<% comments = commentable.comments.recent.limit(10).all %>
-		<%= comments[1].comment %>
-		<%= @post.id %>
+		<%= f.submit %>
+	<br>
+	<br>
+	<%= @post.comments.each do | comment | %>
+		<% comment.comment %>
+	<% end %>
+	<% end %>
 	</div>
 </div>
+
+

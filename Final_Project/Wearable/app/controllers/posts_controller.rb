@@ -33,6 +33,15 @@ class PostsController < ApplicationController
 	end
 
 	def show
+		@post = Post.find(params[:id])
+
+		# comments = commentable.comments.recent.limit(10).all
+
+		# first_comment = comments[1].comment
+
+		# post = @post.id
+
+		@comment = Comment.new
 	end
 
 	def edit

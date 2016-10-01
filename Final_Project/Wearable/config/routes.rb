@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
 	# get    '/help',    to: 'static_pages#help'
 	# get    '/posts/new', to: 'static_pages#posts', as: :posts
-	
-	resources :posts	
+	post    '/posts/:post_id/comments', to: 'comments#create', as: :comments
+	resources :posts do 
+		resources :comments
+	end
 end
