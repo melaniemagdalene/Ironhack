@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	before_action :correct_user, only: [:destroy]
 	after_action :verify_authorized, only: [:update]
 
 
@@ -72,22 +72,19 @@ class PostsController < ApplicationController
 		# @post.destroy
 		# redirect_to posts_path
 		@post = Post.find(params[:id])
-			authorize @post
-		if @post.destroy_attributes(post_params)
-			redirect_to @post
-		else
-			render :destroy
-		end
+		@post.destroy
+		redirect_to posts_path
 	end
 
 	private
 
 	def post_params
-
 		params.require(:post).permit(:title, :description)
 	end
 
-	def find_post
-		@post = Post.find(params[:id])
+
+	def correct_user
+		@post = current_user.posts.find_by(id: params[:id])
+		redirect_to :back if @post.nil?
 	end
 end

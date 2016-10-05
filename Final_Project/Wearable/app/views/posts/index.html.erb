@@ -10,9 +10,9 @@
 	<div class="row">
 		<% @posts.each do |post| %>
 			<div class="text-center">
-				<h2><%= post.title %></h2>
-				<h5><%= post.description %></h5>
-				<h6><%= post.created_at.strftime('%b %d, %Y') %></h6>
+				<h4 class="display-4"><%= post.title %></h4>
+				<div class="lead"><%= post.description %></div>
+				<span><%= post.created_at.strftime('%b %d, %Y') %></span>
 			</div>
 
 			<div class="text-center">
