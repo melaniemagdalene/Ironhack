@@ -125,12 +125,16 @@ h1.center-item {
     float: right;
 }
 
-a {
-  color: grey;
-}
+/*a {
+  color: white;
+}*/
 
 .btn.btn-info {
   background-color: #53CACE;
+  padding-left: 10%;
+  padding-right: 10%;
+  /*box-shadow: 0 1px 0 0 #000000;*/
+  border-radius: 25px;
 }
 
 .btn-grey {
@@ -150,12 +154,12 @@ a {
   font-size: 1em;
 }
 
-.nav-link {
+/*.nav-link {
   background-color: #53CACE;
   border-radius: 25px;
   padding-left: 15px;
   padding-right: 15px;
-}
+}*/
 
 
 
@@ -218,8 +222,8 @@ html {
 .navbar-brand {
   color: white;
   padding-left: 70px;
-}
+}*/
 
 .nav-link {
   color: white;
-}*/
+}
