@@ -3,13 +3,13 @@ class PostsController < ApplicationController
 	after_action :verify_authorized, only: [:update]
 
 
-	# Initializes new object, while passing two parameters
-	commentable = Post.create!(:title => "Title", :description => "Description")
+	# # Initializes new object, while passing two parameters
+	# commentable = Post.create!(:title => "Title", :description => "Description")
 
-	comment = commentable.comments.create
-	comment.title = "First comment."
-	comment.comment = "This is the first comment."
-	comment.save
+	# comment = commentable.comments.create
+	# comment.title = "First comment."
+	# comment.comment = "This is the first comment."
+	# comment.save
 
 	def index
 		@posts = policy_scope(Post)
@@ -18,7 +18,11 @@ class PostsController < ApplicationController
 	end
 
 	def new
+		if user_signed_in?
 		@post = current_user.posts.new
+			else
+				redirect_to user_session_path
+		end
 	end
 
 	def create

@@ -16,7 +16,7 @@ class CommentsController < ApplicationController
 			)
 
 		if @comment.save
-			redirect_to root_path
+			redirect_to :back
 		else
 			render 'new', notice: "Comment was unable to save."
 		end
