@@ -1,71 +1,3 @@
-<!-- Geolocation -->
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Geolocation</title>
-    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-    <meta charset="utf-8">
-    <style>
-      html, body {
-        height: 60%;
-        margin: 0;
-        padding: 0;
-      }
-      #map {
-        height: 100%;
-      }
-    </style>
-  </head>
-  <body>
-    <div id="map"></div>
-    <script>
-      // Note: This example requires that you consent to location sharing when
-      // prompted by your browser. If you see the error "The Geolocation service
-      // failed.", it means you probably did not give permission for the browser to
-      // locate you.
-
-      function initMap() {
-        var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 25.7907, lng: -80.1300},
-          zoom: 16
-        });
-        var infoWindow = new google.maps.InfoWindow({map: map});
-
-        // Try HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            infoWindow.setContent('Location found.');
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-      }
-
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-      }
-    </script>
-    <script async defer
-    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD0L1LxY180IjO57F28dgJEQvnIlsphQ9A&callback=initMap">
-    </script>
-  </body>
-</html>
-<!-- Geolocation -->
-
-
 <header class="container">
 	<div class="row">
 		<h1 class="center-item">View all posts and connect.</h1>
@@ -78,10 +10,6 @@
 	<div class="row">
 		<% @posts.each do |post| %>
 			<div class="text-center">
-				<% policy_scope(current_user.posts).each do |post| %>
-					<p><%= link_to post.title, post_path(post) %></p>
-				<% end %>
-
 				<h2><%= post.title %></h2>
 				<h5><%= post.description %></h5>
 				<h6><%= post.created_at.strftime('%b %d, %Y') %></h6>

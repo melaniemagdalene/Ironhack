@@ -1,11 +1,11 @@
-<header class="container">
+<header class="container center-item">
   <div class="row">
     <h1>View your post below.</h1>
   </div>
   <br>
 </header>
 
-<div class="container text-center">
+<div class="container">
 	<div class="row">
 	    <p><%= @post.title %></p>
 
@@ -29,16 +29,14 @@
 		    <%= f.hidden_field :post_id, value: @post.id %>
 		</div>
 
-		<div class="container center-item">
-			<%= f.submit %>
-		</div>
-	<br>
-	<br>
-	<%= @post.comments.each do | comment | %>
-		<% comment.comment %>
-	<% end %>
-	<% end %>
+			<div class="container center-item">
+				<%= f.submit %>
+			</div>
+			<br>
+			<br>
+		<%= @post.comments.each do | comment | %>
+			<% comment.comment %>
+		<% end %>
+		<% end %>
 	</div>
 </div>
-
-

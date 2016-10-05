@@ -19,9 +19,9 @@ class PostsController < ApplicationController
 
 	def new
 		if user_signed_in?
-		@post = current_user.posts.new
-			else
-				redirect_to user_session_path
+			@post = current_user.posts.new
+		else
+			redirect_to user_session_path
 		end
 	end
 
