@@ -1,4 +1,4 @@
-video#bgvid { 
+/*video#bgvid { 
     position: fixed;
     top: 50%;
     left: 50%;
@@ -14,7 +14,7 @@ video#bgvid {
     background: url(polina.jpg) no-repeat;
     background-size: cover; 
 }
-
+*/
 /*.video {
  position: absolute;
  top: 50%; left: 50%;
@@ -79,7 +79,7 @@ h1.center-item {
 }*/
 
 .home-container {
-	margin-top: 30px;
+  margin-top: 30px;
 }
 /*
 .signup {
@@ -167,16 +167,16 @@ h1.center-item {
 }
 
 a {
-	color: grey;
+  color: grey;
 }
 
 .btn.btn-info {
-	background-color: #53CACE;
+  background-color: #53CACE;
 }
 
 .btn-grey {
-	background-color: #a5acad;
-	border-radius: 25px;
+  background-color: #a5acad;
+  border-radius: 25px;
 }
 
 .btn-grey {
@@ -192,33 +192,33 @@ a {
 }
 
 .nav-link {
-	background-color: #53CACE;
-	border-radius: 25px;
-	padding-left: 15px;
-	padding-right: 15px;
+  background-color: #53CACE;
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 
 
 /*body {
-	margin: 0px;
-	background-image: url("/assets/background.jpg");
-	background-size: cover;
-	position: absolute;
+  margin: 0px;
+  background-image: url("/assets/background.jpg");
+  background-size: cover;
+  position: absolute;
     background-color: rgba(0,0,0,0.5);
     top: 0;
     bottom: 0;
-	max-width: 100%;
-	height: auto;
-	z-index: 0;
+  max-width: 100%;
+  height: auto;
+  z-index: 0;
 }*/
 
 /*#hero {
-	position: relative;
-	top: 0;
-	bottom: 0;
-	height: 100vh;
-	z-index: 0;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  height: 100vh;
+  z-index: 0;
 }
 
 #hero-overlay {
@@ -226,25 +226,25 @@ a {
     background-color: rgba(0,0,0,0.5);
     top: 0;
     bottom: 0;
-	height: 100%;
-	width: 100%;
-	z-index: -5;
+  height: 100%;
+  width: 100%;
+  z-index: -5;
 }
 
 body h1 {
-	color: white;
+  color: white;
 }
 
 body p {
-	color: white;
+  color: white;
 }
 
 .container-fluid {
-	margin-top: 40px;
+  margin-top: 40px;
 }
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -253,14 +253,14 @@ html {
 }
 
 .nav.navbar-nav {
-	padding-right: 70px;
+  padding-right: 70px;
 }
 
 .navbar-brand {
-	color: white;
-	padding-left: 70px;
+  color: white;
+  padding-left: 70px;
 }
 
 .nav-link {
-	color: white;
+  color: white;
 }*/
