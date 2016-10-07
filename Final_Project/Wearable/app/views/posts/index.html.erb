@@ -10,13 +10,13 @@
 	<div class="row">
 		<% @posts.each do |post| %>
 			<div class="text-center">
+				<span class="post-time"><%= post.created_at.strftime('%b %d, %Y') %></span>
 				<h4 class="display-4"><%= post.title %></h4>
 				<div class="lead"><%= post.description %></div>
-				<span><%= post.created_at.strftime('%b %d, %Y') %></span>
 			</div>
 
 			<div class="text-center">
-				<%= link_to "Details", post_path(post) %>
+				<b><%= link_to "Read More", post_path(post) %></b>
 			</div>
 			<br>
 		<% end %>
