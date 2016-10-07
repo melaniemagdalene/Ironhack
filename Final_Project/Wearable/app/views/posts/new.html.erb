@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <style>
       html, body {
-        height: 70%;
+        height: 65%;
         margin: 0;
         padding: 0;
       }
@@ -29,7 +29,7 @@
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 25.7907, lng: -80.1300},
-          zoom: 18
+          zoom: 16
         });
         var infoWindow = new google.maps.InfoWindow({map: map});
 
@@ -68,9 +68,10 @@
 <!-- Geolocation -->
 
 <header class="container">
-    <div class="row">
-        <h1 class="center-item">Create a new post.</h1>
-    </div>
+  <div class="row">
+    <h1 class="center-item">Your neighborhood network to share products.</h1>
+  </div>
+  <hr>
 </header>
 
 <%= render 'form' %>
