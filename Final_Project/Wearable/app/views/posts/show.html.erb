@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<div class="show-background">
-</div>
-
 <header class="container center-item">
   <div class="row">
     <h1>View your post below.</h1>
@@ -49,7 +46,7 @@
 						<% @post.comments.each do |comment| %>
 							<div class="card">
 								<p><%= comment.comment %></p>
-								<%= comment.user %>
+								<%= comment.user.email %>
 							</div>
 						<% end %>
 					</div>

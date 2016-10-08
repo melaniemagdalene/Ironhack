@@ -10,9 +10,10 @@ class CommentsController < ApplicationController
 
 		@post = params[:comment][:post_id]
 
-		@comment = Comment.new(
+		@comment = current_user.comments.new(
 			post_id: @post,
-			comment: params[:comment][:comment]
+			comment: params[:comment][:comment],
+			user_id: current_user.id
 			)
 
 		@comment.save
