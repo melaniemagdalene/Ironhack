@@ -1,19 +1,20 @@
-div.center {
-  
+.card-block {
+  width: 100%;
 }
 
-/*.p {
-  font-size: 30%;
-}
-*/
-.card p{
+.card b {
   padding-left: 3%;
-  padding-top: 1%;
+/*  padding-bottom: 1%;*/
+/*  font-family: Montserrat;*/
+}
+
+.card p {
+  padding-left: 3%;
+  padding-top: 2%;
 /*  padding-bottom: 1%;*/
 /*  font-family: Montserrat;*/
   font-size: 1.25rem;
   font-weight: 300;
-  font-color: #53CACE;
 }
 
 .white-text a {

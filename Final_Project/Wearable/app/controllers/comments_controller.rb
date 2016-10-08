@@ -3,6 +3,7 @@ class CommentsController < ApplicationController
 	
 	def new
 		@comment = current_user.comments.new
+		
 	end
 
 	def create

@@ -41,12 +41,13 @@
 			
 			<!-- Display comments -->
 			<div class="row">
-				<div class="col-sm-6">
+				<div class="col-sm-6 card-block">
 					<div class="card card-block center-content">
 						<% @post.comments.each do |comment| %>
 							<div class="card">
-								<p><%= comment.comment %></p>
-								<%= comment.user.email %>
+								<p class="lead"><%= comment.comment %></p>
+								<hr>
+								<b><%= comment.user.email %></b>
 							</div>
 						<% end %>
 					</div>
