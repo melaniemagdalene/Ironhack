@@ -1,3 +1,29 @@
+.card p{
+  padding-left: 3%;
+  padding-top: 1%;
+  padding-bottom: 1%;
+/*  font-family: Montserrat;*/
+  font-size: 1.25rem;
+  font-weight: 300;
+}
+
+.white-text a {
+  color: white;
+  text-shadow: 0px .5px #696969;
+}
+
+.white-text {
+  text-shadow: 0px .5px #696969;
+}
+
+#carousel-example-generic {
+  background-color: black;
+
+}
+.carousel-item img {
+  opacity: 0.5;
+}
+
 .b {
   font-family: Montserrat;
   color: #365899;
@@ -16,14 +42,14 @@ body,html {
   width: 100%;
   height: 100%;
   height: calc(40% - 1px);
-  background-image: url("/assets/Fashion_backpack.jpg");
+  background-image: url("/assets/Fashion_beach.jpg");
   background-size: cover;
 }
 
 .contact-background {
   width: 100%;
   height: 100%;
-  height: calc(55% - 1px);
+  height: calc(50% - 1px);
   background-image: url("/assets/Fashion_connect_2.jpg");
   background-size: cover;
 }
@@ -55,20 +81,6 @@ h1 {
   font-family: Montserrat;
   margin-top: 40px;
 }
-
-/*.overlay {
-  position: absolute;
-  background-color: rgba(0,0,0,0.5);
-  top: 0;
-  bottom: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -5;
-}*/
-
-/*h1.display-1 {
-  font-family: Montserrat;
-}*/
 
 .center-item {
   text-align: center;
@@ -163,7 +175,7 @@ h1.center-item {
 }
 
 a {
-  color: #111111;
+  color: #696969;
 }
 
 .btn.btn-info {
@@ -183,7 +195,7 @@ a {
   margin-top: 25px;
   width: 30%;
   border: 0;
-  background-color: #a5acad;
+  background-color: #696969;
   border-radius: 5px;
   height: 50px;
   color: white;
@@ -196,39 +208,6 @@ a {
   border-radius: 25px;
   padding-left: 15px;
   padding-right: 15px;
-}*/
-
-
-
-/*body {
-  margin: 0px;
-  background-image: url("/assets/background.jpg");
-  background-size: cover;
-  position: absolute;
-    background-color: rgba(0,0,0,0.5);
-    top: 0;
-    bottom: 0;
-  max-width: 100%;
-  height: auto;
-  z-index: 0;
-}*/
-
-/*#hero {
-  position: relative;
-  top: 0;
-  bottom: 0;
-  height: 100vh;
-  z-index: 0;
-}
-
-#hero-overlay {
-    position: absolute;
-    background-color: rgba(0,0,0,0.5);
-    top: 0;
-    bottom: 0;
-  height: 100%;
-  width: 100%;
-  z-index: -5;
 }
 
 body h1 {
@@ -252,10 +231,6 @@ html {
     margin: 19px 17px 0 0;
 }
 
-.nav.navbar-nav {
-  padding-right: 70px;
-}
-
 .navbar-brand {
   color: white;
   padding-left: 70px;
@@ -263,4 +238,8 @@ html {
 
 .nav-link {
   color: white;
+}
+
+.nav.navbar-nav {
+  padding-right: 40px;
 }

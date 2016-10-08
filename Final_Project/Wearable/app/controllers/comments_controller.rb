@@ -15,11 +15,7 @@ class CommentsController < ApplicationController
 			comment: params[:comment][:comment]
 			)
 
-		if @comment.save
-			redirect_to :back
-		else
-			render 'new', notice: "Comment was unable to save."
-		end
+		@comment.save
+		redirect_to :back
 	end
-
 end

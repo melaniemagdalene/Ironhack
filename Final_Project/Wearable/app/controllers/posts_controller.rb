@@ -11,6 +11,7 @@ class PostsController < ApplicationController
 	# comment.comment = "This is the first comment."
 	# comment.save
 
+
 	def index
 		@posts = policy_scope(Post)
 		@posts = Post.all.order("created_at desc")
