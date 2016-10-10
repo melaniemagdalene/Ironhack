@@ -1,3 +1,16 @@
+.container-grey {
+  background-color: #f7f7f7;
+  padding-top: 25px;
+  padding-bottom: 70px;
+  padding-right: 14%;
+  padding-left: 14%;
+}
+
+.display-4 {
+  color: #000000;
+  font-weight: thin;
+}
+
 .card-block {
   width: 100%;
 }
@@ -37,6 +50,10 @@
 .b {
   font-family: Montserrat;
   color: #365899;
+}
+
+b, strong {
+  color: black;
 }
 
 .post-time {
@@ -96,7 +113,7 @@ textarea {
 }
 
 h1 {
-  font-family: Montserrat;
+  font-family: Poppins;
   margin-top: 40px;
 }
 
@@ -196,12 +213,24 @@ a {
   color: #696969;
 }
 
-.btn.btn-info {
-  background-color: #53CACE;
-  padding-left: 10%;
-  padding-right: 10%;
+.btn-outline-info {
+  padding-left: 2%;
+  padding-right: 2%;
   /*box-shadow: 0 1px 0 0 #000000;*/
   border-radius: 25px;
+  width: 15%;
+  text-align: center;
+/*  border-width: medium;*/
+}
+
+.btn.btn-info {
+  background-color: #53CACE;
+  padding-left: 2%;
+  padding-right: 2%;
+  /*box-shadow: 0 1px 0 0 #000000;*/
+  border-radius: 25px;
+  width: 20%;
+  text-align: center;
 }
 
 .btn-grey {

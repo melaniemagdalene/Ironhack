@@ -10,87 +10,111 @@
 	    <hr>
 
 	    <p>Founded in September of 2016 and based in Miami, Florida. Wearable is a trusted community for people to share clothing and accessories.</p>
+	    <br>
+	    <br>
 	</div>
 </div>
 
-
-<div class="container text-center">
+<!-- <div class="container center-item">
 	<div class="row">
-		<h1 class="display-1">SHARE,
-		<br> REQUEST,
-		<br> WEAR </h1>
-		<p class="lead">Explore different products today.</sp>
+		<h1 class="display-3">SHARE, REQUEST, WEAR </h1>
 	</div>
+</div> -->
+
+<div class="container-grey center-item">
+	<div class="row">
+		<div class="col-xs-12 text-center">
+			<h1 class="display-4"> Your neighborhood network where <br> you can share and request wearables <br> with people around you.</h1>
+			<br>
+		</div>
+		
+		<button class="btn btn-outline-info">
+			<%= link_to "Join", new_user_registration_path %>
+		</button>
+
+		<button class="btn btn-outline-info">
+			<%= link_to "Login", new_user_session_path %>
+		</button>
+	</div>
+	<br>
 </div>
 
+<div class="container center-item">
+	<div class="row">
+		<div class="container home-container center-item">
+			<div class="row">
+				<div class="container text-center">
+					<div class="row">      
+					</div>
+				</div>
+				<br>
+			</div>
+			<br>
+		</div>
 
+		<div class="container">
+		<p class="lead center-item">How it works</p>
+			<ul>
+				<div class="col-sm-4">
+					<div class="row">
+					    <img src="/assets/Vectors_1.png" height="100" width="100">
+				    </div>
+				    <br>
+					    <b>Search for a product</b>
+				    <div class="well well-lg text-center">
+					    <span>Browse listings to find items nearby.</span>
+			        </div>
+			    </div>
+
+				<div class="col-sm-4">
+					<div class="row">
+						<img src="/assets/Vectors_2.png" height="100" width="100">
+					</div>
+					<br>
+						<b>Connect with a giver</b>
+			        <div class="well well-lg text-center">
+			        	<span>Send messages and meet in-person.</span>
+			        </div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="row">
+						<img src="/assets/Vectors_3.png" height="100" width="100">
+				    </div>
+				    <br>
+						<b>Book and meet</b>
+			        <div class="well well-lg text-center">
+				        <span>No cash necessary, completely free!</span>
+			        </div>
+			    </div>
+		    </ul>
+		</div>    
+	</div>
+</div>
+<br>
+<br>
+
+<!-- Search -->
 <div class="container input-group text-center">			
-	<!-- Search -->
 	<div class="container center-item">
 		<div class="row">
 			<div class="col-lg-12">
 				<div class="input-group">
-					<input type="text" class="form-control" placeholder="Enter an item...">
-					<span class="input-group-btn">
+					<input type="text" class="form-control" placeholder="Search for an item...">
+				<!-- 	<span class="input-group-btn">
 						<button class="btn btn-info white-text">Search</button>
-					</span>
+					</span> -->
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- Search -->
 </div>
 <br>
-
-<div class="container text-center">
-	<div class="row">      
-		<button class="btn btn-info white-text">
-			<%= link_to "Join", new_user_registration_path %>
-		</button>
-		
-		<button class="btn btn-info white-text">
-			<%= link_to "Login", new_user_session_path %>
-		</button>
-    </div>
-</div>
 <br>
+<!-- Search -->
 
-<div class="container text-center">
-	<div class="row">
-		
-		<div class="col-sm-4">
-		    <b>Search for a product</b>
-		    <div class="well well-lg text-center">
-			    <span>Browse listings to find amazing items nearby.</span>
-	        </div>
-	    </div>
-
-		<div class="col-sm-4">
-			<b>Connect with a giver</b>
-	        <div class="well well-lg text-center">
-	        	<span>Send messages and meet in-person.</span>
-	        </div>
-		</div>
-
-		<div class="col-sm-4">
-			<b>Book and meet</b>
-	        <div class="well well-lg text-center">
-		        <span>No cash necessary, completely free!</span>
-	        </div>
-	    </div>
-	</div>
-</div>
-
-<div class="container home-container">
-	<div class="row">
-		<div class="col-xs-12 text-center">
-			<h3> Welcome to your neighborhood network where you can share products </h3>
-			<br>
-		</div>
-	
-		<button class="btn btn-info white-text">
-			<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
-		</button>
-	</div>
-	<br>
+<div class="container center-item">
+    <button class="btn-grey white-text">
+      <%= link_to "Explore different products", posts_path(@post) %>
+    </button>
 </div>
