@@ -25,4 +25,3 @@ production:
   <<: *default
   database: wearable_production
   username: wearable
-  password: <%= ENV['WEARABLE_DATABASE_PASSWORD'] %>
