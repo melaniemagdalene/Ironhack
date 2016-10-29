@@ -1,0 +1,38 @@
+Last login: Tue Aug 16 19:35:39 on ttys002
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ rails console
+Loading development environment (Rails 4.2.1)
+[1] pry(main)> User.create(username: "melaniemagdalene", email: "melaniemagdalene@yahoo.com", password: "swordfish", password_confirmation: "swordfish")
+
+   (0.1ms)  begin transaction
+  User Exists (0.2ms)  SELECT  1 AS one FROM "users" WHERE "users"."email" = 'melaniemagdalene@yahoo.com' LIMIT 1
+  SQL (0.3ms)  INSERT INTO "users" ("username", "email", "password_digest", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)  [["username", "melaniemagdalene"], ["email", "melaniemagdalene@yahoo.com"], ["password_digest", "$2a$10$vdrzqnBQNVrEx2N6A8EAye20.Z6Pftlngd1W4yV0MyWteml3Iq3Xa"], ["created_at", "2016-08-16 23:40:00.083273"], ["updated_at", "2016-08-16 23:40:00.083273"]]
+   (1.6ms)  commit transaction
+=> #<User:0x007fb911465d80
+ id: 6,
+ username: "melaniemagdalene",
+ email: "melaniemagdalene@yahoo.com",
+ created_at: Tue, 16 Aug 2016 23:40:00 UTC +00:00,
+ updated_at: Tue, 16 Aug 2016 23:40:00 UTC +00:00,
+ password_digest: "$2a$10$vdrzqnBQNVrEx2N6A8EAye20.Z6Pftlngd1W4yV0MyWteml3Iq3Xa">
+[2] pry(main)> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

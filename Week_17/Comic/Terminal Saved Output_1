@@ -1,0 +1,467 @@
+Last login: Tue Aug 16 20:50:54 on ttys002
+Melanies-MacBook-Pro:~ melanieblazevic$ cd desktop/ironhack/week_17
+Melanies-MacBook-Pro:week_17 melanieblazevic$ ls
+Sandwichr	auth-exercise
+Melanies-MacBook-Pro:week_17 melanieblazevic$ rails new Comic App
+      create  
+      create  README.md
+      create  Rakefile
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+      create  app
+      create  app/assets/config/manifest.js
+      create  app/assets/javascripts/application.js
+      create  app/assets/javascripts/cable.js
+      create  app/assets/stylesheets/application.css
+      create  app/channels/application_cable/channel.rb
+      create  app/channels/application_cable/connection.rb
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/jobs/application_job.rb
+      create  app/mailers/application_mailer.rb
+      create  app/models/application_record.rb
+      create  app/views/layouts/application.html.erb
+      create  app/views/layouts/mailer.html.erb
+      create  app/views/layouts/mailer.text.erb
+      create  app/assets/images/.keep
+      create  app/assets/javascripts/channels
+      create  app/assets/javascripts/channels/.keep
+      create  app/controllers/concerns/.keep
+      create  app/models/concerns/.keep
+      create  bin
+      create  bin/bundle
+      create  bin/rails
+      create  bin/rake
+      create  bin/setup
+      create  bin/update
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/secrets.yml
+      create  config/cable.yml
+      create  config/puma.rb
+      create  config/spring.rb
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/application_controller_renderer.rb
+      create  config/initializers/assets.rb
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/cookies_serializer.rb
+      create  config/initializers/cors.rb
+      create  config/initializers/filter_parameter_logging.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/new_framework_defaults.rb
+      create  config/initializers/session_store.rb
+      create  config/initializers/wrap_parameters.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.keep
+      create  lib/assets
+      create  lib/assets/.keep
+      create  log
+      create  log/.keep
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/apple-touch-icon-precomposed.png
+      create  public/apple-touch-icon.png
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  test/fixtures
+      create  test/fixtures/.keep
+      create  test/fixtures/files
+      create  test/fixtures/files/.keep
+      create  test/controllers
+      create  test/controllers/.keep
+      create  test/mailers
+      create  test/mailers/.keep
+      create  test/models
+      create  test/models/.keep
+      create  test/helpers
+      create  test/helpers/.keep
+      create  test/integration
+      create  test/integration/.keep
+      create  test/test_helper.rb
+      create  tmp
+      create  tmp/.keep
+      create  tmp/cache
+      create  tmp/cache/assets
+      create  vendor/assets/javascripts
+      create  vendor/assets/javascripts/.keep
+      create  vendor/assets/stylesheets
+      create  vendor/assets/stylesheets/.keep
+      remove  config/initializers/cors.rb
+         run  bundle install
+Fetching gem metadata from https://rubygems.org/
+Fetching version metadata from https://rubygems.org/
+Fetching dependency metadata from https://rubygems.org/
+Resolving dependencies...........
+Using rake 11.2.2
+Using concurrent-ruby 1.0.2
+Using i18n 0.7.0
+Using minitest 5.9.0
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using pkg-config 1.1.7
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.1
+Using bundler 1.12.5
+Using byebug 9.0.5
+Using coffee-script-source 1.10.0
+Using execjs 2.7.0
+Using method_source 0.8.2
+Using thor 0.19.1
+Using debug_inspector 0.0.2
+Using ffi 1.9.14
+Using multi_json 1.12.1
+Using rb-fsevent 0.9.7
+Using puma 3.6.0
+Using sass 3.4.22
+Using tilt 2.0.5
+Using spring 1.7.2
+Using sqlite3 1.3.11
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.6.8
+Using rack-test 0.6.3
+Using sprockets 3.7.0
+Using websocket-driver 0.6.4
+Using mime-types 3.1
+Using coffee-script 2.4.1
+Using uglifier 3.0.1
+Using rb-inotify 0.9.7
+Using turbolinks 5.0.1
+Installing activesupport 5.0.0.1
+Using loofah 2.0.3
+Using mail 2.6.4
+Using listen 3.0.8
+Using rails-dom-testing 2.0.1
+Using globalid 0.3.7
+Installing activemodel 5.0.0.1
+Using jbuilder 2.6.0
+Using rails-html-sanitizer 1.0.3
+Using spring-watcher-listen 2.0.0
+Installing activejob 5.0.0.1
+Installing activerecord 5.0.0.1
+Installing actionview 5.0.0.1
+Installing actionpack 5.0.0.1
+Installing actioncable 5.0.0.1
+Installing actionmailer 5.0.0.1
+Installing railties 5.0.0.1
+Using sprockets-rails 3.1.1
+Using coffee-rails 4.2.1
+Using jquery-rails 4.1.1
+Using web-console 3.3.1
+Installing rails 5.0.0.1
+Using sass-rails 5.0.6
+Bundle complete! 15 Gemfile dependencies, 63 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+         run  bundle exec spring binstub --all
+* bin/rake: spring inserted
+* bin/rails: spring inserted
+Melanies-MacBook-Pro:week_17 melanieblazevic$ cd comic app
+Melanies-MacBook-Pro:comic melanieblazevic$ rails g model Comic title:string publisher:string
+Running via Spring preloader in process 44778
+      invoke  active_record
+The name 'Comic' is either already used in your application or reserved by Ruby on Rails. Please choose an alternative and run this generator again.
+Melanies-MacBook-Pro:comic melanieblazevic$ rake db:create db:migrate
+Created database 'db/development.sqlite3'
+Created database 'db/test.sqlite3'
+Melanies-MacBook-Pro:comic melanieblazevic$ subl -n .
+Melanies-MacBook-Pro:comic melanieblazevic$ bundle install
+Using rake 11.2.2
+Using concurrent-ruby 1.0.2
+Using i18n 0.7.0
+Using minitest 5.9.0
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using pkg-config 1.1.7
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.1
+Using bcrypt 3.1.11
+Using byebug 9.0.5
+Using coffee-script-source 1.10.0
+Using execjs 2.7.0
+Using method_source 0.8.2
+Using thor 0.19.1
+Using debug_inspector 0.0.2
+Using orm_adapter 0.5.0
+Using ffi 1.9.14
+Using multi_json 1.12.1
+Using rb-fsevent 0.9.7
+Using puma 3.6.0
+Using bundler 1.12.5
+Using sass 3.4.22
+Using tilt 2.0.5
+Using spring 1.7.2
+Using sqlite3 1.3.11
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.6.8
+Using rack-test 0.6.3
+Using warden 1.2.6
+Using sprockets 3.7.0
+Using websocket-driver 0.6.4
+Using mime-types 3.1
+Using coffee-script 2.4.1
+Using uglifier 3.0.1
+Using rb-inotify 0.9.7
+Using turbolinks 5.0.1
+Using activesupport 5.0.0.1
+Using loofah 2.0.3
+Using mail 2.6.4
+Using listen 3.0.8
+Using rails-dom-testing 2.0.1
+Using globalid 0.3.7
+Using activemodel 5.0.0.1
+Using jbuilder 2.6.0
+Using rails-html-sanitizer 1.0.3
+Using spring-watcher-listen 2.0.0
+Using activejob 5.0.0.1
+Using activerecord 5.0.0.1
+Using actionview 5.0.0.1
+Using actionpack 5.0.0.1
+Using actioncable 5.0.0.1
+Using actionmailer 5.0.0.1
+Using railties 5.0.0.1
+Using sprockets-rails 3.1.1
+Using coffee-rails 4.2.1
+Using responders 2.2.0
+Using jquery-rails 4.1.1
+Using web-console 3.3.1
+Using rails 5.0.0.1
+Using sass-rails 5.0.6
+Using devise 4.1.1
+Bundle complete! 16 Gemfile dependencies, 68 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Melanies-MacBook-Pro:comic melanieblazevic$ rails generate devise:install
+Running via Spring preloader in process 44931
+      create  config/initializers/devise.rb
+      create  config/locales/devise.en.yml
+===============================================================================
+
+Some setup you must do manually if you haven't yet:
+
+  1. Ensure you have defined default url options in your environments files. Here
+     is an example of default_url_options appropriate for a development environment
+     in config/environments/development.rb:
+
+       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+     In production, :host should be set to the actual host of your application.
+
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.
+     For example:
+
+       root to: "home#index"
+
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  4. If you are deploying on Heroku with Rails 3.2 only, you may want to set:
+
+       config.assets.initialize_on_precompile = false
+
+     On config/application.rb forcing your application to not access the DB
+     or load models when precompiling your assets.
+
+  5. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
+
+===============================================================================
+Melanies-MacBook-Pro:comic melanieblazevic$ rails generate devise User name:string
+Running via Spring preloader in process 45026
+      invoke  active_record
+      create    db/migrate/20160817010054_devise_create_users.rb
+      create    app/models/user.rb
+      invoke    test_unit
+      create      test/models/user_test.rb
+      create      test/fixtures/users.yml
+      insert    app/models/user.rb
+       route  devise_for :users
+Melanies-MacBook-Pro:comic melanieblazevic$ rails routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+Melanies-MacBook-Pro:comic melanieblazevic$ rake db:migrate
+== 20160817010054 DeviseCreateUsers: migrating ================================
+-- create_table(:users)
+   -> 0.0085s
+-- add_index(:users, :email, {:unique=>true})
+   -> 0.0009s
+-- add_index(:users, :reset_password_token, {:unique=>true})
+   -> 0.0008s
+== 20160817010054 DeviseCreateUsers: migrated (0.0104s) =======================
+
+Melanies-MacBook-Pro:comic melanieblazevic$ rails g devise:views
+Running via Spring preloader in process 45407
+      invoke  Devise::Generators::SharedViewsGenerator
+      create    app/views/devise/shared
+      create    app/views/devise/shared/_links.html.erb
+      invoke  form_for
+      create    app/views/devise/confirmations
+      create    app/views/devise/confirmations/new.html.erb
+      create    app/views/devise/passwords
+      create    app/views/devise/passwords/edit.html.erb
+      create    app/views/devise/passwords/new.html.erb
+      create    app/views/devise/registrations
+      create    app/views/devise/registrations/edit.html.erb
+      create    app/views/devise/registrations/new.html.erb
+      create    app/views/devise/sessions
+      create    app/views/devise/sessions/new.html.erb
+      create    app/views/devise/unlocks
+      create    app/views/devise/unlocks/new.html.erb
+      invoke  erb
+      create    app/views/devise/mailer
+      create    app/views/devise/mailer/confirmation_instructions.html.erb
+      create    app/views/devise/mailer/password_change.html.erb
+      create    app/views/devise/mailer/reset_password_instructions.html.erb
+      create    app/views/devise/mailer/unlock_instructions.html.erb
+Melanies-MacBook-Pro:comic melanieblazevic$ git add .
+Melanies-MacBook-Pro:comic melanieblazevic$ git commit -m "Authentication with devise"
+[master 6960f6b] Authentication with devise
+ 94 files changed, 1810 insertions(+)
+ create mode 100644 Week_17/Comic/.gitignore
+ create mode 100644 Week_17/Comic/Gemfile
+ create mode 100644 Week_17/Comic/Gemfile.lock
+ create mode 100644 Week_17/Comic/README.md
+ create mode 100644 Week_17/Comic/Rakefile
+ create mode 100644 Week_17/Comic/app/assets/config/manifest.js
+ create mode 100644 Week_17/Comic/app/assets/images/.keep
+ create mode 100644 Week_17/Comic/app/assets/javascripts/application.js
+ create mode 100644 Week_17/Comic/app/assets/javascripts/cable.js
+ create mode 100644 Week_17/Comic/app/assets/javascripts/channels/.keep
+ create mode 100644 Week_17/Comic/app/assets/stylesheets/application.css
+ create mode 100644 Week_17/Comic/app/channels/application_cable/channel.rb
+ create mode 100644 Week_17/Comic/app/channels/application_cable/connection.rb
+ create mode 100644 Week_17/Comic/app/controllers/application_controller.rb
+ create mode 100644 Week_17/Comic/app/controllers/concerns/.keep
+ create mode 100644 Week_17/Comic/app/helpers/application_helper.rb
+ create mode 100644 Week_17/Comic/app/jobs/application_job.rb
+ create mode 100644 Week_17/Comic/app/mailers/application_mailer.rb
+ create mode 100644 Week_17/Comic/app/models/application_record.rb
+ create mode 100644 Week_17/Comic/app/models/concerns/.keep
+ create mode 100644 Week_17/Comic/app/models/user.rb
+ create mode 100644 Week_17/Comic/app/views/devise/confirmations/new.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/mailer/confirmation_instructions.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/mailer/password_change.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/mailer/reset_password_instructions.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/mailer/unlock_instructions.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/passwords/edit.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/passwords/new.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/registrations/edit.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/registrations/new.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/sessions/new.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/shared/_links.html.erb
+ create mode 100644 Week_17/Comic/app/views/devise/unlocks/new.html.erb
+ create mode 100644 Week_17/Comic/app/views/layouts/application.html.erb
+ create mode 100644 Week_17/Comic/app/views/layouts/mailer.html.erb
+ create mode 100644 Week_17/Comic/app/views/layouts/mailer.text.erb
+ create mode 100755 Week_17/Comic/bin/bundle
+ create mode 100755 Week_17/Comic/bin/rails
+ create mode 100755 Week_17/Comic/bin/rake
+ create mode 100755 Week_17/Comic/bin/setup
+ create mode 100755 Week_17/Comic/bin/spring
+ create mode 100755 Week_17/Comic/bin/update
+ create mode 100644 Week_17/Comic/config.ru
+ create mode 100644 Week_17/Comic/config/application.rb
+ create mode 100644 Week_17/Comic/config/boot.rb
+ create mode 100644 Week_17/Comic/config/cable.yml
+ create mode 100644 Week_17/Comic/config/database.yml
+ create mode 100644 Week_17/Comic/config/environment.rb
+ create mode 100644 Week_17/Comic/config/environments/development.rb
+ create mode 100644 Week_17/Comic/config/environments/production.rb
+ create mode 100644 Week_17/Comic/config/environments/test.rb
+ create mode 100644 Week_17/Comic/config/initializers/application_controller_renderer.rb
+ create mode 100644 Week_17/Comic/config/initializers/assets.rb
+ create mode 100644 Week_17/Comic/config/initializers/backtrace_silencers.rb
+ create mode 100644 Week_17/Comic/config/initializers/cookies_serializer.rb
+ create mode 100644 Week_17/Comic/config/initializers/devise.rb
+ create mode 100644 Week_17/Comic/config/initializers/filter_parameter_logging.rb
+ create mode 100644 Week_17/Comic/config/initializers/inflections.rb
+ create mode 100644 Week_17/Comic/config/initializers/mime_types.rb
+ create mode 100644 Week_17/Comic/config/initializers/new_framework_defaults.rb
+ create mode 100644 Week_17/Comic/config/initializers/session_store.rb
+ create mode 100644 Week_17/Comic/config/initializers/wrap_parameters.rb
+ create mode 100644 Week_17/Comic/config/locales/devise.en.yml
+ create mode 100644 Week_17/Comic/config/locales/en.yml
+ create mode 100644 Week_17/Comic/config/puma.rb
+ create mode 100644 Week_17/Comic/config/routes.rb
+ create mode 100644 Week_17/Comic/config/secrets.yml
+ create mode 100644 Week_17/Comic/config/spring.rb
+ create mode 100644 Week_17/Comic/db/migrate/20160817010054_devise_create_users.rb
+ create mode 100644 Week_17/Comic/db/schema.rb
+ create mode 100644 Week_17/Comic/db/seeds.rb
+ create mode 100644 Week_17/Comic/lib/assets/.keep
+ create mode 100644 Week_17/Comic/lib/tasks/.keep
+ create mode 100644 Week_17/Comic/log/.keep
+ create mode 100644 Week_17/Comic/public/404.html
+ create mode 100644 Week_17/Comic/public/422.html
+ create mode 100644 Week_17/Comic/public/500.html
+ create mode 100644 Week_17/Comic/public/apple-touch-icon-precomposed.png
+ create mode 100644 Week_17/Comic/public/apple-touch-icon.png
+ create mode 100644 Week_17/Comic/public/favicon.ico
+ create mode 100644 Week_17/Comic/public/robots.txt
+ create mode 100644 Week_17/Comic/test/controllers/.keep
+ create mode 100644 Week_17/Comic/test/fixtures/.keep
+ create mode 100644 Week_17/Comic/test/fixtures/files/.keep
+ create mode 100644 Week_17/Comic/test/fixtures/users.yml
+ create mode 100644 Week_17/Comic/test/helpers/.keep
+ create mode 100644 Week_17/Comic/test/integration/.keep
+ create mode 100644 Week_17/Comic/test/mailers/.keep
+ create mode 100644 Week_17/Comic/test/models/.keep
+ create mode 100644 Week_17/Comic/test/models/user_test.rb
+ create mode 100644 Week_17/Comic/test/test_helper.rb
+ create mode 100644 Week_17/Comic/tmp/.keep
+ create mode 100644 Week_17/Comic/vendor/assets/javascripts/.keep
+ create mode 100644 Week_17/Comic/vendor/assets/stylesheets/.keep
+Melanies-MacBook-Pro:comic melanieblazevic$ git push
+Counting objects: 56, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (50/50), done.
+Writing objects: 100% (56/56), 19.23 KiB | 0 bytes/s, done.
+Total 56 (delta 5), reused 0 (delta 0)
+remote: Resolving deltas: 100% (5/5), completed with 1 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   0e4a65d..6960f6b  master -> master
+Melanies-MacBook-Pro:comic melanieblazevic$ 

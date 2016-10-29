@@ -1,0 +1,371 @@
+Melanies-MacBook-Pro:~ melanieblazevic$ cd desktop/ironhack
+Melanies-MacBook-Pro:ironhack melanieblazevic$ ls
+Exercises	Week_1		Week_13		Week_16		Week_3		Week_6		Week_9
+Notes		Week_10		Week_14		Week_17		Week_4		Week_7
+Week_0		Week_11		Week_15		Week_2		Week_5		Week_8
+Melanies-MacBook-Pro:ironhack melanieblazevic$ cd week_17
+Melanies-MacBook-Pro:week_17 melanieblazevic$ ls
+Sandwichr
+Melanies-MacBook-Pro:week_17 melanieblazevic$ cd sandwichr
+Melanies-MacBook-Pro:sandwichr melanieblazevic$ subl -n .
+Melanies-MacBook-Pro:sandwichr melanieblazevic$ cd ..
+Melanies-MacBook-Pro:week_17 melanieblazevic$ git clone https://github.com/ironhack/auth-exercise.git
+Cloning into 'auth-exercise'...
+remote: Counting objects: 93, done.
+remote: Total 93 (delta 0), reused 0 (delta 0), pack-reused 92
+Unpacking objects: 100% (93/93), done.
+Checking connectivity... done.
+Melanies-MacBook-Pro:week_17 melanieblazevic$ ls
+Sandwichr	auth-exercise
+Melanies-MacBook-Pro:week_17 melanieblazevic$ cd auth-exercise
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ rm -rf .git
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ ls
+Gemfile		README.rdoc	app		config		db		log		vendor
+Gemfile.lock	Rakefile	bin		config.ru	lib		public
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ ls -a 
+.		.gitignore	Gemfile.lock	Rakefile	bin		config.ru	lib		public
+..		Gemfile		README.rdoc	app		config		db		log		vendor
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ subl -n .
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ bundle install
+Fetching gem metadata from https://rubygems.org/
+Fetching version metadata from https://rubygems.org/
+Fetching dependency metadata from https://rubygems.org/
+Installing rake 11.1.2
+Using i18n 0.7.0
+Installing json 1.8.2 with native extensions
+Installing minitest 5.6.1
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Installing mini_portile 0.6.2
+Installing rack 1.6.1
+Installing mime-types 2.5
+Installing arel 6.0.0
+Using debug_inspector 0.0.2
+Using columnize 0.9.0
+Installing coderay 1.1.0
+Installing coffee-script-source 1.9.1.1
+Installing execjs 2.5.2
+Using thor 0.19.1
+Installing multi_json 1.11.0
+Using method_source 0.8.2
+Installing pg 0.18.2 with native extensions
+
+Gem::Ext::BuildError: ERROR: Failed to build gem native extension.
+
+    current directory: /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/pg-0.18.2/ext
+/Users/melanieblazevic/.rbenv/versions/2.3.0/bin/ruby -r ./siteconf20160816-22881-2uysfc.rb extconf.rb
+checking for pg_config... no
+No pg_config... trying anyway. If building fails, please try again with
+ --with-pg-config=/path/to/pg_config
+checking for libpq-fe.h... no
+Can't find the 'libpq-fe.h header
+*** extconf.rb failed ***
+Could not create Makefile due to some reason, probably lack of necessary
+libraries and/or headers.  Check the mkmf.log file for more details.  You may
+need configuration options.
+
+Provided configuration options:
+	--with-opt-dir
+	--without-opt-dir
+	--with-opt-include
+	--without-opt-include=${opt-dir}/include
+	--with-opt-lib
+	--without-opt-lib=${opt-dir}/lib
+	--with-make-prog
+	--without-make-prog
+	--srcdir=.
+	--curdir
+	--ruby=/Users/melanieblazevic/.rbenv/versions/2.3.0/bin/$(RUBY_BASE_NAME)
+	--with-pg
+	--without-pg
+	--enable-windows-cross
+	--disable-windows-cross
+	--with-pg-config
+	--without-pg-config
+	--with-pg_config
+	--without-pg_config
+	--with-pg-dir
+	--without-pg-dir
+	--with-pg-include
+	--without-pg-include=${pg-dir}/include
+	--with-pg-lib
+	--without-pg-lib=${pg-dir}/lib
+
+To see why this extension failed to compile, please check the mkmf.log which can be found here:
+
+  /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/extensions/x86_64-darwin-15/2.3.0-static/pg-0.18.2/mkmf.log
+
+extconf failed, exit code 1
+
+Gem files will remain installed in /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/pg-0.18.2 for inspection.
+Results logged to /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/extensions/x86_64-darwin-15/2.3.0-static/pg-0.18.2/gem_make.out
+Using slop 3.6.0
+Using bundler 1.12.5
+Installing sass 3.4.13
+Using tilt 1.4.1
+Installing spring 1.3.6
+Using sqlite3 1.3.11
+Installing rdoc 4.2.0
+Using tzinfo 1.2.2
+Installing nokogiri 1.6.6.2 with native extensions
+Using rack-test 0.6.3
+Installing sprockets 3.1.0
+Installing mail 2.6.3
+Using binding_of_caller 0.7.2
+Installing byebug 4.0.5 with native extensions
+Using coffee-script 2.4.1
+Installing uglifier 2.7.1
+An error occurred while installing pg (0.18.2), and Bundler cannot continue.
+Make sure that `gem install pg -v '0.18.2'` succeeds before bundling.
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ rm Gemfile.lock
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ bundle install
+Fetching gem metadata from https://rubygems.org/
+Fetching version metadata from https://rubygems.org/
+Fetching dependency metadata from https://rubygems.org/
+Resolving dependencies.......
+Using rake 11.2.2
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.9.0
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using pkg-config 1.1.7
+Using rack 1.6.4
+Using mime-types-data 3.2016.0521
+Using arel 6.0.3
+Using debug_inspector 0.0.2
+Using bundler 1.12.5
+Using byebug 9.0.5
+Using coderay 1.1.1
+Using concurrent-ruby 1.0.2
+Using execjs 2.7.0
+Using multi_json 1.12.1
+Using thor 0.19.1
+Using method_source 0.8.2
+Using slop 3.6.0
+Using sass 3.4.22
+Using tilt 2.0.5
+Using spring 1.7.2
+Using sqlite3 1.3.11
+Using turbolinks-source 5.0.0
+Using rdoc 4.2.2
+Using tzinfo 1.2.2
+Using nokogiri 1.6.8
+Using rack-test 0.6.3
+Using mime-types 3.1
+Using binding_of_caller 0.7.2
+Using sprockets 3.7.0
+Using uglifier 3.0.1
+Installing pry 0.10.4
+Using turbolinks 5.0.1
+Using sdoc 0.4.1
+Installing activesupport 4.2.1
+Using loofah 2.0.3
+Using mail 2.6.4
+Installing pry-rails 0.3.4
+Using rails-deprecated_sanitizer 1.0.3
+Using globalid 0.3.7
+Installing activemodel 4.2.1
+Using jbuilder 2.6.0
+Using rails-html-sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Installing activejob 4.2.1
+Installing activerecord 4.2.1
+Installing actionview 4.2.1
+Installing actionpack 4.2.1
+Installing actionmailer 4.2.1
+Installing railties 4.2.1
+Using sprockets-rails 3.1.1
+Using jquery-rails 4.1.1
+Installing rails 4.2.1
+Using sass-rails 5.0.6
+Using web-console 2.3.0
+Bundle complete! 12 Gemfile dependencies, 59 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ rake db:create db:migrate db:seed
+db/database.sqlite3 already exists
+== 20150602095721 CreateUsers: migrating ======================================
+-- create_table(:users)
+   -> 0.0011s
+== 20150602095721 CreateUsers: migrated (0.0012s) =============================
+
+== 20150602130219 RenameNameColumnUsers: migrating ============================
+-- rename_column(:users, :name, :username)
+   -> 0.0034s
+== 20150602130219 RenameNameColumnUsers: migrated (0.0035s) ===================
+
+== 20160503132600 RemovePasswordDigestFromUsers: migrating ====================
+-- remove_column(:users, :password_digest, :string)
+   -> 0.0026s
+== 20160503132600 RemovePasswordDigestFromUsers: migrated (0.0027s) ===========
+
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ bundle install
+Resolving dependencies...
+Using rake 11.2.2
+Using i18n 0.7.0
+Using json 1.8.3
+Using minitest 5.9.0
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using pkg-config 1.1.7
+Using rack 1.6.4
+Using mime-types-data 3.2016.0521
+Using arel 6.0.3
+Using bcrypt 3.1.11
+Using debug_inspector 0.0.2
+Using bundler 1.12.5
+Using byebug 9.0.5
+Using coderay 1.1.1
+Using concurrent-ruby 1.0.2
+Using execjs 2.7.0
+Using multi_json 1.12.1
+Using thor 0.19.1
+Using method_source 0.8.2
+Using slop 3.6.0
+Using sass 3.4.22
+Using tilt 2.0.5
+Using spring 1.7.2
+Using sqlite3 1.3.11
+Using turbolinks-source 5.0.0
+Using rdoc 4.2.2
+Using tzinfo 1.2.2
+Using nokogiri 1.6.8
+Using rack-test 0.6.3
+Using mime-types 3.1
+Using binding_of_caller 0.7.2
+Using sprockets 3.7.0
+Using uglifier 3.0.1
+Using pry 0.10.4
+Using turbolinks 5.0.1
+Using sdoc 0.4.1
+Using activesupport 4.2.1
+Using loofah 2.0.3
+Using mail 2.6.4
+Using pry-rails 0.3.4
+Using rails-deprecated_sanitizer 1.0.3
+Using globalid 0.3.7
+Using activemodel 4.2.1
+Using jbuilder 2.6.0
+Using rails-html-sanitizer 1.0.3
+Using rails-dom-testing 1.0.7
+Using activejob 4.2.1
+Using activerecord 4.2.1
+Using actionview 4.2.1
+Using actionpack 4.2.1
+Using actionmailer 4.2.1
+Using railties 4.2.1
+Using sprockets-rails 3.1.1
+Using jquery-rails 4.1.1
+Using rails 4.2.1
+Using sass-rails 5.0.6
+Using web-console 2.3.0
+Bundle complete! 13 Gemfile dependencies, 60 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ rails g migration add_password_digest_to_users password_digest
+      invoke  active_record
+      create    db/migrate/20160816233304_add_password_digest_to_users.rb
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ rake db:migrate
+== 20160816233304 AddPasswordDigestToUsers: migrating =========================
+-- add_column(:users, :password_digest, :string)
+   -> 0.0007s
+== 20160816233304 AddPasswordDigestToUsers: migrated (0.0008s) ================
+
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ rails g controller sessions
+      create  app/controllers/sessions_controller.rb
+      invoke  erb
+      create    app/views/sessions
+      invoke  helper
+   identical    app/helpers/sessions_helper.rb
+      invoke  assets
+      invoke    js
+   identical      app/assets/javascripts/sessions.js
+      invoke    scss
+   identical      app/assets/stylesheets/sessions.scss
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ git add .
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ git commit -m "Added user authentication"
+[master 0e4a65d] Added user authentication
+ 69 files changed, 1139 insertions(+)
+ create mode 100644 Week_17/auth-exercise/.gitignore
+ create mode 100644 Week_17/auth-exercise/Gemfile
+ create mode 100644 Week_17/auth-exercise/Gemfile.lock
+ create mode 100644 Week_17/auth-exercise/README.rdoc
+ create mode 100644 Week_17/auth-exercise/Rakefile
+ create mode 100644 Week_17/auth-exercise/app/assets/images/.keep
+ create mode 100644 Week_17/auth-exercise/app/assets/javascripts/application.js
+ create mode 100644 Week_17/auth-exercise/app/assets/javascripts/sessions.js
+ create mode 100644 Week_17/auth-exercise/app/assets/javascripts/users.js
+ create mode 100644 Week_17/auth-exercise/app/assets/stylesheets/application.css
+ create mode 100644 Week_17/auth-exercise/app/assets/stylesheets/sessions.scss
+ create mode 100644 Week_17/auth-exercise/app/assets/stylesheets/users.scss
+ create mode 100644 Week_17/auth-exercise/app/controllers/application_controller.rb
+ create mode 100644 Week_17/auth-exercise/app/controllers/concerns/.keep
+ create mode 100644 Week_17/auth-exercise/app/controllers/sessions_controller.rb
+ create mode 100644 Week_17/auth-exercise/app/controllers/users_controller.rb
+ create mode 100644 Week_17/auth-exercise/app/helpers/application_helper.rb
+ create mode 100644 Week_17/auth-exercise/app/helpers/sessions_helper.rb
+ create mode 100644 Week_17/auth-exercise/app/helpers/users_helper.rb
+ create mode 100644 Week_17/auth-exercise/app/mailers/.keep
+ create mode 100644 Week_17/auth-exercise/app/models/.keep
+ create mode 100644 Week_17/auth-exercise/app/models/concerns/.keep
+ create mode 100644 Week_17/auth-exercise/app/models/user.rb
+ create mode 100644 Week_17/auth-exercise/app/views/layouts/application.html.erb
+ create mode 100644 Week_17/auth-exercise/app/views/sessions/new.html.erb
+ create mode 100644 Week_17/auth-exercise/app/views/users/home.html.erb
+ create mode 100644 Week_17/auth-exercise/app/views/users/index.html.erb
+ create mode 100644 Week_17/auth-exercise/app/views/users/new.html.erb
+ create mode 100644 Week_17/auth-exercise/app/views/users/show.html.erb
+ create mode 100755 Week_17/auth-exercise/bin/bundle
+ create mode 100755 Week_17/auth-exercise/bin/rails
+ create mode 100755 Week_17/auth-exercise/bin/rake
+ create mode 100755 Week_17/auth-exercise/bin/setup
+ create mode 100644 Week_17/auth-exercise/config.ru
+ create mode 100644 Week_17/auth-exercise/config/application.rb
+ create mode 100644 Week_17/auth-exercise/config/boot.rb
+ create mode 100644 Week_17/auth-exercise/config/database.yml
+ create mode 100644 Week_17/auth-exercise/config/environment.rb
+ create mode 100644 Week_17/auth-exercise/config/environments/development.rb
+ create mode 100644 Week_17/auth-exercise/config/environments/production.rb
+ create mode 100644 Week_17/auth-exercise/config/environments/test.rb
+ create mode 100644 Week_17/auth-exercise/config/initializers/assets.rb
+ create mode 100644 Week_17/auth-exercise/config/initializers/backtrace_silencers.rb
+ create mode 100644 Week_17/auth-exercise/config/initializers/cookies_serializer.rb
+ create mode 100644 Week_17/auth-exercise/config/initializers/filter_parameter_logging.rb
+ create mode 100644 Week_17/auth-exercise/config/initializers/inflections.rb
+ create mode 100644 Week_17/auth-exercise/config/initializers/mime_types.rb
+ create mode 100644 Week_17/auth-exercise/config/initializers/session_store.rb
+ create mode 100644 Week_17/auth-exercise/config/initializers/wrap_parameters.rb
+ create mode 100644 Week_17/auth-exercise/config/locales/en.yml
+ create mode 100644 Week_17/auth-exercise/config/routes.rb
+ create mode 100644 Week_17/auth-exercise/config/secrets.yml
+ create mode 100644 Week_17/auth-exercise/db/database.sqlite3
+ create mode 100644 Week_17/auth-exercise/db/migrate/20150602095721_create_users.rb
+ create mode 100644 Week_17/auth-exercise/db/migrate/20150602130219_rename_name_column_users.rb
+ create mode 100644 Week_17/auth-exercise/db/migrate/20160503132600_remove_password_digest_from_users.rb
+ create mode 100644 Week_17/auth-exercise/db/migrate/20160816233304_add_password_digest_to_users.rb
+ create mode 100644 Week_17/auth-exercise/db/schema.rb
+ create mode 100644 Week_17/auth-exercise/db/seeds.rb
+ create mode 100644 Week_17/auth-exercise/lib/assets/.keep
+ create mode 100644 Week_17/auth-exercise/lib/tasks/.keep
+ create mode 100644 Week_17/auth-exercise/log/.keep
+ create mode 100644 Week_17/auth-exercise/public/404.html
+ create mode 100644 Week_17/auth-exercise/public/422.html
+ create mode 100644 Week_17/auth-exercise/public/500.html
+ create mode 100644 Week_17/auth-exercise/public/favicon.ico
+ create mode 100644 Week_17/auth-exercise/public/robots.txt
+ create mode 100644 Week_17/auth-exercise/vendor/assets/javascripts/.keep
+ create mode 100644 Week_17/auth-exercise/vendor/assets/stylesheets/.keep
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ git push
+Counting objects: 48, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (45/45), done.
+Writing objects: 100% (48/48), 11.91 KiB | 0 bytes/s, done.
+Total 48 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   7265a5c..0e4a65d  master -> master
+Melanies-MacBook-Pro:auth-exercise melanieblazevic$ 

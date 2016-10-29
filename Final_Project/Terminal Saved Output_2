@@ -1,0 +1,553 @@
+Last login: Sat Sep 17 12:17:03 on ttys004
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "Fixed sessions and registrations"
+[master 75703eb] Fixed sessions and registrations
+ 7 files changed, 64 insertions(+), 35 deletions(-)
+ create mode 100644 Final_Project/Wearable/app/views/devise/sessions/new.html.erb
+ delete mode 100644 Final_Project/Wearable/app/views/sessions/new.html.erb
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 18, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (18/18), 2.24 KiB | 0 bytes/s, done.
+Total 18 (delta 9), reused 0 (delta 0)
+remote: Resolving deltas: 100% (9/9), completed with 9 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   c0249e4..75703eb  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake routes
+
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                    help GET    /help(.:format)                static_pages#help
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                  signup GET    /signup(.:format)              users#new
+                   login GET    /login(.:format)               sessions#new
+                         POST   /login(.:format)               sessions#create
+                  logout DELETE /logout(.:format)              sessions#destroy
+                 signout GET    /signout(.:format)             devise/sessions#destroy
+                   posts GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ 
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                    help GET    /help(.:format)                static_pages#help
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                  signup GET    /signup(.:format)              users#new
+                   login GET    /login(.:format)               sessions#new
+                         POST   /login(.:format)               sessions#create
+                  logout DELETE /logout(.:format)              sessions#destroy
+                 signout GET    /signout(.:format)             devise/sessions#destroy
+                   posts GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails c
+Running via Spring preloader in process 51710
+Loading development environment (Rails 5.0.0.1)
+No entry for terminal type "/activesupport-5.0.0.1/lib/active_support/dependencies.rb:293:in `require'";
+using dumb terminal settings.
+irb(main):001:0> User.all
+  User Load (2.8ms)  SELECT "users".* FROM "users"
+=> #<ActiveRecord::Relation [#<User id: 2, email: "melanie@yahoo.com", name: nil>, #<User id: 3, email: "katie@yahoo.com", name: nil>, #<User id: 4, email: "anthony@yahoo.com", name: nil>, #<User id: 5, email: "yemani@yahoo.com", name: nil>, #<User id: 6, email: "test@test.com", name: nil>]>
+irb(main):002:0> u = User.first
+  User Load (0.3ms)  SELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?  [["LIMIT", 1]]
+=> #<User id: 2, email: "melanie@yahoo.com", name: nil>
+irb(main):003:0> u.password
+=> nil
+irb(main):004:0> User.last
+  User Load (0.3ms)  SELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?  [["LIMIT", 1]]
+=> #<User id: 6, email: "test@test.com", name: nil>
+irb(main):005:0> u = User.lat
+NoMethodError: undefined method `lat' for #<Class:0x007fae5499a278>
+Did you mean?  last
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activerecord-5.0.0.1/lib/active_record/dynamic_matchers.rb:21:in `method_missing'
+	from (irb):5
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:293:in `block in require'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:293:in `require'
+	from /Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `<top (required)>'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:287:in `block in load'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:259:in `load_dependency'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/dependencies.rb:287:in `load'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/spring-1.7.2/lib/spring/commands/rails.rb:6:in `call'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/spring-1.7.2/lib/spring/command_wrapper.rb:38:in `call'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/spring-1.7.2/lib/spring/application.rb:191:in `block in serve'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/spring-1.7.2/lib/spring/application.rb:161:in `fork'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/spring-1.7.2/lib/spring/application.rb:161:in `serve'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/spring-1.7.2/lib/spring/application.rb:131:in `block in run'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/spring-1.7.2/lib/spring/application.rb:125:in `loop'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/spring-1.7.2/lib/spring/application.rb:125:in `run'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/spring-1.7.2/lib/spring/application/boot.rb:19:in `<top (required)>'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'irb(main):006:0> u = User.last
+  User Load (0.2ms)  SELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?  [["LIMIT", 1]]
+=> #<User id: 6, email: "test@test.com", name: nil>
+irb(main):007:0> u.password
+=> nil
+irb(main):008:0> u.name
+=> nil
+irb(main):009:0> exit
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                    help GET    /help(.:format)                static_pages#help
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                  signup GET    /signup(.:format)              users#new
+                   login GET    /login(.:format)               sessions#new
+                         POST   /login(.:format)               sessions#create
+                  logout DELETE /logout(.:format)              sessions#destroy
+                 signout GET    /signout(.:format)             devise/sessions#destroy
+                   posts GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails c
+Running via Spring preloader in process 51890
+Loading development environment (Rails 5.0.0.1)
+No entry for terminal type "s/melanieblazevic/.rbenv";
+using dumb terminal settings.
+irb(main):001:0> User.last
+  User Load (0.2ms)  SELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?  [["LIMIT", 1]]
+=> #<User id: 7, email: "test2@gmail.com", name: nil>
+irb(main):002:0> exit
+Melanies-MacBook-Pro:wearable melanieblazevic$ git reset --hard HEAD
+HEAD is now at 75703eb Fixed sessions and registrations
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                    help GET    /help(.:format)                static_pages#help
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                  signup GET    /signup(.:format)              users#new
+                 signout GET    /signout(.:format)             devise/sessions#destroy
+                   posts GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                    help GET    /help(.:format)                static_pages#help
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                  signup GET    /signup(.:format)              users#new
+                   posts GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "Fixed destroy function"
+[master b5a8aea] Fixed destroy function
+ 4 files changed, 45 insertions(+), 20 deletions(-)
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 16, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (16/16), 1.59 KiB | 0 bytes/s, done.
+Total 16 (delta 12), reused 0 (delta 0)
+remote: Resolving deltas: 100% (12/12), completed with 12 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   75703eb..b5a8aea  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "UI updates"
+[master 78a67b7] UI updates
+ 5 files changed, 14 insertions(+), 24 deletions(-)
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 17, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (14/14), done.
+Writing objects: 100% (17/17), 1.60 KiB | 0 bytes/s, done.
+Total 17 (delta 10), reused 0 (delta 0)
+remote: Resolving deltas: 100% (10/10), completed with 10 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   b5a8aea..78a67b7  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ 
+  [Restored Sep 18, 2016, 6:44:04 PM]
+Last login: Sat Sep 17 13:54:34 on ttys000
+Restored session: Sun Sep 18 18:36:30 EDT 2016
+Melanies-MacBook-Pro:wearable melanieblazevic$ git reset --hard HEAD
+HEAD is now at 78a67b7 UI updates
+Melanies-MacBook-Pro:wearable melanieblazevic$ pwd
+/Users/melanieblazevic/desktop/ironhack/final_project/wearable
+Melanies-MacBook-Pro:wearable melanieblazevic$ open wearable
+The file /Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/wearable does not exist.
+Melanies-MacBook-Pro:wearable melanieblazevic$ cd wearable
+-bash: cd: wearable: No such file or directory
+Melanies-MacBook-Pro:wearable melanieblazevic$ pwd
+/Users/melanieblazevic/desktop/ironhack/final_project/wearable
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                    help GET    /help(.:format)                static_pages#help
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                   posts GET    /posts(.:format)               static_pages#post
+                  signup GET    /signup(.:format)              users#new
+                         GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                    help GET    /help(.:format)                static_pages#help
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+               posts_new GET    /posts/new(.:format)           static_pages#post
+                  signup GET    /signup(.:format)              users#new
+                   posts GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "Reformatting forms and adjusting stylesheet"
+[master 832a7c2] Reformatting forms and adjusting stylesheet
+ 11 files changed, 181 insertions(+), 118 deletions(-)
+ rewrite Final_Project/Wearable/app/views/devise/sessions/new.html.erb (84%)
+ create mode 100644 Final_Project/Wearable/app/views/posts/index.html.erb
+ rewrite Final_Project/Wearable/app/views/static_pages/about.html.erb (95%)
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+	modified:   ../../Notes (modified content, untracked content)
+	modified:   ../../Week_1/Important_Program (modified content)
+	modified:   ../../Week_2/Employee_Payroll (modified content, untracked content)
+	modified:   ../../Week_8/First_Functions (modified content)
+	modified:   ../../week_18/todoapp (untracked content)
+
+Untracked files:
+	../Final_Project.xd
+	../Sunglasses.jpg
+	../Terminal Saved Output_1
+	../Wearable_Logo.ai
+	../../Week_10/Auction_site/app/models/view.rb
+	../../Week_10/Auction_site/app/views/devise/
+	../../Week_10/Auction_site/config/initializers/devise.rb
+	../../Week_10/Auction_site/config/locales/devise.en.yml
+	../../Week_10/Auction_site/db/migrate/20160824004721_create_users.rb
+	../../Week_10/Auction_site/db/migrate/20160824010843_add_devise_to_users.rb
+	../../Week_10/Auction_site/db/migrate/20160827185737_devise_create_views.rb
+	../../Week_10/Auction_site/test/fixtures/views.yml
+	../../Week_10/Auction_site/test/models/view_test.rb
+	../../Week_13/async/
+	../../Week_13/coffee_exercise/
+	../../Week_13/episodes.json
+	../../Week_13/fs_module.js
+	../../Week_13/game_of_thrones.js
+	../../Week_13/sleep_function.js
+	../../Week_14/jQuery/animate.css
+	../../Week_14/jQuery/app.js
+	../../Week_14/jQuery/function_example.html
+	../../Week_17/Authentication_Exercise/
+	../../Week_17/Comic/Terminal Saved Output_1
+	../../Week_17/Comic/Terminal Saved Output_2
+	../../Week_17/FoodHub/Terminal Saved Output
+	../../Week_17/FoodHub/Terminal Saved Output_Console
+	../../Week_17/Sandwichr/app/controllers/static_pages_controller.rb
+
+no changes added to commit
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake routes
+
+rakes
+^Crake aborted!
+Interrupt: 
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/config/application.rb:3:in `require'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/config/application.rb:3:in `<top (required)>'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/Rakefile:4:in `require_relative'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/Rakefile:4:in `<top (required)>'
+(See full trace by running task with --trace)
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                    help GET    /help(.:format)                static_pages#help
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                   posts GET    /posts/new(.:format)           static_pages#posts
+                  signup GET    /signup(.:format)              users#new
+                         GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "Fixed bugs"
+[master 63b2e05] Fixed bugs
+ 6 files changed, 58 insertions(+), 50 deletions(-)
+ rewrite Final_Project/Wearable/app/views/devise/sessions/new.html.erb (68%)
+ delete mode 100644 Final_Project/Wearable/app/views/static_pages/post.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/static_pages/posts.html.erb
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 44, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (38/38), done.
+Writing objects: 100% (44/44), 4.96 KiB | 0 bytes/s, done.
+Total 44 (delta 25), reused 0 (delta 0)
+remote: Resolving deltas: 100% (25/25), completed with 16 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   78a67b7..63b2e05  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                    help GET    /help(.:format)                static_pages#help
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                   posts GET    /posts/new(.:format)           static_pages#posts
+                  signup GET    /signup(.:format)              users#new
+                         GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                   posts GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                   posts GET    /posts/new(.:format)           static_pages#posts
+               new_posts POST   /posts/new(.:format)           posts#create
+               users_all GET    /users_all(.:format)           static_pages#users_all
+                post_new GET    /post/new(.:format)            posts#index
+                         GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ 
+  [Restored Sep 25, 2016, 9:46:15 PM]
+Last login: Sun Sep 25 21:45:36 on console
+Melanies-MacBook-Pro:wearable melanieblazevic$ exit
+logout
+Saving session...
+...saving history...truncating history files...
+...completed.
+
+[Process completed]
+

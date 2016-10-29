@@ -1,0 +1,6 @@
+source "http://rubygems.org"
+
+gem 'sinatra'
+
+# Reloads code after refreshing browser
+gem 'sinatra-contrib'

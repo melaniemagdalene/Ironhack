@@ -1,0 +1,230 @@
+Melanies-MacBook-Pro:~ melanieblazevic$ cd desktop/ironhack
+Melanies-MacBook-Pro:ironhack melanieblazevic$ ls
+Exercises	Notes		Week_1		Week_13		Week_16		Week_3		Week_6		Week_9
+Final_Project	Postgres	Week_10		Week_14		Week_17		Week_4		Week_7		week_18
+Melike.mov	Week_0		Week_11		Week_15		Week_2		Week_5		Week_8
+Melanies-MacBook-Pro:ironhack melanieblazevic$ mkdir Sinatra_Review
+Melanies-MacBook-Pro:ironhack melanieblazevic$ cd Sinatra_Review
+Melanies-MacBook-Pro:Sinatra_Review melanieblazevic$ touch Gemfile
+Melanies-MacBook-Pro:Sinatra_Review melanieblazevic$ touch server.rb
+Melanies-MacBook-Pro:Sinatra_Review melanieblazevic$ mkdir views public 
+Melanies-MacBook-Pro:Sinatra_Review melanieblazevic$ tree
+.
+├── Gemfile
+├── public
+├── server.rb
+└── views
+
+2 directories, 2 files
+Melanies-MacBook-Pro:Sinatra_Review melanieblazevic$ subl .
+Melanies-MacBook-Pro:Sinatra_Review melanieblazevic$ ruby server.rb
+== Sinatra (v1.4.7) has taken the stage on 4567 for development with backup from Puma
+Puma starting in single mode...
+* Version 3.6.0 (ruby 2.3.0-p0), codename: Sleepy Sunday Serenity
+* Min threads: 0, max threads: 16
+* Environment: development
+* Listening on tcp://localhost:4567
+Use Ctrl-C to stop
+::1 - - [20/Oct/2016:19:46:22 -0400] "GET / HTTP/1.1" 200 29 0.0218
+::1 - - [20/Oct/2016:19:48:50 -0400] "GET / HTTP/1.1" 200 38 0.0012
+::1 - - [20/Oct/2016:19:49:07 -0400] "GET / HTTP/1.1" 200 34 0.0015
+::1 - - [20/Oct/2016:19:49:19 -0400] "GET / HTTP/1.1" 200 39 0.0014
+::1 - - [20/Oct/2016:19:50:04 -0400] "GET / HTTP/1.1" 200 52 0.0085
+::1 - - [20/Oct/2016:19:50:19 -0400] "GET / HTTP/1.1" 200 61 0.0014
+::1 - - [20/Oct/2016:19:50:44 -0400] "GET / HTTP/1.1" 200 70 0.0015
+2016-10-20 20:06:05 - SyntaxError - /Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:7: syntax error, unexpected ')', expecting keyword_then or ';' or '\n'
+'; @_out_buf << ( if Date.today.Thursday? ).to_s; @_out_buf << '
+                                           ^
+/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:11: syntax error, unexpected keyword_end, expecting ')'
+'; end 
+      ^
+/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:17: syntax error, unexpected keyword_end, expecting ')':
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:270:in `class_eval'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:270:in `compile_template_method'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:233:in `block in compiled_method'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:232:in `synchronize'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:232:in `compiled_method'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:166:in `evaluate'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:102:in `render'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:823:in `render'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:667:in `erb'
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/server.rb:8:in `block in <top (required)>'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1611:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1611:in `block in compile!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:975:in `block (3 levels) in route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:994:in `route_eval'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:975:in `block (2 levels) in route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1015:in `block in process_route'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1013:in `catch'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1013:in `process_route'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:973:in `block in route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:972:in `each'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:972:in `route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1085:in `block in dispatch!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `block in invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `catch'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1082:in `dispatch!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:907:in `block in call!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `block in invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `catch'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:907:in `call!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:895:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/xss_header.rb:18:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/path_traversal.rb:16:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/json_csrf.rb:18:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/frame_options.rb:31:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/logger.rb:15:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/commonlogger.rb:33:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:219:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:212:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/show_exceptions.rb:25:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:182:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:2013:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1487:in `block in call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1787:in `synchronize'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1487:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/configuration.rb:225:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/server.rb:578:in `handle_request'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/server.rb:415:in `process_client'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/server.rb:275:in `block in run'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+::1 - - [20/Oct/2016:20:06:06 -0400] "GET /__sinatra__/500.png HTTP/1.1" 304 - 0.0008
+2016-10-20 20:14:38 - NoMethodError - undefined method `Thursday?' for #<Date: 2016-10-20 ((2457682j,0s,0n),+0s,2299161j)>
+Did you mean?  thursday?
+               tuesday?:
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:7:in `block in singleton class'
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:-6:in `instance_eval'
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:-6:in `singleton class'
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:-8:in `__tilt_70357295454680'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:167:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:167:in `evaluate'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:102:in `render'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:823:in `render'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:667:in `erb'
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/server.rb:8:in `block in <top (required)>'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1611:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1611:in `block in compile!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:975:in `block (3 levels) in route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:994:in `route_eval'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:975:in `block (2 levels) in route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1015:in `block in process_route'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1013:in `catch'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1013:in `process_route'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:973:in `block in route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:972:in `each'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:972:in `route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1085:in `block in dispatch!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `block in invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `catch'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1082:in `dispatch!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:907:in `block in call!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `block in invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `catch'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:907:in `call!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:895:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/xss_header.rb:18:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/path_traversal.rb:16:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/json_csrf.rb:18:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/frame_options.rb:31:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/logger.rb:15:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/commonlogger.rb:33:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:219:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:212:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/show_exceptions.rb:25:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:182:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:2013:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1487:in `block in call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1787:in `synchronize'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1487:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/configuration.rb:225:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/server.rb:578:in `handle_request'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/server.rb:415:in `process_client'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/server.rb:275:in `block in run'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+::1 - - [20/Oct/2016:20:14:38 -0400] "GET /__sinatra__/500.png HTTP/1.1" 304 - 0.0011
+2016-10-20 20:14:41 - NoMethodError - undefined method `Thursday?' for #<Date: 2016-10-20 ((2457682j,0s,0n),+0s,2299161j)>
+Did you mean?  thursday?
+               tuesday?:
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:7:in `block in singleton class'
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:-6:in `instance_eval'
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:-6:in `singleton class'
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/views/home.erb:-8:in `__tilt_70357298768320'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:167:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:167:in `evaluate'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/tilt-2.0.5/lib/tilt/template.rb:102:in `render'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:823:in `render'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:667:in `erb'
+	/Users/melanieblazevic/Desktop/Ironhack/Sinatra_Review/server.rb:8:in `block in <top (required)>'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1611:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1611:in `block in compile!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:975:in `block (3 levels) in route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:994:in `route_eval'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:975:in `block (2 levels) in route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1015:in `block in process_route'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1013:in `catch'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1013:in `process_route'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:973:in `block in route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:972:in `each'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:972:in `route!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1085:in `block in dispatch!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `block in invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `catch'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1082:in `dispatch!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:907:in `block in call!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `block in invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `catch'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1067:in `invoke'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:907:in `call!'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:895:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/xss_header.rb:18:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/path_traversal.rb:16:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/json_csrf.rb:18:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/base.rb:49:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-protection-1.5.3/lib/rack/protection/frame_options.rb:31:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/logger.rb:15:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/commonlogger.rb:33:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:219:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:212:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/head.rb:13:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/rack-1.6.4/lib/rack/methodoverride.rb:22:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/show_exceptions.rb:25:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:182:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:2013:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1487:in `block in call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1787:in `synchronize'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/sinatra-1.4.7/lib/sinatra/base.rb:1487:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/configuration.rb:225:in `call'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/server.rb:578:in `handle_request'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/server.rb:415:in `process_client'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/server.rb:275:in `block in run'
+	/Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/puma-3.6.0/lib/puma/thread_pool.rb:116:in `block in spawn_thread'
+::1 - - [20/Oct/2016:20:14:41 -0400] "GET /__sinatra__/500.png HTTP/1.1" 304 - 0.0007
+::1 - - [20/Oct/2016:20:14:57 -0400] "GET / HTTP/1.1" 200 83 0.0014
+^C== Sinatra has ended his set (crowd applauds)
+- Gracefully stopping, waiting for requests to finish
+=== puma shutdown: 2016-10-20 21:22:29 -0400 ===
+- Goodbye!
+Melanies-MacBook-Pro:Sinatra_Review melanieblazevic$ exit
+logout
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+Deleting expired sessions...none found.
+
+[Process completed]
+

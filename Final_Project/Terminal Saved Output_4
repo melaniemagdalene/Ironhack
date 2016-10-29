@@ -1,0 +1,472 @@
+Last login: Mon Sep 26 21:37:51 on ttys002
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                   posts GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails generate migration AddUserIdToPosts user:references
+Running via Spring preloader in process 11577
+      invoke  active_record
+      create    db/migrate/20160928000116_add_user_id_to_posts.rb
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake db:migrate
+== 20160928000116 AddUserIdToPosts: migrating =================================
+-- add_reference(:posts, :user, {:foreign_key=>true})
+   -> 0.0088s
+== 20160928000116 AddUserIdToPosts: migrated (0.0089s) ========================
+
+Melanies-MacBook-Pro:wearable melanieblazevic$ which ruby
+/Users/melanieblazevic/.rbenv/shims/ruby
+Melanies-MacBook-Pro:wearable melanieblazevic$ echo "gem 'pundit'" >> Gemfile
+Melanies-MacBook-Pro:wearable melanieblazevic$ bundle install
+Using rake 11.2.2
+Using concurrent-ruby 1.0.2
+Using i18n 0.7.0
+Using minitest 5.9.0
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using pkg-config 1.1.7
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.1
+Using bcrypt 3.1.11
+Using coderay 1.1.1
+Using debug_inspector 0.0.2
+Using byebug 9.0.5
+Using coffee-script-source 1.10.0
+Using execjs 2.7.0
+Using method_source 0.8.2
+Using thor 0.19.1
+Using orm_adapter 0.5.0
+Using ffi 1.9.14
+Using multi_json 1.12.1
+Using rb-fsevent 0.9.7
+Using puma 3.6.0
+Using bundler 1.12.5
+Using sass 3.4.22
+Using tilt 2.0.5
+Using spring 1.7.2
+Using sqlite3 1.3.11
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.6.8
+Using rack-test 0.6.3
+Using warden 1.2.6
+Using sprockets 3.7.0
+Using websocket-driver 0.6.4
+Using mime-types 3.1
+Using better_errors 2.1.1
+Using binding_of_caller 0.7.3.pre1
+Using coffee-script 2.4.1
+Using uglifier 3.0.2
+Using rb-inotify 0.9.7
+Using turbolinks 5.0.1
+Using activesupport 5.0.0.1
+Using loofah 2.0.3
+Using mail 2.6.4
+Using listen 3.0.8
+Using rails-dom-testing 2.0.1
+Using globalid 0.3.7
+Using activemodel 5.0.0.1
+Using jbuilder 2.6.0
+Using pundit 1.1.0
+Using rails-html-sanitizer 1.0.3
+Using spring-watcher-listen 2.0.0
+Using activejob 5.0.0.1
+Using activerecord 5.0.0.1
+Using actionview 5.0.0.1
+Using actionpack 5.0.0.1
+Using actioncable 5.0.0.1
+Using actionmailer 5.0.0.1
+Using railties 5.0.0.1
+Using sprockets-rails 3.2.0
+Using coffee-rails 4.2.1
+Using responders 2.3.0
+Using jquery-rails 4.2.1
+Using web-console 3.3.1
+Using rails 5.0.0.1
+Using sass-rails 5.0.6
+Using devise 4.2.0
+Bundle complete! 19 Gemfile dependencies, 72 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails generate pundit:install
+Running via Spring preloader in process 12025
+      create  app/policies/application_policy.rb
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "Access control"
+[master 59df7df] Access control
+ 15 files changed, 165 insertions(+), 42 deletions(-)
+ create mode 100644 Final_Project/Wearable/app/policies/application_policy.rb
+ create mode 100644 Final_Project/Wearable/app/policies/post_policy.rb
+ rewrite Final_Project/Wearable/app/views/posts/index.html.erb (62%)
+ create mode 100644 Final_Project/Wearable/db/migrate/20160928000116_add_user_id_to_posts.rb
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 27, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (26/26), done.
+Writing objects: 100% (27/27), 3.49 KiB | 0 bytes/s, done.
+Total 27 (delta 15), reused 0 (delta 0)
+remote: Resolving deltas: 100% (15/15), completed with 15 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   a9deb1f..59df7df  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ gem install "acts_as_commentable"
+Fetching: acts_as_commentable-4.0.2.gem (100%)
+Successfully installed acts_as_commentable-4.0.2
+Parsing documentation for acts_as_commentable-4.0.2
+Installing ri documentation for acts_as_commentable-4.0.2
+Done installing documentation for acts_as_commentable after 1 seconds
+1 gem installed
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails g comment
+Running via Spring preloader in process 14323
+      create  app/models/comment.rb
+      create  db/migrate/20160929235133_create_comments.rb
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake db:migrate
+== 20160929235133 CreateComments: migrating ===================================
+-- create_table(:comments, {})
+   -> 0.0085s
+-- add_index(:comments, :commentable_type)
+   -> 0.0007s
+-- add_index(:comments, :commentable_id)
+   -> 0.0009s
+-- add_index(:comments, :user_id)
+   -> 0.0009s
+== 20160929235133 CreateComments: migrated (0.0112s) ==========================
+
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake db:migrate
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "Added video as background on landing page"
+[master 3203581] Added video as background on landing page
+ 17 files changed, 147 insertions(+), 31 deletions(-)
+ create mode 100644 Final_Project/Wearable/app/assets/images/Fashion_video.mp4
+ create mode 100644 Final_Project/Wearable/app/assets/videos/Fashion_video.mp4
+ create mode 100644 Final_Project/Wearable/app/controllers/comments_controller.rb
+ create mode 100644 Final_Project/Wearable/app/models/comment.rb
+ rewrite Final_Project/Wearable/app/policies/post_policy.rb (78%)
+ create mode 100644 Final_Project/Wearable/db/migrate/20160929235133_create_comments.rb
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 35, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (33/33), done.
+Writing objects: 100% (35/35), 14.51 MiB | 7.10 MiB/s, done.
+Total 35 (delta 23), reused 0 (delta 0)
+remote: Resolving deltas: 100% (23/23), completed with 22 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   59df7df..3203581  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails routes
+                  Prefix Verb   URI Pattern                    Controller#Action
+        new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
+            user_session POST   /users/sign_in(.:format)       devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)      devise/sessions#destroy
+           user_password POST   /users/password(.:format)      devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)  devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format) devise/passwords#edit
+                         PATCH  /users/password(.:format)      devise/passwords#update
+                         PUT    /users/password(.:format)      devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)        devise/registrations#cancel
+       user_registration POST   /users(.:format)               devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)       devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)          devise/registrations#edit
+                         PATCH  /users(.:format)               devise/registrations#update
+                         PUT    /users(.:format)               devise/registrations#update
+                         DELETE /users(.:format)               devise/registrations#destroy
+                    root GET    /                              static_pages#home
+                   about GET    /about(.:format)               static_pages#about
+                 contact GET    /contact(.:format)             static_pages#contact
+                   posts GET    /posts(.:format)               posts#index
+                         POST   /posts(.:format)               posts#create
+                new_post GET    /posts/new(.:format)           posts#new
+               edit_post GET    /posts/:id/edit(.:format)      posts#edit
+                    post GET    /posts/:id(.:format)           posts#show
+                         PATCH  /posts/:id(.:format)           posts#update
+                         PUT    /posts/:id(.:format)           posts#update
+                         DELETE /posts/:id(.:format)           posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails generate migration AddPostRefToComments post:references
+Running via Spring preloader in process 22422
+      invoke  active_record
+      create    db/migrate/20161001213401_add_post_ref_to_comments.rb
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails db:migrate
+== 20161001213401 AddPostRefToComments: migrating =============================
+-- add_reference(:comments, :post, {:foreign_key=>true})
+   -> 0.0638s
+== 20161001213401 AddPostRefToComments: migrated (0.0639s) ====================
+
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake routes
+                  Prefix Verb   URI Pattern                                 Controller#Action
+        new_user_session GET    /users/sign_in(.:format)                    devise/sessions#new
+            user_session POST   /users/sign_in(.:format)                    devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)                   devise/sessions#destroy
+           user_password POST   /users/password(.:format)                   devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)               devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)              devise/passwords#edit
+                         PATCH  /users/password(.:format)                   devise/passwords#update
+                         PUT    /users/password(.:format)                   devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)                     devise/registrations#cancel
+       user_registration POST   /users(.:format)                            devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)                    devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)                       devise/registrations#edit
+                         PATCH  /users(.:format)                            devise/registrations#update
+                         PUT    /users(.:format)                            devise/registrations#update
+                         DELETE /users(.:format)                            devise/registrations#destroy
+                    root GET    /                                           static_pages#home
+                   about GET    /about(.:format)                            static_pages#about
+                 contact GET    /contact(.:format)                          static_pages#contact
+           post_comments GET    /posts/:post_id/comments(.:format)          comments#index
+                         POST   /posts/:post_id/comments(.:format)          comments#create
+        new_post_comment GET    /posts/:post_id/comments/new(.:format)      comments#new
+       edit_post_comment GET    /posts/:post_id/comments/:id/edit(.:format) comments#edit
+            post_comment GET    /posts/:post_id/comments/:id(.:format)      comments#show
+                         PATCH  /posts/:post_id/comments/:id(.:format)      comments#update
+                         PUT    /posts/:post_id/comments/:id(.:format)      comments#update
+                         DELETE /posts/:post_id/comments/:id(.:format)      comments#destroy
+                   posts GET    /posts(.:format)                            posts#index
+                         POST   /posts(.:format)                            posts#create
+                new_post GET    /posts/new(.:format)                        posts#new
+               edit_post GET    /posts/:id/edit(.:format)                   posts#edit
+                    post GET    /posts/:id(.:format)                        posts#show
+                         PATCH  /posts/:id(.:format)                        posts#update
+                         PUT    /posts/:id(.:format)                        posts#update
+                         DELETE /posts/:id(.:format)                        posts#destroy
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails g controller comments
+Running via Spring preloader in process 22821
+      create  app/controllers/comments_controller.rb
+      invoke  erb
+      create    app/views/comments
+      invoke  test_unit
+      create    test/controllers/comments_controller_test.rb
+      invoke  helper
+      create    app/helpers/comments_helper.rb
+      invoke    test_unit
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/comments.coffee
+      invoke    scss
+      create      app/assets/stylesheets/comments.scss
+Melanies-MacBook-Pro:wearable melanieblazevic$ rake db:migrate
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "Post and comment association"
+[master 290151a] Post and comment association
+ 15 files changed, 116 insertions(+), 34 deletions(-)
+ create mode 100644 Final_Project/Wearable/app/assets/javascripts/comments.coffee
+ create mode 100644 Final_Project/Wearable/app/assets/stylesheets/comments.scss
+ rewrite Final_Project/Wearable/app/controllers/comments_controller.rb (95%)
+ create mode 100644 Final_Project/Wearable/app/helpers/comments_helper.rb
+ create mode 100644 Final_Project/Wearable/db/migrate/20161001213401_add_post_ref_to_comments.rb
+ create mode 100644 Final_Project/Wearable/test/controllers/comments_controller_test.rb
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 32, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (31/31), done.
+Writing objects: 100% (32/32), 4.34 KiB | 0 bytes/s, done.
+Total 32 (delta 21), reused 0 (delta 0)
+remote: Resolving deltas: 100% (21/21), completed with 21 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   3203581..290151a  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "Added carousel slider to landing page"
+[master 3d921c6] Added carousel slider to landing page
+ 129 files changed, 30958 insertions(+), 145 deletions(-)
+ create mode 100644 Final_Project/Wearable/app/assets/images/Fashion_apartment.jpg
+ create mode 100644 Final_Project/Wearable/app/assets/images/Fashion_bbq.jpg
+ create mode 100644 Final_Project/Wearable/app/assets/images/Fashion_converse.jpg
+ create mode 100644 Final_Project/Wearable/app/assets/images/Fashion_drummer.jpg
+ create mode 100644 Final_Project/Wearable/app/assets/images/Fashion_hair.jpg
+ delete mode 100644 Final_Project/Wearable/app/assets/images/background.jpg
+ rewrite Final_Project/Wearable/app/views/static_pages/contact.html.erb (76%)
+ rewrite Final_Project/Wearable/app/views/static_pages/home.html.erb (99%)
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/AUTHORS.txt
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/LICENSE.txt
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/README.md
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/bower.json
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/dist/core.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/dist/jquery.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/dist/jquery.min.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/dist/jquery.min.map
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/dist/jquery.slim.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/dist/jquery.slim.min.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/dist/jquery.slim.min.map
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/external/sizzle/LICENSE.txt
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/external/sizzle/dist/sizzle.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/external/sizzle/dist/sizzle.min.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/external/sizzle/dist/sizzle.min.map
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/package.json
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/.eslintrc.json
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/ajax.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/ajax/jsonp.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/ajax/load.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/ajax/parseXML.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/ajax/script.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/ajax/var/location.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/ajax/var/nonce.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/ajax/var/rquery.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/ajax/xhr.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/attributes.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/attributes/attr.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/attributes/classes.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/attributes/prop.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/attributes/support.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/attributes/val.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/callbacks.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core/DOMEval.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core/access.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core/init.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core/parseHTML.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core/ready-no-deferred.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core/ready.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core/readyException.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core/stripAndCollapse.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core/support.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/core/var/rsingleTag.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/addGetHookIf.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/adjustCSS.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/curCSS.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/hiddenVisibleSelectors.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/showHide.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/support.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/var/cssExpand.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/var/getStyles.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/var/isHiddenWithinTree.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/var/rmargin.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/var/rnumnonpx.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/css/var/swap.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/data.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/data/Data.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/data/var/acceptData.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/data/var/dataPriv.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/data/var/dataUser.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/deferred.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/deferred/exceptionHook.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/deprecated.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/dimensions.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/effects.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/effects/Tween.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/effects/animatedSelector.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/event.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/event/ajax.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/event/alias.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/event/focusin.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/event/support.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/event/trigger.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/exports/amd.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/exports/global.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/jquery.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/manipulation.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/manipulation/_evalUrl.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/manipulation/buildFragment.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/manipulation/getAll.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/manipulation/setGlobalEval.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/manipulation/support.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/manipulation/var/rcheckableType.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/manipulation/var/rscriptType.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/manipulation/var/rtagName.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/manipulation/wrapMap.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/offset.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/queue.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/queue/delay.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/selector-native.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/selector-sizzle.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/selector.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/serialize.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/traversing.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/traversing/findFilter.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/traversing/var/dir.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/traversing/var/rneedsContext.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/traversing/var/siblings.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/ObjectFunctionString.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/arr.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/class2type.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/concat.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/document.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/documentElement.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/fnToString.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/getProto.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/hasOwn.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/indexOf.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/pnum.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/push.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/rcssNum.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/rnothtmlwhite.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/slice.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/support.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/var/toString.js
+ create mode 100644 Final_Project/Wearable/node_modules/jquery/src/wrap.js
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 163, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (157/157), done.
+Writing objects: 100% (163/163), 1.81 MiB | 2.62 MiB/s, done.
+Total 163 (delta 15), reused 0 (delta 0)
+remote: Resolving deltas: 100% (15/15), completed with 10 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   290151a..3d921c6  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "Carousel captions"
+[master f034a9f] Carousel captions
+ 3 files changed, 51 insertions(+), 71 deletions(-)
+ create mode 100644 Final_Project/Wearable/app/assets/javascripts/static_pages.js
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 13, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (13/13), 1.48 KiB | 0 bytes/s, done.
+Total 13 (delta 9), reused 0 (delta 0)
+remote: Resolving deltas: 100% (9/9), completed with 9 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   3d921c6..f034a9f  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "Javascript for slider"
+[master 48f36ae] Javascript for slider
+ 2 files changed, 10 insertions(+), 1 deletion(-)
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 11, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (11/11), 834 bytes | 0 bytes/s, done.
+Total 11 (delta 9), reused 0 (delta 0)
+remote: Resolving deltas: 100% (9/9), completed with 9 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   f034a9f..48f36ae  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ git add .
+Melanies-MacBook-Pro:wearable melanieblazevic$ git commit -m "CSS"
+[master 372d6b7] CSS
+ 4 files changed, 19 insertions(+), 15 deletions(-)
+Melanies-MacBook-Pro:wearable melanieblazevic$ git push
+Counting objects: 14, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (13/13), done.
+Writing objects: 100% (14/14), 1.27 KiB | 0 bytes/s, done.
+Total 14 (delta 11), reused 0 (delta 0)
+remote: Resolving deltas: 100% (11/11), completed with 11 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   48f36ae..372d6b7  master -> master
+Melanies-MacBook-Pro:wearable melanieblazevic$ 
+  [Restored Oct 5, 2016, 2:01:32 PM]
+Last login: Wed Oct  5 14:00:11 on console
+Melanies-MacBook-Pro:wearable melanieblazevic$ 

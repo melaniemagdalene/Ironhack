@@ -1,0 +1,963 @@
+Last login: Tue Sep  6 16:34:05 on ttys000
+Melanies-MBP:~ melanieblazevic$ cd desktop/ironhack/final_project
+Melanies-MBP:final_project melanieblazevic$ rails new Wearable
+      create  
+      create  README.md
+      create  Rakefile
+      create  config.ru
+      create  .gitignore
+      create  Gemfile
+      create  app
+      create  app/assets/config/manifest.js
+      create  app/assets/javascripts/application.js
+      create  app/assets/javascripts/cable.js
+      create  app/assets/stylesheets/application.css
+      create  app/channels/application_cable/channel.rb
+      create  app/channels/application_cable/connection.rb
+      create  app/controllers/application_controller.rb
+      create  app/helpers/application_helper.rb
+      create  app/jobs/application_job.rb
+      create  app/mailers/application_mailer.rb
+      create  app/models/application_record.rb
+      create  app/views/layouts/application.html.erb
+      create  app/views/layouts/mailer.html.erb
+      create  app/views/layouts/mailer.text.erb
+      create  app/assets/images/.keep
+      create  app/assets/javascripts/channels
+      create  app/assets/javascripts/channels/.keep
+      create  app/controllers/concerns/.keep
+      create  app/models/concerns/.keep
+      create  bin
+      create  bin/bundle
+      create  bin/rails
+      create  bin/rake
+      create  bin/setup
+      create  bin/update
+      create  config
+      create  config/routes.rb
+      create  config/application.rb
+      create  config/environment.rb
+      create  config/secrets.yml
+      create  config/cable.yml
+      create  config/puma.rb
+      create  config/spring.rb
+      create  config/environments
+      create  config/environments/development.rb
+      create  config/environments/production.rb
+      create  config/environments/test.rb
+      create  config/initializers
+      create  config/initializers/application_controller_renderer.rb
+      create  config/initializers/assets.rb
+      create  config/initializers/backtrace_silencers.rb
+      create  config/initializers/cookies_serializer.rb
+      create  config/initializers/cors.rb
+      create  config/initializers/filter_parameter_logging.rb
+      create  config/initializers/inflections.rb
+      create  config/initializers/mime_types.rb
+      create  config/initializers/new_framework_defaults.rb
+      create  config/initializers/session_store.rb
+      create  config/initializers/wrap_parameters.rb
+      create  config/locales
+      create  config/locales/en.yml
+      create  config/boot.rb
+      create  config/database.yml
+      create  db
+      create  db/seeds.rb
+      create  lib
+      create  lib/tasks
+      create  lib/tasks/.keep
+      create  lib/assets
+      create  lib/assets/.keep
+      create  log
+      create  log/.keep
+      create  public
+      create  public/404.html
+      create  public/422.html
+      create  public/500.html
+      create  public/apple-touch-icon-precomposed.png
+      create  public/apple-touch-icon.png
+      create  public/favicon.ico
+      create  public/robots.txt
+      create  test/fixtures
+      create  test/fixtures/.keep
+      create  test/fixtures/files
+      create  test/fixtures/files/.keep
+      create  test/controllers
+      create  test/controllers/.keep
+      create  test/mailers
+      create  test/mailers/.keep
+      create  test/models
+      create  test/models/.keep
+      create  test/helpers
+      create  test/helpers/.keep
+      create  test/integration
+      create  test/integration/.keep
+      create  test/test_helper.rb
+      create  tmp
+      create  tmp/.keep
+      create  tmp/cache
+      create  tmp/cache/assets
+      create  vendor/assets/javascripts
+      create  vendor/assets/javascripts/.keep
+      create  vendor/assets/stylesheets
+      create  vendor/assets/stylesheets/.keep
+      remove  config/initializers/cors.rb
+         run  bundle install
+Fetching gem metadata from https://rubygems.org/
+Fetching version metadata from https://rubygems.org/
+Fetching dependency metadata from https://rubygems.org/
+Resolving dependencies..................
+Using rake 11.2.2
+Using concurrent-ruby 1.0.2
+Using i18n 0.7.0
+Using minitest 5.9.0
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using pkg-config 1.1.7
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.1
+Using bundler 1.12.5
+Using byebug 9.0.5
+Using coffee-script-source 1.10.0
+Using execjs 2.7.0
+Using method_source 0.8.2
+Using thor 0.19.1
+Using debug_inspector 0.0.2
+Using ffi 1.9.14
+Using multi_json 1.12.1
+Using rb-fsevent 0.9.7
+Using puma 3.6.0
+Using sass 3.4.22
+Using tilt 2.0.5
+Using spring 1.7.2
+Using sqlite3 1.3.11
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.6.8
+Using rack-test 0.6.3
+Using sprockets 3.7.0
+Using websocket-driver 0.6.4
+Using mime-types 3.1
+Using coffee-script 2.4.1
+Using uglifier 3.0.2
+Using rb-inotify 0.9.7
+Using turbolinks 5.0.1
+Using activesupport 5.0.0.1
+Using loofah 2.0.3
+Using mail 2.6.4
+Using listen 3.0.8
+Using rails-dom-testing 2.0.1
+Using globalid 0.3.7
+Using activemodel 5.0.0.1
+Using jbuilder 2.6.0
+Using rails-html-sanitizer 1.0.3
+Using spring-watcher-listen 2.0.0
+Using activejob 5.0.0.1
+Using activerecord 5.0.0.1
+Using actionview 5.0.0.1
+Using actionpack 5.0.0.1
+Using actioncable 5.0.0.1
+Using actionmailer 5.0.0.1
+Using railties 5.0.0.1
+Using sprockets-rails 3.2.0
+Using coffee-rails 4.2.1
+Using jquery-rails 4.2.1
+Using web-console 3.3.1
+Using rails 5.0.0.1
+Using sass-rails 5.0.6
+Bundle complete! 15 Gemfile dependencies, 63 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+         run  bundle exec spring binstub --all
+* bin/rake: spring inserted
+* bin/rails: spring inserted
+Melanies-MBP:final_project melanieblazevic$ cd wearable
+Melanies-MBP:wearable melanieblazevic$ rails generate controller Users new
+Running via Spring preloader in process 14577
+      create  app/controllers/users_controller.rb
+       route  get 'users/new'
+      invoke  erb
+      create    app/views/users
+      create    app/views/users/new.html.erb
+      invoke  test_unit
+      create    test/controllers/users_controller_test.rb
+      invoke  helper
+      create    app/helpers/users_helper.rb
+      invoke    test_unit
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/users.coffee
+      invoke    scss
+      create      app/assets/stylesheets/users.scss
+Melanies-MBP:wearable melanieblazevic$ rails generate model User name:string email:string
+Running via Spring preloader in process 14593
+      invoke  active_record
+      create    db/migrate/20160906205501_create_users.rb
+      create    app/models/user.rb
+      invoke    test_unit
+      create      test/models/user_test.rb
+      create      test/fixtures/users.yml
+Melanies-MBP:wearable melanieblazevic$ rails db:migrate
+== 20160906205501 CreateUsers: migrating ======================================
+-- create_table(:users)
+   -> 0.0018s
+== 20160906205501 CreateUsers: migrated (0.0019s) =============================
+
+Melanies-MBP:wearable melanieblazevic$ rails generate controller Posts
+Running via Spring preloader in process 14734
+      create  app/controllers/posts_controller.rb
+      invoke  erb
+      create    app/views/posts
+      invoke  test_unit
+      create    test/controllers/posts_controller_test.rb
+      invoke  helper
+      create    app/helpers/posts_helper.rb
+      invoke    test_unit
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/posts.coffee
+      invoke    scss
+      create      app/assets/stylesheets/posts.scss
+Melanies-MBP:wearable melanieblazevic$ rails generate model Post title:string description:string
+Running via Spring preloader in process 14752
+      invoke  active_record
+      create    db/migrate/20160906210839_create_posts.rb
+      create    app/models/post.rb
+      invoke    test_unit
+      create      test/models/post_test.rb
+      create      test/fixtures/posts.yml
+Melanies-MBP:wearable melanieblazevic$ rails db:migrate
+== 20160906210839 CreatePosts: migrating ======================================
+-- create_table(:posts)
+   -> 0.0065s
+== 20160906210839 CreatePosts: migrated (0.0066s) =============================
+
+Melanies-MBP:wearable melanieblazevic$ subl -n .
+Melanies-MBP:wearable melanieblazevic$ rake routes
+   Prefix Verb URI Pattern          Controller#Action
+users_new GET  /users/new(.:format) users#new
+Melanies-MBP:wearable melanieblazevic$ bundle exec rake db:migrate
+Melanies-MBP:wearable melanieblazevic$ bundle exec rake test:models
+Run options: --seed 63654
+
+# Running:
+
+..
+
+Finished in 0.201626s, 9.9193 runs/s, 9.9193 assertions/s.
+
+2 runs, 2 assertions, 0 failures, 0 errors, 0 skips
+Melanies-MBP:wearable melanieblazevic$ rails generate controller Home index
+Running via Spring preloader in process 16391
+      create  app/controllers/home_controller.rb
+       route  get 'home/index'
+      invoke  erb
+      create    app/views/home
+      create    app/views/home/index.html.erb
+      invoke  test_unit
+      create    test/controllers/home_controller_test.rb
+      invoke  helper
+      create    app/helpers/home_helper.rb
+      invoke    test_unit
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/home.coffee
+      invoke    scss
+      create      app/assets/stylesheets/home.scss
+Melanies-MBP:wearable melanieblazevic$ rake routes
+       Prefix Verb   URI Pattern                         Controller#Action
+   home_index GET    /home/index(.:format)               home#index
+    users_new GET    /users/new(.:format)                users#new
+              GET    /home/index(.:format)               home#index
+         root GET    /                                   home#index
+   user_posts GET    /users/:user_id/posts(.:format)     posts#index
+              POST   /users/:user_id/posts(.:format)     posts#create
+new_user_post GET    /users/:user_id/posts/new(.:format) posts#new
+    user_post GET    /users/:user_id/posts/:id(.:format) posts#show
+        users POST   /users(.:format)                    users#create
+     new_user GET    /users/new(.:format)                users#new
+         user GET    /users/:id(.:format)                users#show
+              DELETE /users/:id(.:format)                users#destroy
+Melanies-MBP:wearable melanieblazevic$ git add .
+Melanies-MBP:wearable melanieblazevic$ git commit -m "Generated User/Post model and controller. Configured routes and started index page."
+[master fbb878b] Generated User/Post model and controller. Configured routes and started index page.
+ 111 files changed, 1499 insertions(+)
+ create mode 100644 Final_Project/Wearable/.gitignore
+ create mode 100644 Final_Project/Wearable/Gemfile
+ create mode 100644 Final_Project/Wearable/Gemfile.lock
+ create mode 100644 Final_Project/Wearable/README.md
+ create mode 100644 Final_Project/Wearable/Rakefile
+ create mode 100644 Final_Project/Wearable/app/assets/config/manifest.js
+ create mode 100644 Final_Project/Wearable/app/assets/images/.keep
+ create mode 100644 Final_Project/Wearable/app/assets/images/Wearable_Logo.png
+ create mode 100644 Final_Project/Wearable/app/assets/javascripts/application.js
+ create mode 100644 Final_Project/Wearable/app/assets/javascripts/cable.js
+ create mode 100644 Final_Project/Wearable/app/assets/javascripts/channels/.keep
+ create mode 100644 Final_Project/Wearable/app/assets/javascripts/home.coffee
+ create mode 100644 Final_Project/Wearable/app/assets/javascripts/posts.coffee
+ create mode 100644 Final_Project/Wearable/app/assets/javascripts/users.coffee
+ create mode 100644 Final_Project/Wearable/app/assets/stylesheets/application.css
+ create mode 100644 Final_Project/Wearable/app/assets/stylesheets/home.scss
+ create mode 100644 Final_Project/Wearable/app/assets/stylesheets/posts.scss
+ create mode 100644 Final_Project/Wearable/app/assets/stylesheets/style.css
+ create mode 100644 Final_Project/Wearable/app/assets/stylesheets/users.scss
+ create mode 100644 Final_Project/Wearable/app/channels/application_cable/channel.rb
+ create mode 100644 Final_Project/Wearable/app/channels/application_cable/connection.rb
+ create mode 100644 Final_Project/Wearable/app/controllers/application_controller.rb
+ create mode 100644 Final_Project/Wearable/app/controllers/concerns/.keep
+ create mode 100644 Final_Project/Wearable/app/controllers/home_controller.rb
+ create mode 100644 Final_Project/Wearable/app/controllers/posts_controller.rb
+ create mode 100644 Final_Project/Wearable/app/controllers/users_controller.rb
+ create mode 100644 Final_Project/Wearable/app/helpers/application_helper.rb
+ create mode 100644 Final_Project/Wearable/app/helpers/home_helper.rb
+ create mode 100644 Final_Project/Wearable/app/helpers/posts_helper.rb
+ create mode 100644 Final_Project/Wearable/app/helpers/users_helper.rb
+ create mode 100644 Final_Project/Wearable/app/jobs/application_job.rb
+ create mode 100644 Final_Project/Wearable/app/mailers/application_mailer.rb
+ create mode 100644 Final_Project/Wearable/app/models/application_record.rb
+ create mode 100644 Final_Project/Wearable/app/models/concerns/.keep
+ create mode 100644 Final_Project/Wearable/app/models/post.rb
+ create mode 100644 Final_Project/Wearable/app/models/user.rb
+ create mode 100644 Final_Project/Wearable/app/views/home/index.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/layouts/application.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/layouts/mailer.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/layouts/mailer.text.erb
+ create mode 100644 Final_Project/Wearable/app/views/posts/new.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/shared/_navbar.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/static_pages/about.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/static_pages/contact.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/static_pages/post.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/static_pages/register.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/static_pages/sign_in.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/users/new.html.erb
+ create mode 100755 Final_Project/Wearable/bin/bundle
+ create mode 100755 Final_Project/Wearable/bin/rails
+ create mode 100755 Final_Project/Wearable/bin/rake
+ create mode 100755 Final_Project/Wearable/bin/setup
+ create mode 100755 Final_Project/Wearable/bin/spring
+ create mode 100755 Final_Project/Wearable/bin/update
+ create mode 100644 Final_Project/Wearable/config.ru
+ create mode 100644 Final_Project/Wearable/config/application.rb
+ create mode 100644 Final_Project/Wearable/config/boot.rb
+ create mode 100644 Final_Project/Wearable/config/cable.yml
+ create mode 100644 Final_Project/Wearable/config/database.yml
+ create mode 100644 Final_Project/Wearable/config/environment.rb
+ create mode 100644 Final_Project/Wearable/config/environments/development.rb
+ create mode 100644 Final_Project/Wearable/config/environments/production.rb
+ create mode 100644 Final_Project/Wearable/config/environments/test.rb
+ create mode 100644 Final_Project/Wearable/config/initializers/application_controller_renderer.rb
+ create mode 100644 Final_Project/Wearable/config/initializers/assets.rb
+ create mode 100644 Final_Project/Wearable/config/initializers/backtrace_silencers.rb
+ create mode 100644 Final_Project/Wearable/config/initializers/cookies_serializer.rb
+ create mode 100644 Final_Project/Wearable/config/initializers/filter_parameter_logging.rb
+ create mode 100644 Final_Project/Wearable/config/initializers/inflections.rb
+ create mode 100644 Final_Project/Wearable/config/initializers/mime_types.rb
+ create mode 100644 Final_Project/Wearable/config/initializers/new_framework_defaults.rb
+ create mode 100644 Final_Project/Wearable/config/initializers/session_store.rb
+ create mode 100644 Final_Project/Wearable/config/initializers/wrap_parameters.rb
+ create mode 100644 Final_Project/Wearable/config/locales/en.bootstrap.yml
+ create mode 100644 Final_Project/Wearable/config/locales/en.yml
+ create mode 100644 Final_Project/Wearable/config/puma.rb
+ create mode 100644 Final_Project/Wearable/config/routes.rb
+ create mode 100644 Final_Project/Wearable/config/secrets.yml
+ create mode 100644 Final_Project/Wearable/config/spring.rb
+ create mode 100644 Final_Project/Wearable/db/migrate/20160906205501_create_users.rb
+ create mode 100644 Final_Project/Wearable/db/migrate/20160906210839_create_posts.rb
+ create mode 100644 Final_Project/Wearable/db/schema.rb
+ create mode 100644 Final_Project/Wearable/db/seeds.rb
+ create mode 100644 Final_Project/Wearable/lib/assets/.keep
+ create mode 100644 Final_Project/Wearable/lib/tasks/.keep
+ create mode 100644 Final_Project/Wearable/log/.keep
+ create mode 100644 Final_Project/Wearable/public/404.html
+ create mode 100644 Final_Project/Wearable/public/422.html
+ create mode 100644 Final_Project/Wearable/public/500.html
+ create mode 100644 Final_Project/Wearable/public/apple-touch-icon-precomposed.png
+ create mode 100644 Final_Project/Wearable/public/apple-touch-icon.png
+ create mode 100644 Final_Project/Wearable/public/favicon.ico
+ create mode 100644 Final_Project/Wearable/public/robots.txt
+ create mode 100644 Final_Project/Wearable/test/controllers/.keep
+ create mode 100644 Final_Project/Wearable/test/controllers/home_controller_test.rb
+ create mode 100644 Final_Project/Wearable/test/controllers/posts_controller_test.rb
+ create mode 100644 Final_Project/Wearable/test/controllers/users_controller_test.rb
+ create mode 100644 Final_Project/Wearable/test/fixtures/.keep
+ create mode 100644 Final_Project/Wearable/test/fixtures/files/.keep
+ create mode 100644 Final_Project/Wearable/test/fixtures/posts.yml
+ create mode 100644 Final_Project/Wearable/test/fixtures/users.yml
+ create mode 100644 Final_Project/Wearable/test/helpers/.keep
+ create mode 100644 Final_Project/Wearable/test/integration/.keep
+ create mode 100644 Final_Project/Wearable/test/mailers/.keep
+ create mode 100644 Final_Project/Wearable/test/models/.keep
+ create mode 100644 Final_Project/Wearable/test/models/post_test.rb
+ create mode 100644 Final_Project/Wearable/test/models/user_test.rb
+ create mode 100644 Final_Project/Wearable/test/test_helper.rb
+ create mode 100644 Final_Project/Wearable/tmp/.keep
+ create mode 100644 Final_Project/Wearable/vendor/assets/javascripts/.keep
+ create mode 100644 Final_Project/Wearable/vendor/assets/stylesheets/.keep
+Melanies-MBP:wearable melanieblazevic$ git push
+Counting objects: 60, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (53/53), done.
+Writing objects: 100% (60/60), 17.15 KiB | 0 bytes/s, done.
+Total 60 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 1 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   f5feebd..fbb878b  master -> master
+Melanies-MBP:wearable melanieblazevic$ git add .
+Melanies-MBP:wearable melanieblazevic$ git commit -m "HTML and CSS for index page"
+[master 37b450f] HTML and CSS for index page
+ 7 files changed, 148 insertions(+), 97 deletions(-)
+ create mode 100644 Final_Project/Wearable/app/assets/images/background.jpg
+ rewrite Final_Project/Wearable/app/assets/stylesheets/style.css (64%)
+ rewrite Final_Project/Wearable/app/views/layouts/application.html.erb (84%)
+ rewrite Final_Project/Wearable/app/views/shared/_navbar.html.erb (98%)
+Melanies-MBP:wearable melanieblazevic$ git push
+Counting objects: 19, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (16/16), done.
+Writing objects: 100% (19/19), 194.62 KiB | 0 bytes/s, done.
+Total 19 (delta 9), reused 0 (delta 0)
+remote: Resolving deltas: 100% (9/9), completed with 9 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   fbb878b..37b450f  master -> master
+Melanies-MBP:wearable melanieblazevic$ git reset --hard HEAD
+Checking out files: 100% (157/157), done.
+HEAD is now at 37b450f HTML and CSS for index page
+Melanies-MBP:wearable melanieblazevic$ bundle install
+Using rake 11.2.2
+Using concurrent-ruby 1.0.2
+Using i18n 0.7.0
+Using minitest 5.9.0
+Using thread_safe 0.3.5
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile2 2.1.0
+Using pkg-config 1.1.7
+Using rack 2.0.1
+Using nio4r 1.2.1
+Using websocket-extensions 0.1.2
+Using mime-types-data 3.2016.0521
+Using arel 7.1.1
+Using bcrypt 3.1.11
+Using byebug 9.0.5
+Using coffee-script-source 1.10.0
+Using execjs 2.7.0
+Using method_source 0.8.2
+Using thor 0.19.1
+Using debug_inspector 0.0.2
+Using orm_adapter 0.5.0
+Using ffi 1.9.14
+Using multi_json 1.12.1
+Using rb-fsevent 0.9.7
+Using puma 3.6.0
+Using bundler 1.12.5
+Using sass 3.4.22
+Using tilt 2.0.5
+Using spring 1.7.2
+Using sqlite3 1.3.11
+Using turbolinks-source 5.0.0
+Using tzinfo 1.2.2
+Using nokogiri 1.6.8
+Using rack-test 0.6.3
+Using warden 1.2.6
+Using sprockets 3.7.0
+Using websocket-driver 0.6.4
+Using mime-types 3.1
+Using coffee-script 2.4.1
+Using uglifier 3.0.2
+Using rb-inotify 0.9.7
+Using turbolinks 5.0.1
+Using activesupport 5.0.0.1
+Using loofah 2.0.3
+Using mail 2.6.4
+Using listen 3.0.8
+Using rails-dom-testing 2.0.1
+Using globalid 0.3.7
+Using activemodel 5.0.0.1
+Using jbuilder 2.6.0
+Using rails-html-sanitizer 1.0.3
+Using spring-watcher-listen 2.0.0
+Using activejob 5.0.0.1
+Using activerecord 5.0.0.1
+Using actionview 5.0.0.1
+Using actionpack 5.0.0.1
+Using actioncable 5.0.0.1
+Using actionmailer 5.0.0.1
+Using railties 5.0.0.1
+Using sprockets-rails 3.2.0
+Using coffee-rails 4.2.1
+Using responders 2.3.0
+Using jquery-rails 4.2.1
+Using web-console 3.3.1
+Using rails 5.0.0.1
+Using sass-rails 5.0.6
+Using devise 4.2.0
+Bundle complete! 16 Gemfile dependencies, 68 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
+Melanies-MBP:wearable melanieblazevic$ rails generate devise:install
+Running via Spring preloader in process 36090
+    conflict  config/initializers/devise.rb
+Cannot read termcap database;
+using dumb terminal settings.
+Overwrite /Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/config/initializers/devise.rb? (enter "h" for help) [Ynaqdh] 
+       force  config/initializers/devise.rb
+   identical  config/locales/devise.en.yml
+===============================================================================
+
+Some setup you must do manually if you haven't yet:
+
+  1. Ensure you have defined default url options in your environments files. Here
+     is an example of default_url_options appropriate for a development environment
+     in config/environments/development.rb:
+
+       config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+
+     In production, :host should be set to the actual host of your application.
+
+  2. Ensure you have defined root_url to *something* in your config/routes.rb.
+     For example:
+
+       root to: "home#index"
+
+  3. Ensure you have flash messages in app/views/layouts/application.html.erb.
+     For example:
+
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+
+  4. You can copy Devise views (for customization) to your app by running:
+
+       rails g devise:views
+
+===============================================================================
+Melanies-MBP:wearable melanieblazevic$ rails generate devise User name:string
+Running via Spring preloader in process 36156
+      invoke  active_record
+   identical    db/migrate/20160914012041_add_devise_to_users.rb
+      insert    app/models/user.rb
+       route  devise_for :users
+Melanies-MBP:wearable melanieblazevic$ rake db:migrate
+== 20160914012041 AddDeviseToUsers: migrating =================================
+-- change_table(:users)
+rake aborted!
+StandardError: An error has occurred, this and all later migrations canceled:
+
+SQLite3::SQLException: duplicate column name: email: ALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:5:in `block in up'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:3:in `up'
+ActiveRecord::StatementInvalid: SQLite3::SQLException: duplicate column name: email: ALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:5:in `block in up'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:3:in `up'
+SQLite3::SQLException: duplicate column name: email
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:5:in `block in up'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:3:in `up'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+Melanies-MBP:wearable melanieblazevic$ rails d migration create_users
+Running via Spring preloader in process 36257
+      invoke  active_record
+      remove    db/migrate/20160906205501_create_users.rb
+Melanies-MBP:wearable melanieblazevic$ rails db:drop db:create db:migrate
+rails aborted!
+ActiveRecord::NoEnvironmentInSchemaError: 
+
+Environment data not found in the schema. To resolve this issue, run: 
+
+	bin/rails db:environment:set RAILS_ENV=development
+
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `require'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `<top (required)>'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/spring:13:in `<top (required)>'
+bin/rails:3:in `load'
+bin/rails:3:in `<main>'
+Tasks: TOP => db:drop => db:check_protected_environments
+(See full trace by running task with --trace)
+Melanies-MBP:wearable melanieblazevic$ bin/rails db:environment:set RAILS_ENV=development
+	bin/rails db:environment:set RAILS_ENV=development
+
+Melanies-MBP:wearable melanieblazevic$ bin/rails db:environment:set RAILS_ENV=development
+Melanies-MBP:wearable melanieblazevic$ 
+Melanies-MBP:wearable melanieblazevic$ rails db:drop db:create db:migrate
+Dropped database 'db/development.sqlite3'
+Dropped database 'db/test.sqlite3'
+Created database 'db/development.sqlite3'
+Created database 'db/test.sqlite3'
+== 20160906210839 CreatePosts: migrating ======================================
+-- create_table(:posts)
+   -> 0.0016s
+== 20160906210839 CreatePosts: migrated (0.0017s) =============================
+
+== 20160914012041 AddDeviseToUsers: migrating =================================
+-- change_table(:users)
+rails aborted!
+StandardError: An error has occurred, this and all later migrations canceled:
+
+SQLite3::SQLException: no such table: users: ALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:5:in `block in up'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:3:in `up'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `require'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `<top (required)>'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/spring:13:in `<top (required)>'
+bin/rails:3:in `load'
+bin/rails:3:in `<main>'
+ActiveRecord::StatementInvalid: SQLite3::SQLException: no such table: users: ALTER TABLE "users" ADD "email" varchar DEFAULT '' NOT NULL
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:5:in `block in up'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:3:in `up'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `require'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `<top (required)>'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/spring:13:in `<top (required)>'
+bin/rails:3:in `load'
+bin/rails:3:in `<main>'
+SQLite3::SQLException: no such table: users
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:5:in `block in up'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb:3:in `up'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `require'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `<top (required)>'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/spring:13:in `<top (required)>'
+bin/rails:3:in `load'
+bin/rails:3:in `<main>'
+Tasks: TOP => db:migrate
+(See full trace by running task with --trace)
+Melanies-MBP:wearable melanieblazevic$ rails db:drop db:create db:migrate
+rails aborted!
+ActiveRecord::NoEnvironmentInSchemaError: 
+
+Environment data not found in the schema. To resolve this issue, run: 
+
+	bin/rails db:environment:set RAILS_ENV=development
+
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `require'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `<top (required)>'
+/Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/spring:13:in `<top (required)>'
+bin/rails:3:in `load'
+bin/rails:3:in `<main>'
+Tasks: TOP => db:drop => db:check_protected_environments
+(See full trace by running task with --trace)
+Melanies-MBP:wearable melanieblazevic$ bin/rails db:environment:set RAILS_ENV=development
+Melanies-MBP:wearable melanieblazevic$ rails db:drop db:create db:migrate
+Dropped database 'db/development.sqlite3'
+Dropped database 'db/test.sqlite3'
+Created database 'db/development.sqlite3'
+Created database 'db/test.sqlite3'
+== 20160906210839 CreatePosts: migrating ======================================
+-- create_table(:posts)
+   -> 0.0017s
+== 20160906210839 CreatePosts: migrated (0.0017s) =============================
+
+== 20160914012041 AddDeviseToUsers: migrating =================================
+-- create_table(:users)
+   -> 0.0017s
+-- add_index(:users, :email, {:unique=>true})
+   -> 0.0010s
+-- add_index(:users, :reset_password_token, {:unique=>true})
+   -> 0.0010s
+== 20160914012041 AddDeviseToUsers: migrated (0.0039s) ========================
+
+Melanies-MBP:wearable melanieblazevic$ rake routes
+                  Prefix Verb   URI Pattern                              Controller#Action
+        new_user_session GET    /users/sign_in(.:format)                 devise/sessions#new
+            user_session POST   /users/sign_in(.:format)                 devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)                devise/sessions#destroy
+           user_password POST   /users/password(.:format)                devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)            devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)           devise/passwords#edit
+                         PATCH  /users/password(.:format)                devise/passwords#update
+                         PUT    /users/password(.:format)                devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)                  devise/registrations#cancel
+       user_registration POST   /users(.:format)                         devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)                 devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)                    devise/registrations#edit
+                         PATCH  /users(.:format)                         devise/registrations#update
+                         PUT    /users(.:format)                         devise/registrations#update
+                         DELETE /users(.:format)                         devise/registrations#destroy
+                    root GET    /                                        home#index
+              user_posts GET    /users/:user_id/posts(.:format)          posts#index
+                         POST   /users/:user_id/posts(.:format)          posts#create
+           new_user_post GET    /users/:user_id/posts/new(.:format)      posts#new
+          edit_user_post GET    /users/:user_id/posts/:id/edit(.:format) posts#edit
+               user_post GET    /users/:user_id/posts/:id(.:format)      posts#show
+                         PATCH  /users/:user_id/posts/:id(.:format)      posts#update
+                         PUT    /users/:user_id/posts/:id(.:format)      posts#update
+                         DELETE /users/:user_id/posts/:id(.:format)      posts#destroy
+                   users GET    /users(.:format)                         users#index
+                         POST   /users(.:format)                         users#create
+                new_user GET    /users/new(.:format)                     users#new
+               edit_user GET    /users/:id/edit(.:format)                users#edit
+                    user GET    /users/:id(.:format)                     users#show
+                         PATCH  /users/:id(.:format)                     users#update
+Melanies-MBP:wearable melanieblazevic$ rails g devise:views
+Running via Spring preloader in process 36657
+      invoke  Devise::Generators::SharedViewsGenerator
+      create    app/views/devise/shared
+      create    app/views/devise/shared/_links.html.erb
+      invoke  form_for
+      create    app/views/devise/confirmations
+      create    app/views/devise/confirmations/new.html.erb
+      create    app/views/devise/passwords
+      create    app/views/devise/passwords/edit.html.erb
+      create    app/views/devise/passwords/new.html.erb
+      create    app/views/devise/registrations
+      create    app/views/devise/registrations/edit.html.erb
+      create    app/views/devise/registrations/new.html.erb
+      create    app/views/devise/sessions
+      create    app/views/devise/sessions/new.html.erb
+      create    app/views/devise/unlocks
+      create    app/views/devise/unlocks/new.html.erb
+      invoke  erb
+      create    app/views/devise/mailer
+      create    app/views/devise/mailer/confirmation_instructions.html.erb
+      create    app/views/devise/mailer/password_change.html.erb
+      create    app/views/devise/mailer/reset_password_instructions.html.erb
+      create    app/views/devise/mailer/unlock_instructions.html.erb
+Melanies-MBP:wearable melanieblazevic$ git add .
+Melanies-MBP:wearable melanieblazevic$ git commit -m "Added devise authentication"
+[master f7e6b1c] Added devise authentication
+ 23 files changed, 649 insertions(+), 15 deletions(-)
+ create mode 100644 Final_Project/Wearable/app/views/devise/confirmations/new.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/mailer/confirmation_instructions.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/mailer/password_change.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/mailer/reset_password_instructions.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/mailer/unlock_instructions.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/passwords/edit.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/passwords/new.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/registrations/edit.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/registrations/new.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/sessions/new.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/shared/_links.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/devise/unlocks/new.html.erb
+ create mode 100644 Final_Project/Wearable/config/initializers/devise.rb
+ create mode 100644 Final_Project/Wearable/config/locales/devise.en.yml
+ delete mode 100644 Final_Project/Wearable/db/migrate/20160906205501_create_users.rb
+ create mode 100644 Final_Project/Wearable/db/migrate/20160914012041_add_devise_to_users.rb
+Melanies-MBP:wearable melanieblazevic$ git push
+Counting objects: 23, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (22/22), done.
+Writing objects: 100% (23/23), 7.85 KiB | 0 bytes/s, done.
+Total 23 (delta 15), reused 0 (delta 0)
+remote: Resolving deltas: 100% (15/15), completed with 15 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   37b450f..f7e6b1c  master -> master
+Melanies-MBP:wearable melanieblazevic$ rails generate controller Sessions new
+Running via Spring preloader in process 37273
+      create  app/controllers/sessions_controller.rb
+       route  get 'sessions/new'
+      invoke  erb
+      create    app/views/sessions
+      create    app/views/sessions/new.html.erb
+      invoke  test_unit
+      create    test/controllers/sessions_controller_test.rb
+      invoke  helper
+      create    app/helpers/sessions_helper.rb
+      invoke    test_unit
+      invoke  assets
+      invoke    coffee
+      create      app/assets/javascripts/sessions.coffee
+      invoke    scss
+      create      app/assets/stylesheets/sessions.scss
+Melanies-MBP:wearable melanieblazevic$ rake routes
+                  Prefix Verb   URI Pattern                              Controller#Action
+            sessions_new GET    /sessions/new(.:format)                  sessions#new
+        new_user_session GET    /users/sign_in(.:format)                 devise/sessions#new
+            user_session POST   /users/sign_in(.:format)                 devise/sessions#create
+    destroy_user_session DELETE /users/sign_out(.:format)                devise/sessions#destroy
+           user_password POST   /users/password(.:format)                devise/passwords#create
+       new_user_password GET    /users/password/new(.:format)            devise/passwords#new
+      edit_user_password GET    /users/password/edit(.:format)           devise/passwords#edit
+                         PATCH  /users/password(.:format)                devise/passwords#update
+                         PUT    /users/password(.:format)                devise/passwords#update
+cancel_user_registration GET    /users/cancel(.:format)                  devise/registrations#cancel
+       user_registration POST   /users(.:format)                         devise/registrations#create
+   new_user_registration GET    /users/sign_up(.:format)                 devise/registrations#new
+  edit_user_registration GET    /users/edit(.:format)                    devise/registrations#edit
+                         PATCH  /users(.:format)                         devise/registrations#update
+                         PUT    /users(.:format)                         devise/registrations#update
+                         DELETE /users(.:format)                         devise/registrations#destroy
+                    root GET    /                                        home#index
+              user_posts GET    /users/:user_id/posts(.:format)          posts#index
+                         POST   /users/:user_id/posts(.:format)          posts#create
+           new_user_post GET    /users/:user_id/posts/new(.:format)      posts#new
+          edit_user_post GET    /users/:user_id/posts/:id/edit(.:format) posts#edit
+               user_post GET    /users/:user_id/posts/:id(.:format)      posts#show
+                         PATCH  /users/:user_id/posts/:id(.:format)      posts#update
+                         PUT    /users/:user_id/posts/:id(.:format)      posts#update
+                         DELETE /users/:user_id/posts/:id(.:format)      posts#destroy
+                   users GET    /users(.:format)                         users#index
+                         POST   /users(.:format)                         users#create
+                new_user GET    /users/new(.:format)                     users#new
+               edit_user GET    /users/:id/edit(.:format)                users#edit
+                    user GET    /users/:id(.:format)                     users#show
+                         PATCH  /users/:id(.:format)                     users#update
+                         PUT    /users/:id(.:format)                     users#update
+                         DELETE /users/:id(.:format)                     users#destroy
+Melanies-MBP:wearable melanieblazevic$ rake routes
+        Prefix Verb   URI Pattern                              Controller#Action
+          root GET    /                                        static_pages#home
+          help GET    /help(.:format)                          static_pages#help
+         about GET    /about(.:format)                         static_pages#about
+       contact GET    /contact(.:format)                       static_pages#contact
+        signup GET    /signup(.:format)                        users#new
+         login GET    /login(.:format)                         sessions#new
+               POST   /login(.:format)                         sessions#create
+        logout DELETE /logout(.:format)                        sessions#destroy
+    user_posts GET    /users/:user_id/posts(.:format)          posts#index
+               POST   /users/:user_id/posts(.:format)          posts#create
+ new_user_post GET    /users/:user_id/posts/new(.:format)      posts#new
+edit_user_post GET    /users/:user_id/posts/:id/edit(.:format) posts#edit
+     user_post GET    /users/:user_id/posts/:id(.:format)      posts#show
+               PATCH  /users/:user_id/posts/:id(.:format)      posts#update
+               PUT    /users/:user_id/posts/:id(.:format)      posts#update
+               DELETE /users/:user_id/posts/:id(.:format)      posts#destroy
+         users GET    /users(.:format)                         users#index
+               POST   /users(.:format)                         users#create
+      new_user GET    /users/new(.:format)                     users#new
+     edit_user GET    /users/:id/edit(.:format)                users#edit
+          user GET    /users/:id(.:format)                     users#show
+               PATCH  /users/:id(.:format)                     users#update
+               PUT    /users/:id(.:format)                     users#update
+               DELETE /users/:id(.:format)                     users#destroy
+Melanies-MBP:wearable melanieblazevic$ git add .
+Melanies-MBP:wearable melanieblazevic$ git commit -m "Generated Sessions controller, configured routes and created page templates"
+[master 1344830] Generated Sessions controller, configured routes and created page templates
+ 16 files changed, 97 insertions(+), 47 deletions(-)
+ create mode 100644 Final_Project/Wearable/app/assets/javascripts/sessions.coffee
+ create mode 100644 Final_Project/Wearable/app/assets/stylesheets/sessions.scss
+ create mode 100644 Final_Project/Wearable/app/controllers/sessions_controller.rb
+ create mode 100644 Final_Project/Wearable/app/controllers/static_pages_controller.rb
+ create mode 100644 Final_Project/Wearable/app/helpers/sessions_helper.rb
+ delete mode 100644 Final_Project/Wearable/app/views/devise/sessions/new.html.erb
+ create mode 100644 Final_Project/Wearable/app/views/sessions/new.html.erb
+ rename Final_Project/Wearable/app/views/{home/index.html.erb => static_pages/home.html.erb} (100%)
+ rewrite Final_Project/Wearable/config/routes.rb (70%)
+ create mode 100644 Final_Project/Wearable/test/controllers/sessions_controller_test.rb
+Melanies-MBP:wearable melanieblazevic$ git push
+Counting objects: 31, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (26/26), done.
+Writing objects: 100% (31/31), 3.30 KiB | 0 bytes/s, done.
+Total 31 (delta 14), reused 0 (delta 0)
+remote: Resolving deltas: 100% (14/14), completed with 13 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   f7e6b1c..1344830  master -> master
+Melanies-MBP:wearable melanieblazevic$ rake routes
+        Prefix Verb   URI Pattern                              Controller#Action
+          root GET    /                                        static_pages#home
+          help GET    /help(.:format)                          static_pages#help
+         about GET    /about(.:format)                         static_pages#about
+       contact GET    /contact(.:format)                       static_pages#contact
+        signup GET    /signup(.:format)                        users#new
+         login GET    /login(.:format)                         sessions#new
+               POST   /login(.:format)                         sessions#create
+        logout DELETE /logout(.:format)                        sessions#destroy
+    user_posts GET    /users/:user_id/posts(.:format)          posts#index
+               POST   /users/:user_id/posts(.:format)          posts#create
+ new_user_post GET    /users/:user_id/posts/new(.:format)      posts#new
+edit_user_post GET    /users/:user_id/posts/:id/edit(.:format) posts#edit
+     user_post GET    /users/:user_id/posts/:id(.:format)      posts#show
+               PATCH  /users/:user_id/posts/:id(.:format)      posts#update
+               PUT    /users/:user_id/posts/:id(.:format)      posts#update
+               DELETE /users/:user_id/posts/:id(.:format)      posts#destroy
+         users GET    /users(.:format)                         users#index
+               POST   /users(.:format)                         users#create
+      new_user GET    /users/new(.:format)                     users#new
+     edit_user GET    /users/:id/edit(.:format)                users#edit
+          user GET    /users/:id(.:format)                     users#show
+               PATCH  /users/:id(.:format)                     users#update
+               PUT    /users/:id(.:format)                     users#update
+               DELETE /users/:id(.:format)                     users#destroy
+Melanies-MBP:wearable melanieblazevic$ git add .
+Melanies-MBP:wearable melanieblazevic$ git commit -m "Fixed routes and button links"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+Changes not staged for commit:
+	modified:   ../../Notes (modified content, untracked content)
+	modified:   ../../Week_1/Important_Program (modified content)
+	modified:   ../../Week_2/Employee_Payroll (modified content, untracked content)
+	modified:   ../../Week_8/First_Functions (modified content)
+	modified:   ../../week_18/todoapp (untracked content)
+
+Untracked files:
+	../Sunglasses.jpg
+	../Wearable_Logo.ai
+	../../Week_10/Auction_site/app/models/view.rb
+	../../Week_10/Auction_site/app/views/devise/
+	../../Week_10/Auction_site/config/initializers/devise.rb
+	../../Week_10/Auction_site/config/locales/devise.en.yml
+	../../Week_10/Auction_site/db/migrate/20160824004721_create_users.rb
+	../../Week_10/Auction_site/db/migrate/20160824010843_add_devise_to_users.rb
+	../../Week_10/Auction_site/db/migrate/20160827185737_devise_create_views.rb
+	../../Week_10/Auction_site/test/fixtures/views.yml
+	../../Week_10/Auction_site/test/models/view_test.rb
+	../../Week_13/async/
+	../../Week_13/coffee_exercise/
+	../../Week_13/episodes.json
+	../../Week_13/fs_module.js
+	../../Week_13/game_of_thrones.js
+	../../Week_13/sleep_function.js
+	../../Week_14/jQuery/animate.css
+	../../Week_14/jQuery/app.js
+	../../Week_14/jQuery/function_example.html
+	../../Week_17/Authentication_Exercise/
+	../../Week_17/Comic/Terminal Saved Output_1
+	../../Week_17/Comic/Terminal Saved Output_2
+	../../Week_17/FoodHub/Terminal Saved Output
+	../../Week_17/FoodHub/Terminal Saved Output_Console
+	../../Week_17/Sandwichr/app/controllers/static_pages_controller.rb
+
+no changes added to commit
+Melanies-MBP:wearable melanieblazevic$ git push
+Counting objects: 24, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (24/24), 3.05 KiB | 0 bytes/s, done.
+Total 24 (delta 10), reused 0 (delta 0)
+remote: Resolving deltas: 100% (10/10), completed with 10 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   1344830..0fba569  master -> master
+Melanies-MBP:wearable melanieblazevic$ git add .
+Melanies-MBP:wearable melanieblazevic$ git commit -m "Improved registration form and added logout function"
+[master c0249e4] Improved registration form and added logout function
+ 9 files changed, 143 insertions(+), 96 deletions(-)
+ delete mode 100644 Final_Project/Wearable/app/controllers/sessions_controller.rb
+ rewrite Final_Project/Wearable/app/views/devise/registrations/new.html.erb (98%)
+ delete mode 100644 Final_Project/Wearable/app/views/users/new.html.erb
+Melanies-MBP:wearable melanieblazevic$ git push
+Counting objects: 23, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (19/19), done.
+Writing objects: 100% (23/23), 3.08 KiB | 0 bytes/s, done.
+Total 23 (delta 12), reused 0 (delta 0)
+remote: Resolving deltas: 100% (12/12), completed with 12 local objects.
+To https://github.com/melaniemagdalene/Ironhack.git
+   0fba569..c0249e4  master -> master
+Melanies-MBP:wearable melanieblazevic$ rails g devise:views
+Running via Spring preloader in process 48103
+      invoke  Devise::Generators::SharedViewsGenerator
+       exist    app/views/devise/shared
+   identical    app/views/devise/shared/_links.html.erb
+      invoke  form_for
+       exist    app/views/devise/confirmations
+   identical    app/views/devise/confirmations/new.html.erb
+       exist    app/views/devise/passwords
+   identical    app/views/devise/passwords/edit.html.erb
+   identical    app/views/devise/passwords/new.html.erb
+       exist    app/views/devise/registrations
+   identical    app/views/devise/registrations/edit.html.erb
+    conflict    app/views/devise/registrations/new.html.erb
+  Overwrite /Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/app/views/devise/registrations/new.html.erb? (enter "h" for help) [Ynaqdh] n
+        skip    app/views/devise/registrations/new.html.erb
+      create    app/views/devise/sessions
+      create    app/views/devise/sessions/new.html.erb
+       exist    app/views/devise/unlocks
+   identical    app/views/devise/unlocks/new.html.erb
+      invoke  erb
+       exist    app/views/devise/mailer
+   identical    app/views/devise/mailer/confirmation_instructions.html.erb
+   identical    app/views/devise/mailer/password_change.html.erb
+   identical    app/views/devise/mailer/reset_password_instructions.html.erb
+   identical    app/views/devise/mailer/unlock_instructions.html.erb
+^C^C^C^C^C^C^[[A^[[D^[[D^[[D^[[D^[[D^[[D^[[D

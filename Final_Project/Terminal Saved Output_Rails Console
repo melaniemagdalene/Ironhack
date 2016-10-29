@@ -1,0 +1,225 @@
+Last login: Mon Sep 26 21:36:15 on ttys001
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails console
+Running via Spring preloader in process 4672
+Loading development environment (Rails 5.0.0.1)
+irb(main):001:0> User.all 
+  User Load (19.2ms)  SELECT "users".* FROM "users"
+=> #<ActiveRecord::Relation [#<User id: 2, email: "melanie@yahoo.com", name: nil>, #<User id: 3, email: "katie@yahoo.com", name: nil>, #<User id: 4, email: "anthony@yahoo.com", name: nil>, #<User id: 5, email: "yemani@yahoo.com", name: nil>, #<User id: 6, email: "test@test.com", name: nil>, #<User id: 7, email: "test2@gmail.com", name: nil>, #<User id: 8, email: "test3@gmail.com", name: nil>, #<User id: 9, email: "create@yahoo.com", name: nil>, #<User id: 10, email: "j@aol.com", name: nil>, #<User id: 11, email: "dieter@yahoo.com", name: nil>, ...]>
+irb(main):002:0> user = User.new
+=> #<User id: nil, email: "", name: nil>
+irb(main):003:0> user.id = 100
+=> 100
+irb(main):004:0> user.email = "alexander@yahoo.com"
+=> "alexander@yahoo.com"
+irb(main):005:0> user.name = "Alexander"
+=> "Alexander"
+irb(main):006:0> user.save
+   (0.2ms)  begin transaction
+  User Exists (0.4ms)  SELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?  [["email", "alexander@yahoo.com"], ["LIMIT", 1]]
+   (0.1ms)  rollback transaction
+=> false
+irb(main):007:0> user.valid?
+  User Exists (0.2ms)  SELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?  [["email", "alexander@yahoo.com"], ["LIMIT", 1]]
+=> false
+irb(main):008:0> user.save(validate: false)
+   (0.1ms)  begin transaction
+  SQL (11.1ms)  INSERT INTO "users" ("id", "email", "name") VALUES (?, ?, ?)  [["id", 100], ["email", "alexander@yahoo.com"], ["name", "Alexander"]]
+   (5.9ms)  commit transaction
+=> true
+irb(main):010:0> post = Post.new  
+=> #<Post id: nil, title: nil, description: nil, created_at: nil, updated_at: nil>
+irb(main):011:0> post.id = 55
+=> 55
+irb(main):012:0> post.title = "Shoes"
+=> "Shoes"
+irb(main):013:0> post.description = "Nike, size 10"
+=> "Nike, size 10"
+irb(main):014:0> post.created_at = Time.now
+=> 2016-09-27 00:02:17 -0400
+irb(main):015:0> post.updated_at = Time.now
+=> 2016-09-27 00:02:25 -0400
+irb(main):016:0> post
+=> #<Post id: 55, title: "Shoes", description: "Nike, size 10", created_at: "2016-09-27 04:02:17", updated_at: "2016-09-27 04:02:25">
+irb(main):017:0> post.save
+   (0.3ms)  begin transaction
+   (0.1ms)  rollback transaction
+=> false
+irb(main):018:0> Post.count
+   (0.4ms)  SELECT COUNT(*) FROM "posts"
+=> 8
+irb(main):019:0> Post.all
+  Post Load (0.3ms)  SELECT "posts".* FROM "posts"
+=> #<ActiveRecord::Relation [#<Post id: 1, title: nil, description: nil, created_at: "2016-09-23 01:41:18", updated_at: "2016-09-23 01:41:18">, #<Post id: 2, title: "Nike 310", description: "Size 10", created_at: "2016-09-23 01:46:10", updated_at: "2016-09-23 01:46:10">, #<Post id: 3, title: "Nike 310", description: "Size 10", created_at: "2016-09-23 01:47:35", updated_at: "2016-09-23 01:47:35">, #<Post id: 4, title: "Nike 310", description: "Size 10", created_at: "2016-09-23 01:47:38", updated_at: "2016-09-23 01:47:38">, #<Post id: 5, title: "Red", description: "Red\r\n", created_at: "2016-09-23 04:11:29", updated_at: "2016-09-23 04:11:29">, #<Post id: 6, title: "", description: "", created_at: "2016-09-23 04:11:38", updated_at: "2016-09-23 04:11:38">, #<Post id: 7, title: "", description: "", created_at: "2016-09-23 04:11:43", updated_at: "2016-09-23 04:11:43">, #<Post id: 8, title: "Hello", description: "d\r\n", created_at: "2016-09-26 23:55:42", updated_at: "2016-09-26 23:55:42">]>
+irb(main):020:0> post = Post.new
+=> #<Post id: nil, title: nil, description: nil, created_at: nil, updated_at: nil>
+irb(main):021:0> post.id = 110
+=> 110
+irb(main):022:0> post.title = "Purse"
+=> "Purse"
+irb(main):023:0> post.description = "Crossbody red purse"
+=> "Crossbody red purse"
+irb(main):024:0> post.created_at = Time.now
+=> 2016-09-27 00:57:47 -0400
+irb(main):025:0> post
+=> #<Post id: 110, title: "Purse", description: "Crossbody red purse", created_at: "2016-09-27 04:57:47", updated_at: nil>
+irb(main):026:0> post.save
+   (0.1ms)  begin transaction
+   (0.1ms)  rollback transaction
+=> false
+irb(main):028:0> user.errors.full_messages
+=> ["Password can't be blank"]
+irb(main):032:0> user = User.new           
+=> #<User id: nil, email: "", name: nil>
+irb(main):033:0> user.id = 33
+=> 33
+irb(main):035:0> user.email = "Wesley@yahoo.com"
+=> "Wesley@yahoo.com"
+irb(main):036:0> user.name = "Wesley"
+=> "Wesley"
+irb(main):037:0> user
+=> #<User id: 33, email: "Wesley@yahoo.com", name: "Wesley">
+irb(main):038:0> user.password = "Wesley10"
+=> "Wesley10"
+irb(main):039:0> user
+=> #<User id: 33, email: "Wesley@yahoo.com", name: "Wesley">
+irb(main):040:0> user.save
+   (0.5ms)  begin transaction
+  User Exists (0.2ms)  SELECT  1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?  [["email", "wesley@yahoo.com"], ["LIMIT", 1]]
+  SQL (0.4ms)  INSERT INTO "users" ("id", "email", "encrypted_password", "name") VALUES (?, ?, ?, ?)  [["id", 33], ["email", "wesley@yahoo.com"], ["encrypted_password", "$2a$11$j4PgvtJctLoyOnDSYNRgX.9p1mRIWw2Ozx5AJVro0ixXnRbAO5uSi"], ["name", "Wesley"]]
+   (1.7ms)  commit transaction
+=> true
+irb(main):041:0> User.all
+  User Load (2.4ms)  SELECT "users".* FROM "users"
+=> #<ActiveRecord::Relation [#<User id: 2, email: "melanie@yahoo.com", name: nil>, #<User id: 3, email: "katie@yahoo.com", name: nil>, #<User id: 4, ema
+il: "anthony@yahoo.com", name: nil>, #<User id: 5, email: "yemani@yahoo.com", name: nil>, #<User id: 6, email: "test@test.com", name: nil>, #<User id: 7
+, email: "test2@gmail.com", name: nil>, #<User id: 8, email: "test3@gmail.com", name: nil>, #<User id: 9, email: "create@yahoo.com", name: nil>, #<User 
+id: 10, email: "j@aol.com", name: nil>, #<User id: 11, email: "dieter@yahoo.com", name: nil>, ...]>
+irb(main):043:0> u = User.last
+  User Load (2.4ms)  SELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?  [["LIMIT", 1]]
+=> #<User id: 109, email: "console@yahoo.com", name: nil>
+irb(main):045:0> Post.all
+  Post Load (0.3ms)  SELECT "posts".* FROM "posts"
+=> #<ActiveRecord::Relation [#<Post id: 1, title: nil, description: nil, created_at: "2016-09-23 01:41:18", updated_at: "2016-09-23 01:41:18">, #<Post id: 2, title: "Nike 310", description: "Size 10", created_at: "2016-09-23 01:46:10", updated_at: "2016-09-23 01:46:10">, #<Post id: 3, title: "Nike 310", description: "Size 10", created_at: "2016-09-23 01:47:35", updated_at: "2016-09-23 01:47:35">, #<Post id: 4, title: "Nike 310", description: "Size 10", created_at: "2016-09-23 01:47:38", updated_at: "2016-09-23 01:47:38">, #<Post id: 5, title: "Red", description: "Red\r\n", created_at: "2016-09-23 04:11:29", updated_at: "2016-09-23 04:11:29">, #<Post id: 6, title: "", description: "", created_at: "2016-09-23 04:11:38", updated_at: "2016
+-09-23 04:11:38">, #<Post id: 7, title: "", description: "", created_at: "2016-09-23 04:11:43", updated_at: "2016-09-23 04:11:43">, #<Post id: 8, tit
+le: "Hello", description: "d\r\n", created_at: "2016-09-26 23:55:42", updated_at: "2016-09-26 23:55:42">, #<Post id: 9, title: "Purse", description: 
+"red\r\n", created_at: "2016-09-27 05:18:01", updated_at: "2016-09-27 05:18:01">, #<Post id: 10, title: "Shoes", description: "Nike, size 10\r\n", cr
+irb(main):051:0> u = User.first
+  User Load (3.5ms)  SELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?  [["LIMIT", 1]]
+=> #<User id: 2, email: "melanie@yahoo.com", name: nil>
+irb(main):059:0> p.errorsirb(main):059:0> User.all
+  User Load (105.0ms)  SELECT "users".* FROM "users"
+=> #<ActiveRecord::Relation [#<User id: 2, email: "melanie@yahoo.com", name: nil>, #<User id: 3, email: "katie@yahoo.com", name: nil>, #<User id: 4, email: "anthony@yahoo.com", name: nil>, #<User id: 5, email: "yemani@yahoo.com", name: nil>, #<User id: 6, email: "test@test.com", name: nil>, #<User id: 7, email: "test2@gmail.com", name: nil>, #<User id: 8, email: "test3@gmail.com", name: nil>, #<User id: 9, email: "create@yahoo.com", name: nil>, #<User id: 10, email: "j@aol.com", name: nil>, #<User id: 11, email: "dieter@yahoo.com", name: nil>, ...]>
+	from -e:1:in `<main>'irb(main):061:0> ^C
+irb(main):061:0> commentable = Post.create
+   (0.3ms)  begin transaction
+   (0.1ms)  rollback transaction
+=> #<Post id: nil, title: nil, description: nil, created_at: nil, updated_at: nil, user_id: nil>
+	from -e:1:in `<main>'irb(main):063:0> 
+irb(main):064:0* ^C
+irb(main):064:0> post = Post.new
+=> #<Post id: nil, title: nil, description: nil, created_at: nil, updated_at: nil, user_id: nil>
+irb(main):065:0> post.id = 1
+=> 1
+irb(main):066:0> Post.last    
+  Post Load (0.9ms)  SELECT  "posts".* FROM "posts" ORDER BY "posts"."created_at" ASC LIMIT ?  [["LIMIT", 1]]
+=> #<Post id: 1, title: nil, description: nil, created_at: "2016-09-23 01:41:18", updated_at: "2016-09-23 01:41:18", user_id: nil>
+irb(main):067:0> Description.last
+NameError: uninitialized constant Description
+	from (irb):67
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `<top (required)>'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'
+irb(main):068:0> Comment.last 
+NameError: uninitialized constant Comment::ActsAsCommentable
+	from /Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/app/models/comment.rb:3:in `<class:Comment>'
+	from /Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/app/models/comment.rb:1:in `<top (required)>'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/dependencies/interlock.rb:12:in `block in loading'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/concurrency/share_lock.rb:117:in `exclusive'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/activesupport-5.0.0.1/lib/active_support/dependencies/interlock.rb:11:in `loading'
+	from (irb):68
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `<top (required)>'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'
+irb(main):069:0> Post.all
+  Post Load (0.8ms)  SELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC
+=> #<ActiveRecord::Relation [#<Post id: 29, title: "Title", description: "Description", created_at: "2016-09-30 00:22:42", updated_at: "2016-09-30 00:22:42", user_id: nil>, #<Post id: 28, title: "Title", description: "Description", created_at: "2016-09-30 00:20:44", updated_at: "2016-09-30 00:20:44", user_id: nil>, #<Post id: 27, title: "Purse", description: "Pink Purse!", created_at: "2016-09-29 23:38:47", updated_at: "2016-09-29 23:39:30", user_id: 111>, #<Post id: 26, title: "Shoes", description: "nike, 12", created_at: "2016-09-29 23:19:53", updated_at: "2016-09-29 23:22:45", user_id: 2>, #<Post id: 25, title: "Shoes", description: "Nike, size 10", created_at: "2016-09-27 23:39:19", updated_at: "2016-09-27 23:39:19", user_id: nil>, #<Post id: 24, title: "Red Purse", description: "hello", created_at: "2016-09-27 23:09:28", updated_at: "2016-09-27 23:09:28", user_id: nil>, #<Post id: 23, title: "Jordans", description: "Men's size 12", created_at: "2016-09-27 22:59:28", updated_at: "2016-09-27 22:59:28", user_id: nil>, #<Post id: 22, title: "Heels", description: "Looking for wedges in size 6", created_at: "2016-09-27 22:57:41", updated_at: "2016-09-27 22:57:41", user_id: nil>, #<Post id: 21, title: "Travel carry on", description: "Small size", created_at: "2016-09-27 22:49:52", updated_at: "2016-09-27 22:49:52", user_id: nil>, #<Post id: 20, title: "Purse", description: "Black\r\n", created_at: "2016-09-27 22:47:28", updated_at: "2016-09-27 22:47:28", user_id: nil>, ...]>
+irb(main):070:0> Users.all
+NameError: uninitialized constant Users
+	from (irb):70
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/console.rb:65:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/console_helper.rb:9:in `start'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:78:in `console'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands/commands_tasks.rb:49:in `run_command!'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/gems/2.3.0/gems/railties-5.0.0.1/lib/rails/commands.rb:18:in `<top (required)>'
+	from /Users/melanieblazevic/Desktop/Ironhack/Final_Project/Wearable/bin/rails:9:in `<top (required)>'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from /Users/melanieblazevic/.rbenv/versions/2.3.0/lib/ruby/2.3.0/rubygems/core_ext/kernel_require.rb:55:in `require'
+	from -e:1:in `<main>'
+irb(main):071:0> User.all
+  User Load (1.0ms)  SELECT "users".* FROM "users"
+=> #<ActiveRecord::Relation [#<User id: 2, email: "melanie@yahoo.com", name: nil>, #<User id: 3, email: "katie@yahoo.com", name: nil>, #<User id: 4, email: "anthony@yahoo.com", name: nil>, #<User id: 5, email: "yemani@yahoo.com", name: nil>, #<User id: 6, email: "test@test.com", name: nil>, #<User id: 7, email: "test2@gmail.com", name: nil>, #<User id: 8, email: "test3@gmail.com", name: nil>, #<User id: 9, email: "create@yahoo.com", name: nil>, #<User id: 10, email: "j@aol.com", name: nil>, #<User id: 11, email: "dieter@yahoo.com", name: nil>, ...]>
+irb(main):072:0> Post.all
+  Post Load (463.5ms)  SELECT "posts".* FROM "posts" ORDER BY "posts"."created_at" DESC
+=> #<ActiveRecord::Relation [#<Post id: 72, title: "Title", description: "Description", created_at: "2016-10-05 00:15:11", updated_at: "2016-10-05 00:15:11", user_id: nil>, #<Post id: 71, title: "Title", description: "Description", created_at: "2016-10-04 05:03:19", updated_at: "2016-10-04 05:03:19", user_id: nil>, #<Post id: 70, title: "Hair", description: "Silver Clip", created_at: "2016-10-04 02:52:32", updated_at: "2016-10-04 02:52:32", user_id: 2>, #<Post id: 69, title: "Title", description: "Description", created_at: "2016-10-04 02:52:20", updated_at: "2016-10-04 02:52:20", user_id: nil>, #<Post id: 68, title: "Title", description: "Description", created_at: "2016-10-01 22:11:11", updated_at: "2016-10-01 22:11:11", user_id: nil>, #<Post id: 67, title: "Title", description: "Description", created_at: "2016-10-01 22:10:28", updated_at: "2016-10-01 22:10:28", user_id: nil>, #<Post id: 66, title: "Title", description: "Description", created_at: "2016-10-01 22:09:43", updated_at: "2016-10-01 22:09:43", user_id: nil>, #<Post id: 65, title: "Title", description: "Description", created_at: "2016-10-01 22:04:38", updated_at: "2016-10-01 22:04:38", user_id: nil>, #<Post id: 64, title: "Title", description: "Description", created_at: "2016-10-01 22:03:45", updated_at: "2016-10-01 22:03:45", user_id: nil>, #<Post id: 63, title: "Title", description: "Description", created_at: "2016-10-01 21:59:42", updated_at: "2016-10-01 21:59:42", user_id: nil>, ...]>
+irb(main):073:0> Post.new
+=> #<Post id: nil, title: nil, description: nil, created_at: nil, updated_at: nil, user_id: nil>
+irb(main):074:0> post.title = "Purse"
+=> "Purse"
+irb(main):075:0> post.description = "Marc Jacobs"
+=> "Marc Jacobs"
+irb(main):076:0> post.created_at = Time.now
+=> 2016-10-04 23:46:27 -0400
+irb(main):077:0> post.updated_at = Time.now
+=> 2016-10-04 23:46:35 -0400
+irb(main):078:0> post.user_id = 44
+=> 44
+irb(main):080:0> post.save
+   (5.0ms)  begin transaction
+   (0.3ms)  rollback transaction
+=> false
+irb(main):081:0>  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  [Restored Oct 5, 2016, 2:01:32 PM]
+Last login: Wed Oct  5 14:00:11 on console
+Melanies-MacBook-Pro:wearable melanieblazevic$ rails console
+
+Running via Spring preloader in process 774
+Loading development environment (Rails 5.0.0.1)
+No entry for terminal type "/rake-11.2.2/lib/rake/ext/string.rb";
+using dumb terminal settings.
+irb(main):001:0> exit
+Melanies-MacBook-Pro:wearable melanieblazevic$ exit
+logout
+Saving session...
+...copying shared history...
+...saving history...truncating history files...
+...completed.
+
+[Process completed]
+

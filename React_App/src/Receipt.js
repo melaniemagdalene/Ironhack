@@ -1,23 +1,15 @@
 import React, { Component } from 'react';
+import ReceiptItemList from './ReceiptItemList';
+import ReceiptForm from './ReceiptForm';
 
 class Receipt extends Component {
 
 	constructor(){
 		super();
 		this.state = {
-			productName: "",
-			productPrice: "",
 			total: 0,
 			itemList: []
 		}
-	}
-
-	onProductNameChange(e){
-		this.setState({productName: e.target.value})
-	}
-
-	onProductPriceChange(e){
-		this.setState({productPrice: e.target.value})
 	}
 
 	logSomething(){
@@ -28,20 +20,13 @@ class Receipt extends Component {
 	// Clear the form
 	// Update the total
 
-	onFormSubmit(e){
-		e.preventDefault();
+	onFormSubmit(newItem){
+		var newList = this.state.itemList.concat(newItem)
 
-		var newList = this.state.itemList.concat({
-			name: this.state.productName,
-			price: this.state.productPrice
-		})
-
-		var newTotal = this.state.total + Number(this.state.productPrice);
+		var newTotal = this.state.total + newItem.price;
 
 		this.setState({
 			itemList: newList,
-			productName: "",
-			productPrice: "",
 			total: newTotal
 		})
 	}
@@ -58,23 +43,8 @@ class Receipt extends Component {
 		console.log(productName, productPrice, total);
 		return(
 			<div>
-				<form onSubmit={this.onFormSubmit.bind(this)}>
-				<input
-					placeholder="Name"
-					value={this.state.productName}
-					onChange={this.onProductNameChange.bind(this)}
-				/>
-				<input
-					placeholder="Price"
-					value={this.state.productPrice}
-					onChange={this.onProductPriceChange.bind(this)}
-				/>
-					<button type="submit">Add Item</button>
-				</form>
-
-				<ul>
-					{ this.renderProducts() }
-				</ul>
+				<ReceiptForm onItemSubmit={this.onFormSubmit.bind(this)} />
+				<ReceiptItemList items={this.state.itemList} />
 				<span><strong>${total}</strong></span>
 			</div>
 		)
